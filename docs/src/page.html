@@ -1,0 +1,953 @@
+<title>Panduan Afiliasi Roblox</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+  :root {
+    --bg: #F5F7F4; --surface: #FFFFFF; --surface-2: #ECF1EC; --surface-3: #E1E8E2;
+    --ink: #18201C; --ink-2: #4B5751; --muted: #77837C; --line: #D3DBD5; --line-strong: #B9C4BC;
+    --accent: #0E8A57; --accent-ink: #FFFFFF; --accent-soft: #DCF1E5; --accent-line: #9ED4B8;
+    --warm: #B36512; --warm-soft: #F9EBD6; --warm-line: #E7C08A;
+    --danger: #B4392E; --danger-soft: #F8E1DD; --danger-line: #E8A39B;
+    --info: #2B5FA8; --info-soft: #E0EAF8; --info-line: #A9C1E8;
+    --code-bg: #12201A; --code-ink: #DCE8E0; --code-bar: #0C1712; --code-line: #1F3128;
+    --code-kw: #7FD1A6; --code-str: #F2C784; --code-cm: #7E948B; --code-num: #9BC8F0; --code-fn: #CDBAF7; --code-key: #9ED4B8;
+    --shadow: 0 1px 2px rgba(20, 40, 30, .06), 0 8px 24px -12px rgba(20, 40, 30, .18);
+    --radius: 10px; --radius-sm: 6px;
+    --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+    --body: "Atkinson Hyperlegible", "Helvetica Neue", Arial, system-ui, sans-serif;
+    --mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0E1512; --surface: #151E19; --surface-2: #1B2620; --surface-3: #223029;
+      --ink: #E4EBE6; --ink-2: #B3BFB7; --muted: #7F8C85; --line: #263129; --line-strong: #3A4840;
+      --accent: #3FD08D; --accent-ink: #07160E; --accent-soft: #163224; --accent-line: #2A6A49;
+      --warm: #E8A448; --warm-soft: #33260F; --warm-line: #7A5A24;
+      --danger: #F08074; --danger-soft: #3A1E1A; --danger-line: #7A3A33;
+      --info: #7FAAEE; --info-soft: #17243A; --info-line: #2F4B7A;
+      --code-bg: #0A110D; --code-bar: #060B08; --code-line: #1A2620;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0E1512; --surface: #151E19; --surface-2: #1B2620; --surface-3: #223029;
+    --ink: #E4EBE6; --ink-2: #B3BFB7; --muted: #7F8C85; --line: #263129; --line-strong: #3A4840;
+    --accent: #3FD08D; --accent-ink: #07160E; --accent-soft: #163224; --accent-line: #2A6A49;
+    --warm: #E8A448; --warm-soft: #33260F; --warm-line: #7A5A24;
+    --danger: #F08074; --danger-soft: #3A1E1A; --danger-line: #7A3A33;
+    --info: #7FAAEE; --info-soft: #17243A; --info-line: #2F4B7A;
+    --code-bg: #0A110D; --code-bar: #060B08; --code-line: #1A2620;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+    color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+  h1, h2, h3, h4 { font-family: var(--display); text-wrap: balance; line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+  h1 { font-size: clamp(30px, 4vw, 44px); font-weight: 800; }
+  h2 { font-size: clamp(24px, 2.6vw, 30px); font-weight: 700; }
+  h3 { font-size: 19px; font-weight: 700; margin-top: 28px; }
+  h4 { font-size: 16px; font-weight: 700; margin-top: 18px; }
+  p, ul, ol { margin: 0 0 14px; }
+  ul, ol { padding-left: 22px; }
+  li { margin-bottom: 4px; }
+  code { font-family: var(--mono); font-size: .88em; background: var(--surface-2); border: 1px solid var(--line); padding: 1px 5px; border-radius: 4px; word-break: break-word; }
+  pre code { background: none; border: 0; padding: 0; font-size: inherit; word-break: normal; }
+  strong { font-weight: 700; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0; }
+  .eyebrow { font-family: var(--display); font-weight: 600; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+  .ui { font-family: var(--display); font-weight: 600; font-size: .92em; background: var(--surface-2); border: 1px solid var(--line-strong); border-radius: 5px; padding: 0 6px; white-space: nowrap; }
+  .num { font-variant-numeric: tabular-nums; }
+
+  /* ---------- kerangka halaman ---------- */
+  .topbar { position: sticky; top: 0; z-index: 30; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .topbar-in { display: flex; align-items: center; gap: 14px; padding: 10px 20px; max-width: 1360px; margin: 0 auto; }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 16px; color: var(--ink); text-decoration: none; }
+  .brand-mark { width: 26px; height: 26px; border-radius: 7px; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; font-size: 13px; font-weight: 800; }
+  .brand small { font-weight: 400; color: var(--muted); font-family: var(--body); font-size: 13px; }
+  .topbar .spacer { flex: 1; }
+  .btn { font-family: var(--display); font-weight: 600; font-size: 13px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); border-radius: 7px; padding: 6px 11px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; line-height: 1.2; }
+  .btn:hover { border-color: var(--accent); }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .btn-primary:hover { filter: brightness(1.05); }
+  .btn-ghost { background: transparent; }
+  #menu-btn { display: none; }
+
+  .shell { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 0; max-width: 1360px; margin: 0 auto; }
+  .sidebar { position: sticky; top: 53px; height: calc(100vh - 53px); overflow-y: auto; padding: 20px 14px 40px 20px; border-right: 1px solid var(--line); }
+  .nav-group { margin-bottom: 18px; }
+  .nav-group > .eyebrow { display: block; margin: 0 0 6px 10px; color: var(--muted); }
+  .nav a { display: block; padding: 5px 10px; border-radius: 6px; color: var(--ink-2); text-decoration: none; font-size: 14px; border-left: 2px solid transparent; }
+  .nav a:hover { background: var(--surface-2); color: var(--ink); }
+  .nav a.active { color: var(--accent); background: var(--accent-soft); border-left-color: var(--accent); font-weight: 700; }
+  .sidebar .progress { margin: 6px 0 14px 10px; font-size: 12px; color: var(--muted); }
+  .sidebar .progress b { color: var(--ink); }
+  .bar { height: 4px; background: var(--surface-3); border-radius: 4px; overflow: hidden; margin-top: 4px; }
+  .bar i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .3s; }
+
+  main { padding: 28px 40px 100px; min-width: 0; }
+  .doc { max-width: 72ch; margin: 0 auto 64px; scroll-margin-top: 76px; }
+  .doc.wide { max-width: 980px; }
+  .doc > header { margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .doc > header p { color: var(--ink-2); margin: 6px 0 0; font-size: 17px; }
+  .lead { font-size: 18px; color: var(--ink-2); }
+
+  /* hero */
+  .hero { max-width: 980px; margin: 8px auto 56px; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr); gap: 28px; align-items: start; }
+  .hero h1 span { color: var(--accent); }
+  .hero .lead { max-width: 60ch; margin-top: 12px; }
+  .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+  .who { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; box-shadow: var(--shadow); }
+  .who dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; margin: 8px 0 0; font-size: 14px; }
+  .who dt { color: var(--muted); }
+  .who dd { margin: 0; }
+
+  /* alur */
+  .flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 18px 0 8px; counter-reset: flow; }
+  .flow-step { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 14px 12px; cursor: pointer; text-align: left; font: inherit; color: inherit; transition: border-color .15s, transform .15s; }
+  .flow-step:hover { border-color: var(--accent-line); }
+  .flow-step[aria-expanded="true"] { border-color: var(--accent); background: var(--accent-soft); }
+  .flow-step::before { counter-increment: flow; content: counter(flow); font-family: var(--display); font-weight: 800; font-size: 12px; color: var(--accent-ink); background: var(--accent); border-radius: 999px; width: 22px; height: 22px; display: inline-grid; place-items: center; margin-bottom: 8px; }
+  .flow-step .actor { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-family: var(--display); font-weight: 600; }
+  .flow-step b { display: block; font-family: var(--display); font-size: 15px; margin: 2px 0 4px; }
+  .flow-step span { font-size: 13px; color: var(--ink-2); }
+  .flow-step:not(:last-child)::after { content: ""; position: absolute; right: -8px; top: 50%; width: 6px; height: 6px; border-top: 2px solid var(--line-strong); border-right: 2px solid var(--line-strong); transform: translateY(-50%) rotate(45deg); }
+  .flow-detail { background: var(--surface); border: 1px solid var(--accent-line); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 14px; font-size: 15px; }
+  .flow-detail[hidden] { display: none; }
+  .flow-detail p:last-child { margin-bottom: 0; }
+
+  /* callout */
+  .callout { display: grid; grid-template-columns: auto 1fr; gap: 10px; padding: 12px 14px; border-radius: var(--radius-sm); border: 1px solid var(--info-line); background: var(--info-soft); margin: 14px 0; font-size: 15px; }
+  .callout .ico { font-family: var(--display); font-weight: 800; font-size: 13px; width: 22px; height: 22px; border-radius: 999px; display: grid; place-items: center; background: var(--info); color: #fff; margin-top: 2px; }
+  .callout p:last-child { margin: 0; }
+  .callout b:first-child { display: block; margin-bottom: 2px; }
+  .callout.warn { border-color: var(--warm-line); background: var(--warm-soft); } .callout.warn .ico { background: var(--warm); }
+  .callout.danger { border-color: var(--danger-line); background: var(--danger-soft); } .callout.danger .ico { background: var(--danger); }
+  .callout.ok { border-color: var(--accent-line); background: var(--accent-soft); } .callout.ok .ico { background: var(--accent); color: var(--accent-ink); }
+
+  /* langkah bernomor */
+  .steps { list-style: none; padding: 0; margin: 18px 0; counter-reset: step; }
+  .steps > li { position: relative; padding: 0 0 18px 44px; counter-increment: step; }
+  .steps > li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 999px; background: var(--surface); border: 2px solid var(--accent); color: var(--accent); font-family: var(--display); font-weight: 800; display: grid; place-items: center; font-size: 14px; }
+  .steps > li:not(:last-child)::after { content: ""; position: absolute; left: 14px; top: 32px; bottom: 0; width: 2px; background: var(--line); }
+  .steps > li > b { display: block; font-family: var(--display); font-size: 17px; margin: 3px 0 4px; }
+  .steps p:last-child { margin-bottom: 0; }
+
+  /* checklist */
+  .check { list-style: none; padding: 0; margin: 14px 0; display: grid; gap: 8px; }
+  .check label { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; padding: 12px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); cursor: pointer; }
+  .check label:has(input:checked) { border-color: var(--accent-line); background: var(--accent-soft); }
+  .check label:has(input:checked) b { text-decoration: line-through; color: var(--muted); }
+  .check input { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--accent); }
+  .check b { display: block; font-family: var(--display); }
+  .check span { font-size: 14px; color: var(--ink-2); }
+
+  /* tabel */
+  .table-wrap { overflow-x: auto; margin: 14px 0; border: 1px solid var(--line); border-radius: var(--radius-sm); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; background: var(--surface); }
+  th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-family: var(--display); font-weight: 600; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); background: var(--surface-2); }
+  tr:last-child td { border-bottom: 0; }
+  .req { font-family: var(--display); font-size: 11px; font-weight: 700; padding: 1px 6px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent-line); white-space: nowrap; }
+  .opt { font-family: var(--display); font-size: 11px; font-weight: 600; padding: 1px 6px; border-radius: 4px; background: var(--surface-2); color: var(--muted); border: 1px solid var(--line); white-space: nowrap; }
+
+  /* tabs */
+  .tabs { margin: 16px 0; }
+  .tablist { display: flex; gap: 4px; flex-wrap: wrap; border-bottom: 1px solid var(--line); }
+  .tab { font-family: var(--display); font-weight: 600; font-size: 14px; background: none; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: 8px 12px; color: var(--ink-2); cursor: pointer; }
+  .tab:hover { color: var(--ink); }
+  .tab[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); }
+  .tabpanel[hidden] { display: none; }
+  .tabpanel { padding-top: 12px; }
+  .filemeta { display: flex; gap: 14px; flex-wrap: wrap; font-size: 14px; color: var(--ink-2); margin-bottom: 10px; }
+  .filemeta b { color: var(--ink); }
+
+  /* kode */
+  .code { background: var(--code-bg); color: var(--code-ink); border-radius: var(--radius-sm); border: 1px solid var(--code-line); margin: 12px 0; overflow: hidden; }
+  .code-bar { display: flex; align-items: center; gap: 10px; padding: 6px 8px 6px 14px; background: var(--code-bar); border-bottom: 1px solid var(--code-line); font-family: var(--mono); font-size: 12px; color: var(--code-cm); }
+  .code-bar .fname { color: var(--code-ink); }
+  .code-bar .spacer { flex: 1; }
+  .code-bar .btn { background: transparent; color: var(--code-ink); border-color: var(--code-line); font-size: 12px; padding: 3px 9px; }
+  .code-bar .btn:hover { border-color: var(--code-kw); color: var(--code-kw); }
+  .code pre { margin: 0; padding: 14px 16px; overflow-x: auto; font-family: var(--mono); font-size: 13px; line-height: 1.55; tab-size: 4; max-height: 520px; }
+  .code.tall pre { max-height: none; }
+  .tok-kw { color: var(--code-kw); } .tok-str { color: var(--code-str); } .tok-cm { color: var(--code-cm); font-style: italic; } .tok-num { color: var(--code-num); } .tok-fn { color: var(--code-fn); } .tok-key { color: var(--code-key); } .tok-bool { color: var(--code-num); }
+  .hl { background: rgba(127, 209, 166, .12); display: inline-block; width: 100%; }
+
+  /* alat interaktif */
+  .tool { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); overflow: hidden; margin: 18px 0; }
+  .tool-form { padding: 18px 20px; border-right: 1px solid var(--line); display: grid; gap: 12px; align-content: start; }
+  .tool-out { padding: 18px 20px; background: var(--surface-2); min-width: 0; }
+  .field { display: grid; gap: 4px; }
+  .field label { font-family: var(--display); font-weight: 600; font-size: 13px; }
+  .field small { color: var(--muted); font-size: 12px; }
+  .field input, .field select, .field textarea { font: inherit; font-size: 14px; padding: 8px 10px; border: 1px solid var(--line-strong); border-radius: 6px; background: var(--surface); color: var(--ink); width: 100%; }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent); outline: 0; box-shadow: 0 0 0 3px var(--accent-soft); }
+  .field input[type="number"] { font-variant-numeric: tabular-nums; }
+  .field .mono { font-family: var(--mono); font-size: 13px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 7px; overflow: hidden; }
+  .seg button { font-family: var(--display); font-weight: 600; font-size: 13px; padding: 7px 12px; background: var(--surface); color: var(--ink-2); border: 0; cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+  .out-title { font-family: var(--display); font-weight: 600; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .out-link { font-family: var(--mono); font-size: 13px; background: var(--surface); border: 1px dashed var(--line-strong); border-radius: 6px; padding: 10px 12px; word-break: break-all; margin-bottom: 10px; }
+  .out-err { color: var(--danger); font-size: 14px; }
+  .calc-steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+  .calc-steps li { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: baseline; padding: 8px 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; font-size: 14px; }
+  .calc-steps li small { display: block; color: var(--muted); font-size: 12px; }
+  .calc-steps li .v { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 14px; white-space: nowrap; }
+  .calc-steps li.total { border-color: var(--accent); background: var(--accent-soft); }
+  .calc-steps li.total .v { font-family: var(--display); font-size: 22px; font-weight: 800; color: var(--accent); }
+  .out-note { font-size: 13px; color: var(--muted); margin-top: 10px; }
+  .tool .code { margin: 0 0 10px; }
+  .tool .code pre { max-height: 360px; }
+
+  /* faq */
+  details.faq { border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); margin-bottom: 8px; }
+  details.faq summary { cursor: pointer; padding: 12px 14px; font-family: var(--display); font-weight: 600; list-style: none; display: flex; gap: 10px; align-items: center; }
+  details.faq summary::-webkit-details-marker { display: none; }
+  details.faq summary::before { content: "+"; font-weight: 800; color: var(--accent); width: 18px; text-align: center; flex: none; }
+  details.faq[open] summary::before { content: "–"; }
+  details.faq .body { padding: 0 14px 14px 42px; font-size: 15px; }
+  details.faq .body p:last-child { margin-bottom: 0; }
+  .err { font-family: var(--mono); font-size: 12px; color: var(--danger); background: var(--danger-soft); border: 1px solid var(--danger-line); padding: 1px 6px; border-radius: 4px; }
+
+  /* status & kamus */
+  .status-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 14px 0; }
+  .status { padding: 12px 14px; border-radius: var(--radius-sm); border: 1px solid var(--line); background: var(--surface); font-size: 14px; }
+  .status b { display: inline-block; font-family: var(--mono); font-size: 13px; padding: 1px 7px; border-radius: 4px; margin-bottom: 6px; }
+  .status.s-attr b { background: var(--accent-soft); color: var(--accent); }
+  .status.s-unattr b { background: var(--surface-3); color: var(--ink-2); }
+  .status.s-unm b { background: var(--warm-soft); color: var(--warm); }
+  .status.s-void b { background: var(--danger-soft); color: var(--danger); }
+  dl.glossary { display: grid; grid-template-columns: max-content 1fr; gap: 10px 18px; font-size: 15px; margin: 14px 0; }
+  dl.glossary dt { font-family: var(--display); font-weight: 700; }
+  dl.glossary dd { margin: 0; color: var(--ink-2); }
+
+  .endpoint { font-family: var(--mono); font-size: 14px; display: inline-flex; align-items: center; gap: 8px; margin: 22px 0 6px; }
+  .endpoint .m { font-weight: 600; font-size: 11px; padding: 2px 7px; border-radius: 4px; background: var(--accent); color: var(--accent-ink); }
+  .toast { position: fixed; bottom: 22px; left: 50%; transform: translate(-50%, 20px); background: var(--ink); color: var(--bg); font-family: var(--display); font-weight: 600; font-size: 14px; padding: 9px 16px; border-radius: 999px; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 50; }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+  footer { max-width: 72ch; margin: 0 auto; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+
+  @media (max-width: 960px) {
+    .shell { grid-template-columns: 1fr; }
+    .sidebar { position: fixed; inset: 53px 0 0 0; height: auto; background: var(--bg); z-index: 25; transform: translateX(-100%); transition: transform .2s; border-right: 0; }
+    .sidebar.open { transform: none; }
+    #menu-btn { display: inline-flex; }
+    main { padding: 20px 18px 80px; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .flow { grid-template-columns: 1fr 1fr; }
+    .flow-step:not(:last-child)::after { display: none; }
+    .tool { grid-template-columns: 1fr; }
+    .tool-form { border-right: 0; border-bottom: 1px solid var(--line); }
+    .status-grid { grid-template-columns: 1fr; }
+    dl.glossary { grid-template-columns: 1fr; gap: 2px 0; }
+    dl.glossary dd { margin-bottom: 10px; }
+  }
+  @media (max-width: 520px) { .flow { grid-template-columns: 1fr; } .field-row { grid-template-columns: 1fr; } }
+</style>
+<!--BODY-->
+<div class="topbar"><div class="topbar-in">
+  <button class="btn btn-ghost" id="menu-btn" aria-label="Buka menu" aria-controls="sidebar" aria-expanded="false">☰ Menu</button>
+  <a class="brand" href="#atas"><span class="brand-mark">K</span> KLSM Affiliate <small>· panduan integrasi Roblox</small></a>
+  <span class="spacer"></span>
+  <button class="btn btn-ghost" id="theme-btn" title="Ganti tema">Tema: <span id="theme-label">sistem</span></button>
+</div></div>
+
+<div class="shell">
+<aside class="sidebar" id="sidebar">
+  <nav class="nav" aria-label="Daftar isi">
+    <div class="nav-group"><span class="eyebrow">Mulai di sini</span>
+      <a href="#gambaran">Gambaran besar</a>
+      <a href="#persiapan">Persiapan</a>
+      <div class="progress">Checklist: <b id="check-count">0/6</b> selesai<div class="bar"><i id="check-bar"></i></div></div>
+    </div>
+    <div class="nav-group"><span class="eyebrow">Pasang di Roblox</span>
+      <a href="#pasang">1. Taruh script di Studio</a>
+      <a href="#konfig">2. Isi alamat API &amp; key</a>
+      <a href="#share-link">3. Share link admin</a>
+      <a href="#robux">4. Pembelian Robux</a>
+      <a href="#bagibagi">5. Donasi bagi-bagi</a>
+      <a href="#tes">6. Tes &amp; pastikan jalan</a>
+    </div>
+    <div class="nav-group"><span class="eyebrow">Alat bantu</span>
+      <a href="#alat-link">Generator share link</a>
+      <a href="#alat-komisi">Kalkulator komisi</a>
+      <a href="#alat-payload">Bikin payload &amp; curl</a>
+    </div>
+    <div class="nav-group"><span class="eyebrow">Referensi</span>
+      <a href="#api">Endpoint API</a>
+      <a href="#status">Status event</a>
+      <a href="#masalah">Masalah umum</a>
+      <a href="#kamus">Kamus istilah</a>
+    </div>
+  </nav>
+</aside>
+
+<main id="atas">
+
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow">Panduan integrasi</span>
+      <h1>Sambungkan map Roblox kamu ke <span>sistem komisi admin</span></h1>
+      <p class="lead">Tiga script kecil di game, satu key dari dashboard. Setelah itu, setiap player yang masuk lewat link admin dan belanja di map kamu, komisinya kehitung sendiri.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#persiapan">Mulai dari persiapan</a>
+        <a class="btn" href="#pasang">Langsung ke script</a>
+        <a class="btn" href="#alat-komisi">Coba kalkulator komisi</a>
+      </div>
+    </div>
+    <div class="who">
+      <span class="eyebrow">Buat siapa panduan ini</span>
+      <dl>
+        <dt>Kamu</dt><dd>Pemilik / developer map Roblox yang pegang Roblox Studio.</dd>
+        <dt>Perlu bisa</dt><dd>Buka Roblox Studio, copy-paste script, buka dashboard owner.</dd>
+        <dt>Waktu</dt><dd>Kira-kira 20 menit sampai join pertama masuk.</dd>
+        <dt>Nggak perlu</dt><dd>Ngerti backend. Semua hitungan dilakukan di server, bukan di game.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GAMBARAN ================= -->
+<section class="doc wide" id="gambaran">
+  <header><span class="eyebrow">Mulai di sini</span><h2>Gambaran besar</h2><p>Apa yang sebenarnya terjadi dari link dibagikan sampai komisi muncul.</p></header>
+  <p>Sistem ini kerjanya sederhana: <strong>admin</strong> ngajak orang main ke map kamu lewat link khusus. Orang yang masuk lewat link itu disebut <strong>spender</strong>. Setiap kali spender belanja (beli developer product pakai Robux, atau kirim donasi bagi-bagi), admin yang ngajak dapat komisi. Game kamu cuma perlu <em>lapor</em> ke server. Server yang ngitung.</p>
+  <p>Klik tiap kotak buat lihat detailnya.</p>
+  <div class="flow" id="flow">
+    <button class="flow-step" aria-expanded="false" data-detail="fd1"><span class="actor">Admin</span><b>Bagikan link</b><span>Link berisi kode referral admin.</span></button>
+    <button class="flow-step" aria-expanded="false" data-detail="fd2"><span class="actor">Player → Game</span><b>Masuk lewat link</b><span>Game baca kodenya, lapor "join" ke server.</span></button>
+    <button class="flow-step" aria-expanded="false" data-detail="fd3"><span class="actor">Game</span><b>Player belanja</b><span>Robux atau bagi-bagi, game lapor lagi.</span></button>
+    <button class="flow-step" aria-expanded="false" data-detail="fd4"><span class="actor">Server</span><b>Komisi kehitung</b><span>Admin lihat saldonya di halaman sendiri.</span></button>
+  </div>
+  <div class="flow-detail" id="fd1" hidden><p><strong>Link dibuat otomatis di dashboard</strong> (menu <span class="ui">Admins</span>) untuk tiap admin dan tiap map. Bentuknya: <code>https://www.roblox.com/games/start?placeId=…&amp;launchData=ref_KODE</code>. Admin tinggal copy dan sebar ke mana pun.</p><p>Admin juga punya halaman pribadi <code>/a/&lt;token&gt;</code> tanpa login, isinya saldo, daftar komisi, dan link share-nya.</p></div>
+  <div class="flow-detail" id="fd2" hidden><p>Waktu player masuk lewat link itu, Roblox nyelipin teks <code>ref_KODE</code> ke <code>LaunchData</code>. Script <code>ReferralJoin</code> membacanya dan mengirim <code>POST /ingest/join</code> berisi UserId, username, dan kode tadi.</p><p>Server nyatet: "spender ini diajak admin X". Aturannya <strong>first-touch</strong>: yang dihitung admin pertama, selamanya. Player yang masuk tanpa link juga tetap dilaporkan (kodenya kosong) supaya tercatat sebagai spender organik.</p></div>
+  <div class="flow-detail" id="fd3" hidden><p><strong>Robux:</strong> di dalam <code>ProcessReceipt</code> game, tambahkan satu panggilan <code>AffiliateClient.reportRobux(receipt, player.Name)</code>. Hanya developer product yang dihitung, game pass tidak.</p><p><strong>Bagi-bagi:</strong> setelah donasi masuk ke game (lewat MessagingService dari proxy kamu), script <code>DonationReport</code> mengirimnya ke server. Kalau donaturnya lagi ada di server, kirim UserId-nya supaya cocok pasti.</p></div>
+  <div class="flow-detail" id="fd4" hidden><p>Server cari siapa spender-nya, siapa admin pengajaknya, dan rate yang berlaku saat itu. Robux dipotong fee Roblox 30% dulu, dikonversi ke Rupiah, baru dikali persen komisi. Bagi-bagi langsung dikali persen komisi.</p><p>Hasilnya masuk ke buku besar (ledger) admin. Tiap bulan owner generate payout dan tandai sudah dibayar. Semua ini di luar game, kamu nggak perlu ngapa-ngapain lagi.</p></div>
+
+  <div class="callout ok"><span class="ico">✓</span><div><b>Yang perlu kamu lakukan di game cuma tiga hal</b><p>Lapor saat player join, lapor saat ada pembelian Robux, lapor saat ada donasi bagi-bagi. Sisanya urusan server.</p></div></div>
+</section>
+
+<!-- ================= PERSIAPAN ================= -->
+<section class="doc" id="persiapan">
+  <header><span class="eyebrow">Mulai di sini</span><h2>Persiapan</h2><p>Centang satu-satu. Progresnya disimpan di browser kamu.</p></header>
+  <ul class="check" id="checklist">
+    <li><label><input type="checkbox" data-key="backend"><div><b>Backend sudah jalan dan bisa diakses dari internet</b><span>Jalankan <code>bun run dev:api</code> atau <code>docker compose up --build</code>. Roblox butuh alamat <strong>https publik</strong>, jadi <code>localhost</code> nggak akan bisa dipanggil dari game. Untuk coba-coba, pakai tunnel seperti ngrok atau cloudflared.</span></div></label></li>
+    <li><label><input type="checkbox" data-key="owner"><div><b>Akun owner sudah dibuat</b><span>Sekali saja: <code>bun run seed:owner owner rahasia</code> (ganti username dan password). Dipakai buat login dashboard.</span></div></label></li>
+    <li><label><input type="checkbox" data-key="rate"><div><b>Rate komisi sudah diset</b><span>Dashboard → <span class="ui">Config</span> → Rate. Isi persen komisi (misal 10), fee Roblox (30), dan kurs Rupiah per Robux (misal 145). <strong>Tanpa rate, semua laporan dari game ditolak</strong> dengan error 503.</span></div></label></li>
+    <li><label><input type="checkbox" data-key="map"><div><b>Map ditambah, ingest key disimpan</b><span>Dashboard → <span class="ui">Config</span> → Maps → isi nama dan <strong>Place ID</strong>. Muncul key berawalan <code>mk_</code>. <strong>Key ini cuma tampil sekali.</strong> Kalau hilang, klik <span class="ui">Rotate key</span> untuk bikin baru (yang lama mati).</span></div></label></li>
+    <li><label><input type="checkbox" data-key="http"><div><b>HTTP Requests di game sudah nyala</b><span>Roblox Studio → <span class="ui">Game Settings</span> → <span class="ui">Security</span> → <span class="ui">Allow HTTP Requests</span> = ON. Kalau lupa, semua request gagal dengan pesan "Http requests are not enabled".</span></div></label></li>
+    <li><label><input type="checkbox" data-key="admin"><div><b>Minimal satu admin dibuat</b><span>Dashboard → <span class="ui">Admins</span> → buat admin. Sistem otomatis bikin kode referral dan share link untuk tiap map aktif. Admin yang daftar sendiri perlu di-approve dulu.</span></div></label></li>
+  </ul>
+  <h3>Di mana lihat Place ID?</h3>
+  <p>Buka halaman game kamu di browser. Angka setelah <code>/games/</code> itu Place ID-nya: <code>roblox.com/games/<strong>123456789</strong>/Nama-Game</code>. Di Studio juga ada di <span class="ui">Game Settings</span> → <span class="ui">Basic Info</span>.</p>
+  <p>Universe ID boleh dikosongkan, cuma catatan.</p>
+</section>
+
+<!-- ================= PASANG ================= -->
+<section class="doc wide" id="pasang">
+  <header><span class="eyebrow">Pasang di Roblox · langkah 1</span><h2>Taruh script di Studio</h2><p>Semua script ada di folder <code>roblox/</code> repo ini. Isinya persis yang tampil di bawah.</p></header>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Nama di Explorer</th><th>Jenis object</th><th>Fungsi</th><th>Wajib?</th></tr></thead>
+    <tbody>
+      <tr><td><code>AffiliateClient</code></td><td>ModuleScript</td><td>Pengirim HTTP ke server, dengan retry. Dipakai script lain.</td><td><span class="req">wajib</span></td></tr>
+      <tr><td><code>ReferralJoin</code></td><td>Script</td><td>Baca kode dari link saat player join, lapor ke server.</td><td><span class="req">wajib</span></td></tr>
+      <tr><td><code>ReceiptHook</code></td><td>Script (contoh)</td><td>Contoh <code>ProcessReceipt</code>. <strong>Gabungkan</strong> ke handler yang sudah ada, jangan ditaruh mentah.</td><td><span class="opt">lihat langkah 4</span></td></tr>
+      <tr><td><code>DonationReport</code></td><td>Script</td><td>Terusin donasi bagi-bagi yang masuk ke game ke server.</td><td><span class="opt">kalau pakai bagi-bagi</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <ol class="steps">
+    <li><b>Buka Explorer, cari <span class="ui">ServerScriptService</span></b><p>Semua file ditaruh di sini, bukan di StarterPlayer atau Workspace. Script ini jalan di server, jadi player nggak bisa lihat atau ubah key-nya.</p></li>
+    <li><b>Klik <span class="ui">+</span> di ServerScriptService → pilih <span class="ui">ModuleScript</span></b><p>Ganti namanya jadi persis <code>AffiliateClient</code> (huruf besar-kecil harus sama). Script lain mencarinya dengan nama itu. Hapus isi bawaan, paste isi tab <em>AffiliateClient</em> di bawah.</p></li>
+    <li><b>Klik <span class="ui">+</span> lagi → pilih <span class="ui">Script</span> untuk <code>ReferralJoin</code></b><p>Ganti nama, paste isinya. Ulangi untuk <code>DonationReport</code> kalau map kamu menerima donasi bagi-bagi.</p></li>
+    <li><b><code>ReceiptHook</code> jangan di-paste mentah</b><p>Roblox cuma mengizinkan <strong>satu</strong> <code>ProcessReceipt</code> per game. Kalau game kamu sudah punya, ambil bagian <code>reportRobux</code>-nya saja. Caranya di <a href="#robux">langkah 4</a>.</p></li>
+  </ol>
+
+  <div class="tabs" id="script-tabs">
+    <div class="tablist" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" aria-controls="tp-client">AffiliateClient</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="tp-join">ReferralJoin</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="tp-receipt">ReceiptHook</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="tp-donation">DonationReport</button>
+    </div>
+    <div class="tabpanel" id="tp-client" role="tabpanel">
+      <div class="filemeta"><span>Jenis: <b>ModuleScript</b></span><span>Lokasi: <b>ServerScriptService</b></span><span>Yang perlu diubah: <b>baris API_BASE dan MAP_KEY</b></span></div>
+      <div class="code"><div class="code-bar"><span class="fname">roblox/AffiliateClient.luau</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">{{FILE:roblox/AffiliateClient.luau}}</code></pre></div>
+    </div>
+    <div class="tabpanel" id="tp-join" role="tabpanel" hidden>
+      <div class="filemeta"><span>Jenis: <b>Script</b></span><span>Lokasi: <b>ServerScriptService</b></span><span>Yang perlu diubah: <b>tidak ada</b></span></div>
+      <div class="code"><div class="code-bar"><span class="fname">roblox/ReferralJoin.server.luau</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">{{FILE:roblox/ReferralJoin.server.luau}}</code></pre></div>
+    </div>
+    <div class="tabpanel" id="tp-receipt" role="tabpanel" hidden>
+      <div class="filemeta"><span>Jenis: <b>Script (contoh)</b></span><span>Lokasi: <b>ServerScriptService</b></span><span>Yang perlu diubah: <b>isi grantProduct, atau gabung ke handler yang ada</b></span></div>
+      <div class="code"><div class="code-bar"><span class="fname">roblox/ReceiptHook.server.luau</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">{{FILE:roblox/ReceiptHook.server.luau}}</code></pre></div>
+    </div>
+    <div class="tabpanel" id="tp-donation" role="tabpanel" hidden>
+      <div class="filemeta"><span>Jenis: <b>Script</b></span><span>Lokasi: <b>ServerScriptService</b></span><span>Yang perlu diubah: <b>TOPIC, atau pakai BindableEvent yang ada</b></span></div>
+      <div class="code"><div class="code-bar"><span class="fname">roblox/DonationReport.server.luau</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">{{FILE:roblox/DonationReport.server.luau}}</code></pre></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KONFIG ================= -->
+<section class="doc" id="konfig">
+  <header><span class="eyebrow">Pasang di Roblox · langkah 2</span><h2>Isi alamat API &amp; key</h2><p>Cuma dua baris yang perlu diubah, dua-duanya di <code>AffiliateClient</code>.</p></header>
+  <div class="code"><div class="code-bar"><span class="fname">AffiliateClient · baris 16–17</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">AffiliateClient.API_BASE = "https://affiliate.contoh.com" -- alamat server, TANPA garis miring di akhir
+AffiliateClient.MAP_KEY = "mk_a1b2c3..."                 -- ingest key dari dashboard Config > Maps</code></pre></div>
+  <h3>Aturan alamat API</h3>
+  <ul>
+    <li>Harus <strong>https</strong> dan bisa diakses dari internet. Roblox nggak bisa memanggil <code>localhost</code> atau IP lokal.</li>
+    <li>Jangan pakai garis miring di akhir. Script menambahkan sendiri <code>/ingest/join</code> dan seterusnya.</li>
+    <li>Satu server bisa melayani banyak map. Tiap map punya key sendiri, jadi laporan otomatis tahu datang dari map mana.</li>
+  </ul>
+  <h3>Simpan key dengan aman</h3>
+  <p>Key ini setara password untuk map kamu. Siapa pun yang punya key bisa kirim laporan palsu. Kalau tempat kerja kamu memakai repo publik atau Rojo, jangan taruh key langsung di file. Dua cara yang lebih aman:</p>
+  <ul>
+    <li>Simpan di <code>ServerStorage</code> sebagai <code>StringValue</code> bernama misalnya <code>AffiliateKey</code>, lalu baca: <code>AffiliateClient.MAP_KEY = game.ServerStorage.AffiliateKey.Value</code>.</li>
+    <li>Kalau game kamu punya akses <em>HttpService secrets</em>, pakai <code>HttpService:GetSecret("affiliate_key")</code>.</li>
+  </ul>
+  <div class="callout warn"><span class="ico">!</span><div><b>Key bocor? Rotate.</b><p>Dashboard → <span class="ui">Config</span> → Maps → <span class="ui">Rotate key</span>. Key lama langsung mati, semua request dengan key lama ditolak 401. Jangan lupa update di game dan publish ulang.</p></div></div>
+</section>
+
+<!-- ================= SHARE LINK ================= -->
+<section class="doc" id="share-link">
+  <header><span class="eyebrow">Pasang di Roblox · langkah 3</span><h2>Share link admin</h2><p>Link inilah yang membuat sistem tahu player masuk lewat siapa.</p></header>
+  <p>Bentuk link yang dibuat dashboard untuk tiap admin:</p>
+  <div class="code"><div class="code-bar"><span class="fname">format share link</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code>https://www.roblox.com/games/start?placeId=123456789&amp;launchData=ref_K7PQ2M</code></pre></div>
+  <ul>
+    <li><code>placeId</code>: Place ID map kamu.</li>
+    <li><code>launchData=ref_K7PQ2M</code>: kode referral admin, diawali <code>ref_</code>. Kode 6 huruf/angka, tanpa huruf yang mirip (0/O, 1/I).</li>
+  </ul>
+  <p>Saat player klik link itu, Roblox membuka game dan mengisi <code>player:GetJoinData().LaunchData</code> dengan teks <code>ref_K7PQ2M</code>. Script <code>ReferralJoin</code> membacanya dan mengirim ke server. Kamu nggak perlu mengurai kodenya di game, kirim mentah saja.</p>
+  <h3>Hal yang sering bikin bingung</h3>
+  <ul>
+    <li><strong>LaunchData cuma terisi kalau masuk lewat link.</strong> Join dari daftar game, dari teman, atau dari Studio: nilainya <code>nil</code>. Ini normal. Player tetap dilaporkan sebagai join biasa.</li>
+    <li><strong>First-touch.</strong> Spender terikat ke admin pertama yang kodenya dia pakai, selamanya. Kalau dia masuk lagi lewat link admin lain, dicatat tapi tidak mengubah apa-apa.</li>
+    <li><strong>Admin nggak bisa ngajak dirinya sendiri.</strong> Kalau admin punya Roblox user ID dan masuk lewat link-nya sendiri, dianggap <code>self_referral</code> dan diabaikan.</li>
+    <li><strong>Kode nggak dikenal atau admin nonaktif</strong> tetap dicatat di riwayat, tapi tidak diatribusi. Bisa dicek di halaman Flow dashboard.</li>
+    <li>Server toleran: <code>ref_k7pq2m</code>, <code>REF-K7PQ2M</code>, atau ada spasi di ujung tetap dibaca. Maksimal 200 karakter, batas dari Roblox.</li>
+  </ul>
+  <p>Mau coba bikin link sendiri? Pakai <a href="#alat-link">generator share link</a>.</p>
+</section>
+
+<!-- ================= ROBUX ================= -->
+<section class="doc" id="robux">
+  <header><span class="eyebrow">Pasang di Roblox · langkah 4</span><h2>Pembelian Robux</h2><p>Setiap developer product yang dibeli lewat <code>ProcessReceipt</code> dilaporkan ke server. Game pass sengaja tidak dihitung.</p></header>
+  <div class="callout danger"><span class="ico">!</span><div><b>Roblox cuma mengizinkan satu ProcessReceipt per game</b><p>Kalau kamu menaruh <code>ReceiptHook</code> apa adanya padahal game sudah punya handler, salah satu akan ditimpa dan pembelian bisa kacau. Selalu <strong>gabungkan</strong>.</p></div></div>
+  <h3>Kalau game sudah punya ProcessReceipt</h3>
+  <p>Tambahkan dua baris ini di handler kamu, <em>setelah</em> item diberikan ke player dan <em>sebelum</em> <code>return PurchaseGranted</code>:</p>
+  <div class="code"><div class="code-bar"><span class="fname">potongan untuk digabung</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">local AffiliateClient = require(game:GetService("ServerScriptService"):WaitForChild("AffiliateClient"))
+
+MarketplaceService.ProcessReceipt = function(receipt)
+	-- ... cek DataStore, cari player, kasih item seperti biasa ...
+
+	-- laporkan ke afiliasi. Tidak menahan pembelian kalau gagal.
+	local reported = AffiliateClient.reportRobux(receipt, player.Name)
+	if not reported then
+		-- opsional: simpan ke antrian dan kirim ulang nanti (lihat flushPending di ReceiptHook)
+	end
+
+	return Enum.ProductPurchaseDecision.PurchaseGranted
+end</code></pre></div>
+  <h3>Kalau game belum punya ProcessReceipt</h3>
+  <p>Pakai <code>ReceiptHook</code> apa adanya, lalu isi fungsi <code>grantProduct</code> dengan logika game kamu (tambah coin, buka item, dan seterusnya). Sisanya sudah diurus: cek duplikat lewat DataStore, laporan ke server, dan antrian kirim ulang tiap 5 menit kalau server sempat nggak bisa dihubungi.</p>
+  <h3>Kenapa aman kalau dikirim dua kali?</h3>
+  <p>Server mengenali pembelian dari <code>PurchaseId</code>, yang unik dari Roblox. Kirim ulang dengan <code>PurchaseId</code> yang sama cuma balas <code>duplicate: true</code>, komisi tidak dobel. Jadi kalau ragu, kirim saja.</p>
+  <h3>Yang dikirim ke server</h3>
+  <p><code>reportRobux</code> mengambil semuanya dari <code>receipt</code>: <code>PurchaseId</code>, <code>PlayerId</code>, <code>ProductId</code>, <code>CurrencySpent</code> (Robux kotor sebelum potongan), dan <code>PlaceIdWherePurchased</code>. Server yang memotong fee 30% dan mengkonversi ke Rupiah. Lihat rincian di <a href="#api-robux">referensi endpoint</a>.</p>
+</section>
+
+<!-- ================= BAGI-BAGI ================= -->
+<section class="doc" id="bagibagi">
+  <header><span class="eyebrow">Pasang di Roblox · langkah 5</span><h2>Donasi bagi-bagi</h2><p>Donasi Rupiah dari luar Roblox. Server perlu tahu donasi itu milik spender yang mana.</p></header>
+  <p>Alurnya: donatur kirim bagi-bagi → proxy kamu menerima webhook dari bagi-bagi → proxy meneruskan ke game lewat <code>MessagingService</code> → script <code>DonationReport</code> di game mengirim ke server afiliasi. Kenapa lewat game? Karena game yang paling tahu siapa player yang sedang online, jadi pencocokan donatur lebih akurat.</p>
+  <ol class="steps">
+    <li><b>Samakan nama topic</b><p>Di <code>DonationReport</code>, ubah <code>TOPIC = "BagiBagiDonation"</code> supaya sama dengan topic yang dipakai proxy kamu saat <code>PublishAsync</code>. Kalau game kamu sudah punya penerima donasi sendiri yang memicu <code>BindableEvent</code>, pakai "Sumber event B" di bagian bawah script dan matikan bagian MessagingService.</p></li>
+    <li><b>Bentuk data donasi yang dimengerti</b><p>Script menerima tabel dengan nama field panjang atau pendek: <code>id</code>, <code>name</code>/<code>n</code>, <code>amount</code>/<code>a</code> (Rupiah), <code>message</code>/<code>m</code>, <code>username</code>/<code>u</code>, <code>t</code> (waktu). Yang wajib cuma <code>id</code> dan <code>amount</code>.</p></li>
+    <li><b>Biarkan script mencari player-nya</b><p>Script mencocokkan <code>username</code> lalu nama donatur dengan player yang ada di server (nama akun atau display name). Kalau ketemu, <code>robloxUserId</code> ikut dikirim dan server langsung yakin siapa spender-nya.</p></li>
+  </ol>
+  <h3>Kalau player-nya nggak ada di server?</h3>
+  <p>Server menebak dari beberapa petunjuk, urut prioritas: field <code>username</code>, nama donatur, sebutan <code>@nama</code> atau <code>un: nama</code> di pesan, lalu kata pertama pesan. Tebakan hanya dicocokkan ke spender yang <strong>sudah pernah join</strong> map kamu. Orang Roblox asing tidak dibuat otomatis.</p>
+  <p>Kalau tetap nggak ketemu, donasi masuk antrian <strong>Unmatched</strong> di dashboard (menu <span class="ui">Spend</span>, filter status unmatched). Owner tinggal pilih spender yang benar, komisi langsung dihitung ulang dengan rate saat donasi terjadi.</p>
+  <div class="callout"><span class="ico">i</span><div><b>Jalur cadangan tanpa game</b><p>Proxy juga boleh langsung memanggil <code>POST /webhook/bagibagi</code> di server afiliasi. Dua jalur boleh nyala bersamaan, karena server mengenali donasi dari <code>id</code>-nya, jadi tidak dobel. Detail di <a href="#api-webhook">referensi endpoint</a>.</p></div></div>
+</section>
+
+<!-- ================= TES ================= -->
+<section class="doc" id="tes">
+  <header><span class="eyebrow">Pasang di Roblox · langkah 6</span><h2>Tes &amp; pastikan jalan</h2><p>Urutan cek dari yang paling gampang.</p></header>
+  <ol class="steps">
+    <li><b>Tes join dari Studio</b><p>Tekan <span class="ui">Play</span> di Studio. Karena HTTP Requests sudah nyala, script langsung mengirim join. Buka dashboard → <span class="ui">Spenders</span>, akun kamu harus muncul. Kalau tidak, lihat jendela <span class="ui">Output</span> di Studio: semua kegagalan dicetak dengan awalan <code>[Affiliate]</code>.</p></li>
+    <li><b>Tes kode referral di game yang sudah publish</b><p>LaunchData tidak bisa disimulasikan di Studio. Publish game, lalu buka share link salah satu admin dari akun Roblox lain (bukan akun admin itu sendiri). Cek <span class="ui">Spenders</span>: kolom referrer harus terisi.</p></li>
+    <li><b>Tes pembelian</b><p>Beli developer product di game yang sudah publish (Robux benar-benar terpotong, pakai produk murah). Cek <span class="ui">Spend</span>: event Robux muncul dengan status <code>attributed</code> kalau pembelinya masuk lewat link, atau <code>unattributed</code> kalau organik.</p></li>
+    <li><b>Tes tanpa game pakai curl</b><p>Buat memastikan server dan key benar, kirim langsung dari terminal. Pakai <a href="#alat-payload">pembuat payload</a> untuk menyusun perintahnya.</p></li>
+  </ol>
+  <p>Halaman <span class="ui">Flow</span> di dashboard merangkum semua ini jadi checklist otomatis: join pertama, atribusi pertama, Robux pertama, bagi-bagi pertama, komisi pertama, payout pertama. Kalau ada join dengan kode yang tidak dikenal, halaman itu juga memperingatkan.</p>
+</section>
+
+<!-- ================= ALAT: LINK ================= -->
+<section class="doc wide" id="alat-link">
+  <header><span class="eyebrow">Alat bantu</span><h2>Generator share link</h2><p>Buat link dari Place ID dan kode referral. Dashboard sudah bikin ini otomatis, alat ini buat ngecek atau bikin manual.</p></header>
+  <div class="tool">
+    <div class="tool-form">
+      <div class="field"><label for="g-place">Place ID</label><input id="g-place" type="text" inputmode="numeric" class="mono" value="123456789"><small>Angka setelah <code>/games/</code> di URL game.</small></div>
+      <div class="field"><label for="g-code">Kode referral admin</label><input id="g-code" type="text" class="mono" value="K7PQ2M" maxlength="16"><small>4 sampai 16 huruf/angka. Lihat di dashboard → Admins.</small></div>
+    </div>
+    <div class="tool-out">
+      <div class="out-title">Share link</div>
+      <div class="out-link" id="g-out"></div>
+      <div class="out-title">Yang dibaca game di LaunchData</div>
+      <div class="out-link" id="g-launch"></div>
+      <button class="btn btn-primary" id="g-copy">Salin link</button>
+      <p class="out-note" id="g-note"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ALAT: KOMISI ================= -->
+<section class="doc wide" id="alat-komisi">
+  <header><span class="eyebrow">Alat bantu</span><h2>Kalkulator komisi</h2><p>Rumus yang sama persis dengan server. Semua pembulatan ke bawah, supaya sistem tidak pernah bayar lebih.</p></header>
+  <div class="tool">
+    <div class="tool-form">
+      <div class="field"><label>Jenis spend</label><div class="seg" id="c-src"><button type="button" aria-pressed="true" data-src="ROBUX">Robux</button><button type="button" aria-pressed="false" data-src="IDR">Bagi-bagi (Rupiah)</button></div></div>
+      <div class="field"><label for="c-amount" id="c-amount-label">Robux kotor (CurrencySpent)</label><input id="c-amount" type="number" min="0" step="1" value="1000"></div>
+      <div class="field-row">
+        <div class="field"><label for="c-rate">Komisi admin (%)</label><input id="c-rate" type="number" min="0" max="100" step="0.01" value="10"></div>
+        <div class="field" id="c-fee-wrap"><label for="c-fee">Fee Roblox (%)</label><input id="c-fee" type="number" min="0" max="100" step="0.01" value="30"></div>
+      </div>
+      <div class="field" id="c-idr-wrap"><label for="c-idr">Rupiah per 1 Robux</label><input id="c-idr" type="number" min="0" step="1" value="145"><small>Kurs yang diset owner di Config → Rate.</small></div>
+    </div>
+    <div class="tool-out">
+      <div class="out-title">Perhitungan</div>
+      <ol class="calc-steps" id="c-steps"></ol>
+      <p class="out-note">Persen disimpan sebagai basis poin: 10% = 1000 bps. Rate punya riwayat, event lama memakai rate yang berlaku saat transaksi. Ubah rate hari ini tidak mengubah komisi kemarin.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ALAT: PAYLOAD ================= -->
+<section class="doc wide" id="alat-payload">
+  <header><span class="eyebrow">Alat bantu</span><h2>Bikin payload &amp; curl</h2><p>Susun request persis seperti yang dikirim script, lalu jalankan dari terminal untuk tes tanpa game.</p></header>
+  <div class="tool">
+    <div class="tool-form">
+      <div class="field"><label for="p-ep">Endpoint</label><select id="p-ep"><option value="join">POST /ingest/join · player masuk</option><option value="robux">POST /ingest/robux · pembelian Robux</option><option value="bagibagi">POST /ingest/bagibagi · donasi</option></select></div>
+      <div class="field"><label for="p-base">Alamat API</label><input id="p-base" type="text" class="mono" value="https://affiliate.contoh.com"></div>
+      <div class="field"><label for="p-key">Ingest key (x-map-key)</label><input id="p-key" type="text" class="mono" value="mk_GANTI_DENGAN_KEY_KAMU"><small>Tidak disimpan di mana pun, cuma dipakai di halaman ini.</small></div>
+      <div id="p-fields"></div>
+    </div>
+    <div class="tool-out">
+      <div class="out-title">Body JSON</div>
+      <div class="code"><div class="code-bar"><span class="fname">payload</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code id="p-json" data-lang="json"></code></pre></div>
+      <div class="out-title">Perintah curl</div>
+      <div class="code"><div class="code-bar"><span class="fname">terminal</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code id="p-curl"></code></pre></div>
+      <div class="out-title">Contoh balasan kalau sukses</div>
+      <div class="code"><div class="code-bar"><span class="fname">response 200</span></div><pre><code id="p-res" data-lang="json"></code></pre></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= API ================= -->
+<section class="doc wide" id="api">
+  <header><span class="eyebrow">Referensi</span><h2>Endpoint API</h2><p>Tiga endpoint yang dipanggil game, plus satu webhook cadangan. Semua menerima JSON.</p></header>
+  <h3>Autentikasi</h3>
+  <p>Setiap request dari game membawa header <code>x-map-key: mk_…</code>. Boleh juga <code>Authorization: Bearer mk_…</code>. Key menentukan map mana yang melapor. Kalau key salah atau map dinonaktifkan: <span class="err">401 map key tidak valid / map nonaktif</span>.</p>
+  <p>Tanggal boleh dikirim sebagai unix detik (<code>os.time()</code>), unix milidetik, atau string ISO. Kalau dikosongkan, server memakai waktu sekarang.</p>
+
+  <div class="endpoint" id="api-join"><span class="m">POST</span>/ingest/join</div>
+  <p>Dipanggil setiap player masuk. Mendaftarkan spender dan, kalau bawa kode, mengikatnya ke admin.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Field</th><th>Tipe</th><th></th><th>Isi dari</th></tr></thead>
+    <tbody>
+      <tr><td><code>robloxUserId</code></td><td>number</td><td><span class="req">wajib</span></td><td><code>player.UserId</code></td></tr>
+      <tr><td><code>username</code></td><td>string ≤50</td><td><span class="req">wajib</span></td><td><code>player.Name</code></td></tr>
+      <tr><td><code>displayName</code></td><td>string ≤50</td><td><span class="opt">opsional</span></td><td><code>player.DisplayName</code></td></tr>
+      <tr><td><code>launchData</code></td><td>string ≤200</td><td><span class="opt">opsional</span></td><td><code>GetJoinData().LaunchData</code> mentah, boleh <code>nil</code></td></tr>
+      <tr><td><code>joinedAt</code></td><td>tanggal</td><td><span class="opt">opsional</span></td><td><code>os.time()</code></td></tr>
+    </tbody>
+  </table></div>
+  <p>Balasan: <code>{ ok, outcome, spenderId, referrerAdminId }</code>. Nilai <code>outcome</code>:</p>
+  <div class="table-wrap"><table>
+    <tbody>
+      <tr><td><code>attributed</code></td><td>Kode valid, spender baru diikat ke admin ini. Yang kamu harapkan.</td></tr>
+      <tr><td><code>no_code</code></td><td>Join tanpa link. Normal, spender tetap dicatat.</td></tr>
+      <tr><td><code>already_referred</code></td><td>Spender sudah punya admin sebelumnya. First-touch, tidak diubah.</td></tr>
+      <tr><td><code>unknown_code</code></td><td>Kode tidak ada di sistem. Cek format link.</td></tr>
+      <tr><td><code>inactive_admin</code></td><td>Admin ada tapi nonaktif atau belum di-approve.</td></tr>
+      <tr><td><code>self_referral</code></td><td>Admin masuk lewat link-nya sendiri.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="endpoint" id="api-robux"><span class="m">POST</span>/ingest/robux</div>
+  <p>Dipanggil dari <code>ProcessReceipt</code>. Idempoten berdasarkan <code>purchaseId</code>.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Field</th><th>Tipe</th><th></th><th>Isi dari</th></tr></thead>
+    <tbody>
+      <tr><td><code>purchaseId</code></td><td>string ≤128</td><td><span class="req">wajib</span></td><td><code>receipt.PurchaseId</code></td></tr>
+      <tr><td><code>robloxUserId</code></td><td>number</td><td><span class="req">wajib</span></td><td><code>receipt.PlayerId</code></td></tr>
+      <tr><td><code>currencySpent</code></td><td>number ≥0</td><td><span class="req">wajib</span></td><td><code>receipt.CurrencySpent</code>, Robux kotor</td></tr>
+      <tr><td><code>username</code></td><td>string ≤50</td><td><span class="opt">opsional</span></td><td><code>player.Name</code></td></tr>
+      <tr><td><code>productId</code></td><td>number</td><td><span class="opt">opsional</span></td><td><code>receipt.ProductId</code></td></tr>
+      <tr><td><code>currencyType</code></td><td>string</td><td><span class="opt">opsional</span></td><td><code>tostring(receipt.CurrencyType)</code></td></tr>
+      <tr><td><code>placeId</code></td><td>number</td><td><span class="opt">opsional</span></td><td><code>receipt.PlaceIdWherePurchased</code></td></tr>
+      <tr><td><code>purchasedAt</code></td><td>tanggal</td><td><span class="opt">opsional</span></td><td><code>os.time()</code></td></tr>
+    </tbody>
+  </table></div>
+  <p>Balasan: <code>{ ok, duplicate, eventId, status, commissionIdr }</code>. <code>duplicate: true</code> artinya sudah pernah dicatat, bukan error.</p>
+
+  <div class="endpoint" id="api-bagibagi"><span class="m">POST</span>/ingest/bagibagi</div>
+  <p>Dipanggil dari game setelah donasi masuk. Idempoten berdasarkan <code>id</code>.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Field</th><th>Tipe</th><th></th><th>Keterangan</th></tr></thead>
+    <tbody>
+      <tr><td><code>id</code></td><td>string ≤128</td><td><span class="req">wajib</span></td><td>ID transaksi bagi-bagi.</td></tr>
+      <tr><td><code>amountIdr</code></td><td>number / string</td><td><span class="req">wajib</span></td><td>Rupiah. <code>50000</code>, <code>"50000"</code>, atau <code>"Rp 50.000"</code> semua diterima.</td></tr>
+      <tr><td><code>donorName</code></td><td>string ≤200</td><td><span class="opt">opsional</span></td><td>Nama yang ditulis donatur.</td></tr>
+      <tr><td><code>message</code></td><td>string ≤2000</td><td><span class="opt">opsional</span></td><td>Pesan donasi. Dipakai untuk menebak username.</td></tr>
+      <tr><td><code>username</code></td><td>string ≤50</td><td><span class="opt">opsional</span></td><td>Username Roblox kalau proxy/game sudah mengekstraknya.</td></tr>
+      <tr><td><code>robloxUserId</code></td><td>number</td><td><span class="opt">opsional</span></td><td>Isi kalau game yakin siapa donaturnya. Match langsung, tanpa tebakan.</td></tr>
+      <tr><td><code>occurredAt</code></td><td>tanggal</td><td><span class="opt">opsional</span></td><td>Waktu donasi.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Balasan: <code>{ ok, duplicate, eventId, status, commissionIdr, candidates }</code>. <code>candidates</code> berisi daftar username yang server coba cocokkan, berguna buat debugging kenapa hasilnya <code>unmatched</code>.</p>
+
+  <div class="endpoint" id="api-webhook"><span class="m">POST</span>/webhook/bagibagi <span class="opt">cadangan</span></div>
+  <p>Untuk proxy yang mau lapor langsung tanpa lewat game. Autentikasi pakai header <code>x-webhook-secret</code> (atau <code>?secret=</code>), atau HMAC-SHA256 dari body mentah di header <code>x-signature</code>. Diset lewat <code>WEBHOOK_SHARED_SECRET</code> / <code>WEBHOOK_HMAC_SECRET</code> di <code>.env</code>. Kalau dua-duanya kosong, endpoint terbuka (hanya untuk development).</p>
+  <p>Payload mengikuti bentuk webhook bagi-bagi: <code>id</code> atau <code>transaction_id</code>, <code>name</code> atau <code>donator_name</code>, <code>amount</code>, <code>message</code>, <code>username</code>, <code>created_at</code>. Field lain diabaikan tapi disimpan mentah.</p>
+
+  <h3>Error yang mungkin muncul</h3>
+  <div class="table-wrap"><table>
+    <tbody>
+      <tr><td><span class="err">401</span></td><td><code>x-map-key wajib</code> atau <code>map key tidak valid / map nonaktif</code>. Cek key, cek map masih aktif, cek belum di-rotate.</td></tr>
+      <tr><td><span class="err">400</span></td><td><code>payload tidak valid</code> plus daftar <code>issues</code> yang menyebutkan field mana yang salah.</td></tr>
+      <tr><td><span class="err">503</span></td><td><code>Belum ada commission rate yang berlaku</code>. Buka Config → Rate dan buat rate.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Script <code>AffiliateClient</code> mengulang request sampai 3 kali kalau server error (5xx) atau jaringan gagal, tapi <strong>tidak</strong> mengulang kalau 4xx, karena mengulang tidak akan mengubah hasil.</p>
+</section>
+
+<!-- ================= STATUS ================= -->
+<section class="doc" id="status">
+  <header><span class="eyebrow">Referensi</span><h2>Status event</h2><p>Setiap laporan spend punya satu status. Terlihat di dashboard menu Spend.</p></header>
+  <div class="status-grid">
+    <div class="status s-attr"><b>attributed</b><div>Spender punya admin pengajak. Komisi dihitung dan masuk saldo admin.</div></div>
+    <div class="status s-unattr"><b>unattributed</b><div>Spender organik, tidak lewat link siapa pun. Dicatat untuk analitik saja, komisi 0.</div></div>
+    <div class="status s-unm"><b>unmatched</b><div>Donasi bagi-bagi belum ketemu spender-nya. Menunggu owner cocokkan manual.</div></div>
+    <div class="status s-void"><b>void</b><div>Dibatalkan owner (misal refund). Komisi yang sudah masuk dibalik di ledger. Tidak ada yang dihapus.</div></div>
+  </div>
+</section>
+
+<!-- ================= MASALAH ================= -->
+<section class="doc" id="masalah">
+  <header><span class="eyebrow">Referensi</span><h2>Masalah umum</h2><p>Gejala di kiri, penyebab dan obatnya di dalam.</p></header>
+  <details class="faq"><summary>Output Studio: "Http requests are not enabled"</summary><div class="body"><p>HTTP Requests belum dinyalakan. <span class="ui">Game Settings</span> → <span class="ui">Security</span> → <span class="ui">Allow HTTP Requests</span> = ON, lalu publish ulang.</p></div></details>
+  <details class="faq"><summary>Output Studio: "[Affiliate] /ingest/join -> 401"</summary><div class="body"><p>Key salah, map dinonaktifkan, atau key sudah di-rotate. Ambil key baru lewat <span class="ui">Rotate key</span> di Config → Maps, pasang di <code>AffiliateClient.MAP_KEY</code>, publish ulang.</p></div></details>
+  <details class="faq"><summary>Output Studio: "[Affiliate] ... -> 503"</summary><div class="body"><p>Belum ada rate komisi. Config → Rate → buat rate. Setelah itu laporan berikutnya langsung diterima. Pembelian yang sempat gagal dilaporkan akan dikirim ulang oleh <code>flushPending</code> kalau kamu pakai <code>ReceiptHook</code>.</p></div></details>
+  <details class="faq"><summary>Request gagal terus, tidak ada kode status</summary><div class="body"><p>Server tidak bisa dijangkau dari Roblox. Pastikan alamatnya https publik, bukan <code>localhost</code> atau IP lokal. Coba buka alamat itu dari HP dengan data seluler. Pastikan juga tidak ada garis miring ganda: <code>API_BASE</code> tanpa <code>/</code> di akhir.</p></div></details>
+  <details class="faq"><summary>Join masuk, tapi referrer kosong padahal pakai link</summary><div class="body"><p>Tiga kemungkinan. Pertama, tes dilakukan di Studio: LaunchData tidak ada di Studio, harus di game yang sudah publish. Kedua, player masuk dari tempat lain (daftar game, undangan teman) bukan dari link. Ketiga, player memakai akun admin itu sendiri: <code>self_referral</code>.</p><p>Cek halaman <span class="ui">Flow</span>: kalau ada peringatan "kode tidak dikenal", berarti link-nya salah format atau kodenya tidak ada.</p></div></details>
+  <details class="faq"><summary>Spender sudah punya referrer, tapi bukan admin yang saya harapkan</summary><div class="body"><p>First-touch. Dia sudah pernah masuk lewat link admin lain sebelumnya, dan itu yang dihitung selamanya. Riwayat semua kode yang pernah dia bawa ada di detail spender.</p></div></details>
+  <details class="faq"><summary>Pembelian Robux terjadi, tapi tidak muncul di dashboard</summary><div class="body"><p>Pastikan <code>reportRobux</code> benar-benar dipanggil di dalam <code>ProcessReceipt</code> yang aktif. Kalau game punya dua handler, hanya yang terakhir di-assign yang jalan. Cek juga bahwa itu developer product, bukan game pass.</p></div></details>
+  <details class="faq"><summary>Balasan "duplicate: true"</summary><div class="body"><p>Bukan error. Pembelian atau donasi dengan ID yang sama sudah pernah dicatat. Roblox memang sering memanggil <code>ProcessReceipt</code> lebih dari sekali.</p></div></details>
+  <details class="faq"><summary>Donasi bagi-bagi statusnya unmatched terus</summary><div class="body"><p>Server tidak menemukan spender yang cocok. Penyebab paling sering: donatur belum pernah join map kamu (jadi belum ada di daftar spender), atau nama yang dia tulis beda dengan username Roblox-nya. Lihat <code>candidates</code> di balasan untuk tahu nama apa saja yang dicoba.</p><p>Solusinya: cocokkan manual di dashboard, atau minta donatur menulis username Roblox di pesan donasi, misalnya <code>@namaakun</code>.</p></div></details>
+  <details class="faq"><summary>Komisi 0 padahal statusnya attributed</summary><div class="body"><p>Cek rate saat transaksi. Kalau komisi 0%, atau untuk Robux kursnya 0, hasilnya memang 0. Pembelian yang sangat kecil juga bisa 0 karena pembulatan ke bawah: 1 Robux × 70% = 0 Robux net.</p></div></details>
+  <details class="faq"><summary>Saya salah catat, mau hapus</summary><div class="body"><p>Tidak ada tombol hapus, sengaja. Pakai <span class="ui">Void</span> di event tersebut. Komisi yang sudah masuk dibalik, dan semuanya tercatat di <span class="ui">Audit</span>.</p></div></details>
+</section>
+
+<!-- ================= KAMUS ================= -->
+<section class="doc" id="kamus">
+  <header><span class="eyebrow">Referensi</span><h2>Kamus istilah</h2><p>Kata-kata yang muncul di dashboard dan di panduan ini.</p></header>
+  <dl class="glossary">
+    <dt>Owner</dt><dd>Kamu, pemilik sistem. Login ke dashboard, atur rate, map, admin, dan payout.</dd>
+    <dt>Admin</dt><dd>Orang yang mengajak player ke map lewat share link dan dapat komisi.</dd>
+    <dt>Spender</dt><dd>Player yang pernah masuk ke map dan tercatat. Bisa punya admin pengajak (referrer) atau tidak.</dd>
+    <dt>Kode referral</dt><dd>6 karakter unik milik admin, misalnya <code>K7PQ2M</code>. Ditempel di link sebagai <code>ref_K7PQ2M</code>.</dd>
+    <dt>LaunchData</dt><dd>Teks yang Roblox selipkan ke game saat player masuk lewat link <code>games/start</code>. Di sinilah kode referral dibawa.</dd>
+    <dt>Ingest key</dt><dd>Password map untuk mengirim laporan ke server, berawalan <code>mk_</code>. Dipasang di <code>AffiliateClient.MAP_KEY</code>.</dd>
+    <dt>Place ID</dt><dd>Angka ID tempat (place) di Roblox. Dipakai di share link.</dd>
+    <dt>First-touch</dt><dd>Aturan bahwa spender terikat ke admin pertama yang kodenya dia pakai, selamanya.</dd>
+    <dt>Developer product</dt><dd>Barang yang bisa dibeli berulang di game pakai Robux. Yang dihitung komisi. Game pass tidak.</dd>
+    <dt>Bagi-bagi</dt><dd>Layanan donasi Rupiah dari luar Roblox. Diteruskan ke game lewat proxy dan MessagingService.</dd>
+    <dt>Ledger</dt><dd>Buku besar komisi admin. Saldo admin = jumlah semua baris ledger (earn, reversal, payout).</dd>
+    <dt>Payout</dt><dd>Pembayaran saldo admin, biasanya bulanan. Owner generate lalu tandai sudah dibayar.</dd>
+    <dt>bps</dt><dd>Basis poin. 100 bps = 1%, 1000 bps = 10%. Cara server menyimpan persen supaya tidak ada pecahan.</dd>
+    <dt>Idempoten</dt><dd>Kirim berkali-kali hasilnya tetap satu. Server begini untuk pembelian (by PurchaseId) dan donasi (by id).</dd>
+  </dl>
+</section>
+
+<footer>Panduan ini dibuat dari kode di repo <code>klsm-admin-affliate</code>. Kode Luau di atas diambil langsung dari folder <code>roblox/</code>. Regenerasi dengan <code>bun run docs/build.ts</code>.</footer>
+</main>
+</div>
+<div class="toast" id="toast">Disalin</div>
+<script>
+(function () {
+  "use strict";
+  const $ = (s, r) => (r || document).querySelector(s);
+  const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+  const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const store = {
+    get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* abaikan */ } },
+  };
+
+  /* ---------- toast ---------- */
+  let toastTimer;
+  function toast(msg) {
+    const t = $("#toast"); t.textContent = msg; t.classList.add("show");
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove("show"), 1600);
+  }
+  function copyText(text) {
+    const done = () => toast("Disalin");
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, () => fallbackCopy(text, done));
+    } else fallbackCopy(text, done);
+  }
+  function fallbackCopy(text, done) {
+    const ta = document.createElement("textarea"); ta.value = text; ta.setAttribute("readonly", "");
+    ta.style.position = "fixed"; ta.style.top = "-1000px"; document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); done(); } catch (e) { toast("Gagal menyalin, salin manual ya"); }
+    document.body.removeChild(ta);
+  }
+
+  /* ---------- tema ---------- */
+  const themeBtn = $("#theme-btn"), themeLabel = $("#theme-label");
+  const THEMES = [["system", "sistem"], ["light", "terang"], ["dark", "gelap"]];
+  function applyTheme(t) {
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    else document.documentElement.removeAttribute("data-theme");
+    themeLabel.textContent = (THEMES.find((x) => x[0] === t) || THEMES[0])[1];
+  }
+  let theme = store.get("klsm-docs-theme") || "system"; applyTheme(theme);
+  themeBtn.addEventListener("click", () => {
+    const i = THEMES.findIndex((x) => x[0] === theme); theme = THEMES[(i + 1) % THEMES.length][0];
+    store.set("klsm-docs-theme", theme); applyTheme(theme);
+  });
+
+  /* ---------- menu mobile ---------- */
+  const menuBtn = $("#menu-btn"), sidebar = $("#sidebar");
+  menuBtn.addEventListener("click", () => {
+    const open = sidebar.classList.toggle("open"); menuBtn.setAttribute("aria-expanded", String(open));
+  });
+  $$(".nav a").forEach((a) => a.addEventListener("click", () => { sidebar.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); }));
+
+  /* ---------- scroll spy ---------- */
+  const navLinks = $$(".nav a");
+  const byId = new Map(navLinks.map((a) => [a.getAttribute("href").slice(1), a]));
+  if ("IntersectionObserver" in window) {
+    const visible = new Map();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) visible.set(e.target.id, e.boundingClientRect.top); else visible.delete(e.target.id); });
+      let best = null;
+      visible.forEach((top, id) => { if (best === null || top < visible.get(best)) best = id; });
+      if (best) { navLinks.forEach((a) => a.classList.remove("active")); const a = byId.get(best); if (a) a.classList.add("active"); }
+    }, { rootMargin: "-15% 0px -60% 0px", threshold: 0 });
+    $$("section.doc").forEach((s) => io.observe(s));
+  }
+
+  /* ---------- alur (gambaran besar) ---------- */
+  $$(".flow-step").forEach((btn) => btn.addEventListener("click", () => {
+    const wasOpen = btn.getAttribute("aria-expanded") === "true";
+    $$(".flow-step").forEach((b) => b.setAttribute("aria-expanded", "false"));
+    $$(".flow-detail").forEach((d) => { d.hidden = true; });
+    if (!wasOpen) { btn.setAttribute("aria-expanded", "true"); $("#" + btn.dataset.detail).hidden = false; }
+  }));
+  // buka langkah pertama supaya halaman tidak kosong saat dimuat
+  $(".flow-step").click();
+
+  /* ---------- checklist ---------- */
+  const checks = $$("#checklist input");
+  const saved = store.get("klsm-docs-check") || {};
+  checks.forEach((c) => { c.checked = !!saved[c.dataset.key]; });
+  function updateProgress() {
+    const n = checks.filter((c) => c.checked).length;
+    $("#check-count").textContent = n + "/" + checks.length;
+    $("#check-bar").style.width = Math.round((n / checks.length) * 100) + "%";
+  }
+  checks.forEach((c) => c.addEventListener("change", () => {
+    const s = store.get("klsm-docs-check") || {}; s[c.dataset.key] = c.checked; store.set("klsm-docs-check", s); updateProgress();
+    if (checks.every((x) => x.checked)) toast("Persiapan lengkap. Lanjut ke script!");
+  }));
+  updateProgress();
+
+  /* ---------- tabs ---------- */
+  $$(".tabs").forEach((tabs) => {
+    const btns = $$(".tab", tabs);
+    btns.forEach((b) => b.addEventListener("click", () => {
+      btns.forEach((x) => { x.setAttribute("aria-selected", "false"); $("#" + x.getAttribute("aria-controls")).hidden = true; });
+      b.setAttribute("aria-selected", "true"); $("#" + b.getAttribute("aria-controls")).hidden = false;
+    }));
+  });
+
+  /* ---------- pewarna kode ---------- */
+  const LUA_KW = new Set("local function end if then else elseif for in do while return not and or nil true false break repeat until".split(" "));
+  function hlLua(src) {
+    const re = /(--\[\[[\s\S]*?\]\])|(--[^\n]*)|("(?:[^"\\\n]|\\.)*"|'(?:[^'\\\n]|\\.)*')|(\b\d+(?:\.\d+)?\b)|([A-Za-z_]\w*)/g;
+    let out = "", last = 0, m;
+    while ((m = re.exec(src))) {
+      out += esc(src.slice(last, m.index));
+      const t = m[0];
+      if (m[1] || m[2]) out += '<span class="tok-cm">' + esc(t) + "</span>";
+      else if (m[3]) out += '<span class="tok-str">' + esc(t) + "</span>";
+      else if (m[4]) out += '<span class="tok-num">' + t + "</span>";
+      else if (LUA_KW.has(t)) out += '<span class="tok-kw">' + t + "</span>";
+      else if (/^\s*\(/.test(src.slice(re.lastIndex, re.lastIndex + 2))) out += '<span class="tok-fn">' + t + "</span>";
+      else out += t;
+      last = re.lastIndex;
+    }
+    return out + esc(src.slice(last));
+  }
+  function hlJson(src) {
+    const re = /("(?:[^"\\]|\\.)*")(\s*:)?|(-?\d+(?:\.\d+)?)|\b(true|false|null)\b/g;
+    let out = "", last = 0, m;
+    while ((m = re.exec(src))) {
+      out += esc(src.slice(last, m.index));
+      if (m[1] && m[2]) out += '<span class="tok-key">' + esc(m[1]) + "</span>" + m[2];
+      else if (m[1]) out += '<span class="tok-str">' + esc(m[1]) + "</span>";
+      else if (m[3]) out += '<span class="tok-num">' + m[3] + "</span>";
+      else out += '<span class="tok-bool">' + m[4] + "</span>";
+      last = re.lastIndex;
+    }
+    return out + esc(src.slice(last));
+  }
+  function highlight(code) {
+    const lang = code.dataset.lang, src = code.textContent;
+    if (lang === "lua") code.innerHTML = hlLua(src);
+    else if (lang === "json") code.innerHTML = hlJson(src);
+  }
+  $$("code[data-lang]").forEach(highlight);
+
+  /* ---------- tombol salin ---------- */
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-copy]"); if (!btn) return;
+    const code = $("pre code", btn.closest(".code")); if (code) copyText(code.textContent);
+  });
+
+  /* ---------- generator share link ---------- */
+  const gPlace = $("#g-place"), gCode = $("#g-code"), gOut = $("#g-out"), gLaunch = $("#g-launch"), gNote = $("#g-note");
+  let gLink = "";
+  function renderLink() {
+    const place = gPlace.value.trim(), code = gCode.value.trim().toUpperCase();
+    const errs = [];
+    if (!/^\d+$/.test(place)) errs.push("Place ID harus angka saja.");
+    if (!/^[A-Z0-9]{4,16}$/.test(code)) errs.push("Kode harus 4 sampai 16 huruf/angka.");
+    if (errs.length) { gOut.innerHTML = '<span class="out-err">' + esc(errs.join(" ")) + "</span>"; gLaunch.textContent = "–"; gNote.textContent = ""; gLink = ""; return; }
+    const p = new URLSearchParams({ placeId: place, launchData: "ref_" + code });
+    gLink = "https://www.roblox.com/games/start?" + p.toString();
+    gOut.textContent = gLink; gLaunch.textContent = "ref_" + code;
+    gNote.textContent = "Server membaca kode " + code + " dari teks itu. Huruf kecil atau tanda minus setelah ref juga diterima.";
+  }
+  [gPlace, gCode].forEach((el) => el.addEventListener("input", renderLink)); renderLink();
+  $("#g-copy").addEventListener("click", () => { if (gLink) copyText(gLink); });
+
+  /* ---------- kalkulator komisi ---------- */
+  const BPS = 10000;
+  const rp = (n) => "Rp" + Math.floor(n).toLocaleString("id-ID");
+  const rbx = (n) => Math.floor(n).toLocaleString("id-ID") + " R$";
+  const pctToBps = (p) => Math.round(p * 100);
+  const fmtPct = (bps) => { const p = bps / 100; return (Number.isInteger(p) ? p : p.toFixed(2).replace(/\.?0+$/, "")) + "%"; };
+  let cSrc = "ROBUX";
+  const cAmount = $("#c-amount"), cRate = $("#c-rate"), cFee = $("#c-fee"), cIdr = $("#c-idr"), cSteps = $("#c-steps");
+  function calc() {
+    const gross = Math.max(0, Math.floor(Number(cAmount.value) || 0));
+    const commissionBps = Math.min(BPS, Math.max(0, pctToBps(Number(cRate.value) || 0)));
+    const feeBps = Math.min(BPS, Math.max(0, pctToBps(Number(cFee.value) || 0)));
+    const idrPerRobux = Math.max(0, Math.floor(Number(cIdr.value) || 0));
+    const rows = [];
+    let netIdr;
+    if (cSrc === "ROBUX") {
+      const netRobux = Math.floor((gross * (BPS - feeBps)) / BPS);
+      netIdr = netRobux * idrPerRobux;
+      rows.push(["Robux kotor yang dibayar player", "CurrencySpent dari receipt", rbx(gross)]);
+      rows.push(["Potong fee Roblox " + fmtPct(feeBps), "floor(" + gross + " × " + (BPS - feeBps) + " / " + BPS + ")", rbx(netRobux)]);
+      rows.push(["Konversi ke Rupiah × " + idrPerRobux, netRobux + " × " + idrPerRobux, rp(netIdr)]);
+    } else {
+      netIdr = gross;
+      rows.push(["Donasi bagi-bagi", "tidak ada potongan", rp(gross)]);
+    }
+    const commission = Math.floor((netIdr * commissionBps) / BPS);
+    rows.push(["Komisi admin " + fmtPct(commissionBps), "floor(" + netIdr + " × " + commissionBps + " / " + BPS + ")", rp(commission), true]);
+    cSteps.innerHTML = rows.map((r) => '<li' + (r[3] ? ' class="total"' : "") + "><div>" + esc(r[0]) + "<small>" + esc(r[1]) + '</small></div><span class="v">' + esc(r[2]) + "</span></li>").join("");
+  }
+  $$("#c-src button").forEach((b) => b.addEventListener("click", () => {
+    $$("#c-src button").forEach((x) => x.setAttribute("aria-pressed", "false")); b.setAttribute("aria-pressed", "true");
+    cSrc = b.dataset.src;
+    const isRobux = cSrc === "ROBUX";
+    $("#c-fee-wrap").hidden = !isRobux; $("#c-idr-wrap").hidden = !isRobux;
+    $("#c-amount-label").textContent = isRobux ? "Robux kotor (CurrencySpent)" : "Nominal donasi (Rupiah)";
+    cAmount.value = isRobux ? 1000 : 50000; calc();
+  }));
+  [cAmount, cRate, cFee, cIdr].forEach((el) => el.addEventListener("input", calc)); calc();
+
+  /* ---------- pembuat payload ---------- */
+  const ENDPOINTS = {
+    join: {
+      path: "/ingest/join",
+      fields: [
+        ["robloxUserId", "number", "123456789", "player.UserId"],
+        ["username", "text", "budi_gamer", "player.Name"],
+        ["displayName", "text", "Budi", "player.DisplayName"],
+        ["launchData", "text", "ref_K7PQ2M", "kosongkan untuk join tanpa link"],
+        ["joinedAt", "number", "", "unix detik, kosong = sekarang"],
+      ],
+      res: { ok: true, outcome: "attributed", spenderId: 42, referrerAdminId: 3 },
+    },
+    robux: {
+      path: "/ingest/robux",
+      fields: [
+        ["purchaseId", "text", "a1b2c3d4-0000-4000-8000-000000000001", "receipt.PurchaseId, unik"],
+        ["robloxUserId", "number", "123456789", "receipt.PlayerId"],
+        ["username", "text", "budi_gamer", ""],
+        ["productId", "number", "1234567", "receipt.ProductId"],
+        ["currencySpent", "number", "100", "Robux kotor"],
+        ["currencyType", "text", "Robux", ""],
+        ["placeId", "number", "123456789", ""],
+        ["purchasedAt", "number", "", "unix detik, kosong = sekarang"],
+      ],
+      res: { ok: true, duplicate: false, eventId: 117, status: "attributed", commissionIdr: 1015 },
+    },
+    bagibagi: {
+      path: "/ingest/bagibagi",
+      fields: [
+        ["id", "text", "bb_20260905_0001", "id transaksi bagi-bagi"],
+        ["amountIdr", "text", "50000", "angka atau \"Rp 50.000\""],
+        ["donorName", "text", "Budi", ""],
+        ["message", "text", "@budi_gamer semangat terus!", "dipakai untuk menebak username"],
+        ["username", "text", "", "kalau sudah tahu"],
+        ["robloxUserId", "number", "", "isi kalau player ada di server"],
+        ["occurredAt", "number", "", "unix detik, kosong = sekarang"],
+      ],
+      res: { ok: true, duplicate: false, eventId: 118, status: "attributed", commissionIdr: 5000, candidates: ["budi_gamer", "Budi"] },
+    },
+  };
+  const pEp = $("#p-ep"), pBase = $("#p-base"), pKey = $("#p-key"), pFields = $("#p-fields"), pJson = $("#p-json"), pCurl = $("#p-curl"), pRes = $("#p-res");
+  function buildFields() {
+    const ep = ENDPOINTS[pEp.value];
+    pFields.innerHTML = ep.fields.map((f) =>
+      '<div class="field"><label for="pf-' + f[0] + '">' + f[0] + "</label><input id=\"pf-" + f[0] + '" data-name="' + f[0] + '" data-type="' + f[1] + '" type="text" class="mono" value="' + esc(f[2]) + '">' + (f[3] ? "<small>" + esc(f[3]) + "</small>" : "") + "</div>").join("");
+    $$("input", pFields).forEach((i) => i.addEventListener("input", renderPayload));
+    pRes.textContent = JSON.stringify(ep.res, null, 2); highlight(pRes);
+    renderPayload();
+  }
+  function renderPayload() {
+    const ep = ENDPOINTS[pEp.value]; const body = {};
+    $$("input", pFields).forEach((i) => {
+      const v = i.value.trim(); if (v === "") return;
+      body[i.dataset.name] = i.dataset.type === "number" && /^-?\d+(\.\d+)?$/.test(v) ? Number(v) : v;
+    });
+    const json = JSON.stringify(body, null, 2);
+    pJson.textContent = json; highlight(pJson);
+    const base = pBase.value.trim().replace(/\/+$/, "") || "https://affiliate.contoh.com";
+    const key = pKey.value.trim() || "mk_...";
+    pCurl.textContent = 'curl -X POST "' + base + ep.path + '" \\\n  -H "Content-Type: application/json" \\\n  -H "x-map-key: ' + key + '" \\\n  -d \'' + JSON.stringify(body).replace(/'/g, "'\\''") + "'";
+  }
+  pEp.addEventListener("change", buildFields); [pBase, pKey].forEach((el) => el.addEventListener("input", renderPayload)); buildFields();
+})();
+</script>

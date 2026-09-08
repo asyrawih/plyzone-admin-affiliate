@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Token warna. Tema gelap cukup menimpa nilai di .dark; komponen memakai var(--...), bukan warna Tailwind langsung. */
+:root {
+  --plane: #f9f9f7;      /* latar halaman */
+  --surface: #fcfcfb;    /* kartu, input, sidebar */
+  --surface-2: #f3f3f0;  /* hover baris, blok lembut */
+  --surface-3: #ebebe6;  /* code, nav aktif */
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #898781;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --on-ink: #ffffff;     /* teks di atas tombol --ink */
+  --s1: #2a78d6; /* net spend */
+  --s2: #eb6834; /* komisi */
+  --s3: #1baf7a; /* bagi-bagi */
+  --good: #0ca30c;
+  --warn: #fab219;
+  --serious: #ec835a;
+  --critical: #d03b3b;
+  /* tone badge/blok status: bg / fg / border */
+  --good-bg: #ecfdf0;  --good-fg: #166534;  --good-bd: #bbf7d0;
+  --warn-bg: #fffbeb;  --warn-fg: #92400e;  --warn-bd: #fde68a;
+  --bad-bg: #fef2f2;   --bad-fg: #991b1b;   --bad-bd: #fecaca;
+  --info-bg: #eff6ff;  --info-fg: #1e40af;  --info-bd: #bfdbfe;
+  --teal-bg: #f0fdfa;  --teal-fg: #115e59;  --teal-bd: #99f6e4;
+  --neutral-bg: #ebebe6; --neutral-fg: #52514e; --neutral-bd: #d6d5cd;
+}
+.dark {
+  --plane: #121211;
+  --surface: #1b1b1a;
+  --surface-2: #232322;
+  --surface-3: #2c2c2a;
+  --ink: #f2f1ec;
+  --ink-2: #c2c0b8;
+  --muted: #8f8d86;
+  --grid: #2f2f2c;
+  --axis: #45453f;
+  --on-ink: #0b0b0b;
+  --s1: #5a9ae6;
+  --s2: #f0855b;
+  --s3: #3cc796;
+  --good: #3ec43e;
+  --warn: #f6c24a;
+  --critical: #e35b5b;
+  --good-bg: #13301c;  --good-fg: #86e0a0;  --good-bd: #1f5a32;
+  --warn-bg: #3a2b0a;  --warn-fg: #f2c86a;  --warn-bd: #6b4f14;
+  --bad-bg: #3b1717;   --bad-fg: #f3a0a0;   --bad-bd: #6e2626;
+  --info-bg: #14263f;  --info-fg: #95c0f2;  --info-bd: #234876;
+  --teal-bg: #10302c;  --teal-fg: #86d9cb;  --teal-bd: #1e5c54;
+  --neutral-bg: #2c2c2a; --neutral-fg: #c2c0b8; --neutral-bd: #45453f;
+}
+html, body, #root { height: 100%; }
+body { background: var(--plane); color: var(--ink); font-feature-settings: "tnum" 1; }
+.tnum { font-variant-numeric: tabular-nums; }
+::selection { background: color-mix(in srgb, var(--s1) 30%, transparent); }

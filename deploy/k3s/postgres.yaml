@@ -1,0 +1,64 @@
+# Postgres di dalam k3s (single node). Data di PVC local-path; SEGERA patch PV ke Retain setelah bound (README §Postgres).
+# Secret klsm-postgres dibuat deploy.sh dari .env (POSTGRES_PASSWORD), bukan di sini.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: klsm-postgres-data
+spec:
+  accessModes: ["ReadWriteOnce"]
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: klsm-postgres
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate            # satu PVC RWO, pod lama harus lepas dulu
+  selector:
+    matchLabels: { app: klsm-postgres }
+  template:
+    metadata:
+      labels: { app: klsm-postgres }
+    spec:
+      terminationGracePeriodSeconds: 60   # beri waktu checkpoint saat shutdown
+      securityContext:
+        fsGroup: 70             # uid/gid "postgres" di image alpine
+      containers:
+        - name: postgres
+          image: postgres:16.4-alpine
+          args: ["-c", "shared_buffers=128MB", "-c", "max_connections=50", "-c", "timezone=UTC", "-c", "log_min_duration_statement=500"]
+          ports: [{ containerPort: 5432, name: pg }]
+          env:
+            - { name: PGDATA, value: /var/lib/postgresql/data/pgdata }   # subdir, bukan root mount
+          envFrom:
+            - secretRef: { name: klsm-postgres }                         # POSTGRES_USER / POSTGRES_PASSWORD / POSTGRES_DB
+          volumeMounts:
+            - { name: data, mountPath: /var/lib/postgresql/data }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits: { cpu: "1", memory: 1Gi }
+          readinessProbe:
+            exec: { command: ["sh", "-c", "pg_isready -U \"$POSTGRES_USER\" -d \"$POSTGRES_DB\""] }
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            exec: { command: ["sh", "-c", "pg_isready -U \"$POSTGRES_USER\" -d \"$POSTGRES_DB\""] }
+            initialDelaySeconds: 30
+            periodSeconds: 20
+      volumes:
+        - name: data
+          persistentVolumeClaim: { claimName: klsm-postgres-data }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: klsm-postgres
+spec:
+  selector: { app: klsm-postgres }
+  ports:
+    - { name: pg, port: 5432, targetPort: pg }

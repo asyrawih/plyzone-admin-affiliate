@@ -1,0 +1,21 @@
+{
+  "name": "@klsm/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run src/index.ts",
+    "migrate": "bun run src/cli/migrate.ts",
+    "seed:owner": "bun run src/cli/seed-owner.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@klsm/analytics": "workspace:*",
+    "@klsm/db": "workspace:*",
+    "@klsm/shared": "workspace:*",
+    "hono": "^4.13.0",
+    "zod": "^4.0.0"
+  }
+}

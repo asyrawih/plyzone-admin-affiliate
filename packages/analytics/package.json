@@ -1,0 +1,13 @@
+{
+  "name": "@klsm/analytics",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": { "typecheck": "tsc -p tsconfig.json" },
+  "dependencies": {
+    "@duckdb/node-api": "1.5.5-r.4",
+    "@klsm/shared": "workspace:*",
+    "@klsm/db": "workspace:*"
+  }
+}

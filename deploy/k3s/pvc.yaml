@@ -1,0 +1,11 @@
+# PVC SQLite LAMA. Hanya dipakai migrate-job.yaml saat cutover; hapus setelah fase D (patch PV ke Retain & backup dulu).
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: klsm-affiliate-data
+spec:
+  accessModes: ["ReadWriteOnce"]
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 5Gi

@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: klsm-affiliate
+spec:
+  replicas: 2                 # stateless: data di Postgres, DuckDB in-memory per pod
+  strategy:
+    type: RollingUpdate       # deploy tanpa downtime: pod baru siap dulu, baru pod lama dimatikan
+    rollingUpdate: { maxUnavailable: 0, maxSurge: 1 }
+  selector:
+    matchLabels: { app: klsm-affiliate }
+  template:
+    metadata:
+      labels: { app: klsm-affiliate }
+    spec:
+      # Setelah reboot node semua pod naik bersamaan; tunggu Postgres siap dulu supaya app tidak crash-loop.
+      initContainers:
+        - name: wait-db
+          image: postgres:16.4-alpine
+          envFrom:
+            - secretRef: { name: klsm-postgres }
+          command: ["sh", "-c", "until pg_isready -h klsm-postgres -U \"$POSTGRES_USER\"; do echo 'tunggu postgres...'; sleep 2; done"]
+      containers:
+        - name: app
+          image: klsm-affiliate
+          imagePullPolicy: Always
+          ports: [{ containerPort: 3000, name: http }]
+          envFrom:
+            - configMapRef: { name: klsm-affiliate-config }
+            - secretRef: { name: klsm-affiliate-secrets }    # DATABASE_URL, WEBHOOK_*
+          resources:
+            requests: { cpu: 100m, memory: 192Mi }
+            limits: { cpu: "1", memory: 768Mi }     # DuckDB in-memory + pool; data ukuran MB
+          readinessProbe:
+            httpGet: { path: /health, port: http }
+            initialDelaySeconds: 3
+            periodSeconds: 10
+          livenessProbe:
+            httpGet: { path: /health, port: http }
+            initialDelaySeconds: 20
+            periodSeconds: 30
+---
+# Saat `kubectl drain` (upgrade k3s) minimal satu pod app tetap hidup.
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: klsm-affiliate
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels: { app: klsm-affiliate }

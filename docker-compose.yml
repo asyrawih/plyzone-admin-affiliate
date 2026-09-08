@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres:16.4-alpine
+    environment:
+      POSTGRES_USER: klsm
+      POSTGRES_PASSWORD: klsm
+      POSTGRES_DB: klsm
+    ports:
+      - "5433:5432"          # 5433 supaya tidak bentrok dengan Postgres lokal lain; TEST_DATABASE_URL default memakai ini
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U klsm"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  app:
+    build: .
+    env_file:
+      - path: .env
+        required: false     # `docker compose up -d postgres` tanpa .env pun boleh
+    environment:
+      DATABASE_URL: postgres://klsm:klsm@postgres:5432/klsm
+      STATIC_DIR: /app/apps/dashboard/dist
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  pgdata:

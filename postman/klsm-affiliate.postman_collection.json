@@ -1,0 +1,2560 @@
+{
+  "info": {
+    "_postman_id": "1e981b0c-1b64-4ba5-ae35-59f40fb79344",
+    "name": "KLSM Affiliate",
+    "description": "API sistem afiliasi admin (SQLite + DuckDB). Jalankan folder berurutan: Owner Auth → Config → Admins → Ingest → ... Variabel (mapKey, adminId, eventId, dll) diisi otomatis oleh test script.\n\nAuth:\n- Owner: cookie session (login dulu, Postman simpan cookie otomatis)\n- Game: header x-map-key\n- Webhook: header x-webhook-secret\n- Admin: cookie session terpisah (folder Admin Auth)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "ownerUsername",
+      "value": "owner"
+    },
+    {
+      "key": "ownerPassword",
+      "value": "rahasia"
+    },
+    {
+      "key": "webhookSecret",
+      "value": "devsecret"
+    },
+    {
+      "key": "mapKey",
+      "value": ""
+    },
+    {
+      "key": "mapId",
+      "value": "1"
+    },
+    {
+      "key": "adminId",
+      "value": "1"
+    },
+    {
+      "key": "pendingAdminId",
+      "value": ""
+    },
+    {
+      "key": "referralCode",
+      "value": ""
+    },
+    {
+      "key": "publicToken",
+      "value": ""
+    },
+    {
+      "key": "eventId",
+      "value": ""
+    },
+    {
+      "key": "unmatchedEventId",
+      "value": ""
+    },
+    {
+      "key": "payoutId",
+      "value": ""
+    },
+    {
+      "key": "adminPassword",
+      "value": "rahasia123"
+    },
+    {
+      "key": "adminUsername",
+      "value": "citra"
+    }
+  ],
+  "item": [
+    {
+      "name": "0 · Health",
+      "item": [
+        {
+          "name": "Health",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "health"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "1 · Owner Auth",
+      "item": [
+        {
+          "name": "Login owner",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"{{ownerUsername}}\",\n  \"password\": \"{{ownerPassword}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));",
+                  "pm.test(\"ada user\", () => pm.expect(pm.response.json().user.username).to.be.a(\"string\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Me",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/me",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "description": "Cookie klsm_session disimpan otomatis oleh Postman setelah login."
+    },
+    {
+      "name": "2 · Config",
+      "item": [
+        {
+          "name": "Rates: current + history",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/config/rates",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "config",
+                "rates"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Rates: buat rate baru",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/config/rates",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "config",
+                "rates"
+              ]
+            },
+            "description": "bps = basis point. 1000 = 10%. effectiveFrom null = sekarang. Berlaku ke depan saja.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"commissionBps\": 1000,\n  \"robloxFeeBps\": 3000,\n  \"idrPerRobux\": 145,\n  \"minPayoutIdr\": 0,\n  \"effectiveFrom\": null\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Maps: list",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/config/maps",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "config",
+                "maps"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Maps: buat map (simpan ingestKey!)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/config/maps",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "config",
+                "maps"
+              ]
+            },
+            "description": "ingestKey hanya muncul sekali. Test script menyimpannya ke variabel mapKey.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Jaksel Space\",\n  \"placeId\": 82391043752226,\n  \"universeId\": null\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const setv = (k, v) => { pm.collectionVariables.set(k, v); try { pm.environment.set(k, v); } catch (e) {} };",
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));",
+                  "const j = pm.response.json(); setv(\"mapKey\", j.ingestKey); setv(\"mapId\", j.map.id); console.log(\"mapKey disimpan:\", j.ingestKey);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Maps: update",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/config/maps/{{mapId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "config",
+                "maps",
+                "{{mapId}}"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Jaksel Space\",\n  \"isActive\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3 · Admin daftar sendiri",
+      "item": [
+        {
+          "name": "Daftar (→ pending)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admin-auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin-auth",
+                "register"
+              ]
+            },
+            "description": "Username acak per run (citra_xxx) supaya bisa diulang. Tersimpan ke adminUsername, dipakai Login admin.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"{{adminUsername}}\",\n  \"password\": \"{{adminPassword}}\",\n  \"displayName\": \"Citra\",\n  \"robloxUsername\": \"player{{runSpender}}\",\n  \"notes\": \"Discord: citra#1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const setv = (k, v) => { pm.collectionVariables.set(k, v); try { pm.environment.set(k, v); } catch (e) {} };",
+                  "setv(\"adminUsername\", \"citra_\" + Date.now().toString(36));"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const setv = (k, v) => { pm.collectionVariables.set(k, v); try { pm.environment.set(k, v); } catch (e) {} };",
+                  "pm.test(\"201\", () => pm.expect(pm.response.code).to.eql(201)); setv(\"pendingAdminId\", pm.response.json().admin.id);"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "description": "Simulasi admin afiliasi mendaftar dari /admin/register. Status pending, id tersimpan ke pendingAdminId untuk di-approve owner di folder berikutnya."
+    },
+    {
+      "name": "4 · Admins (owner)",
+      "item": [
+        {
+          "name": "List admins",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/admins",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admins"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Buat admin manual",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admins",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admins"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"displayName\": \"Andi\",\n  \"robloxUsername\": \"andi_admin\",\n  \"robloxUserId\": null,\n  \"notes\": \"admin pertama\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const setv = (k, v) => { pm.collectionVariables.set(k, v); try { pm.environment.set(k, v); } catch (e) {} };",
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));",
+                  "const j = pm.response.json(); setv(\"adminId\", j.admin.id); setv(\"referralCode\", j.admin.referral_code); setv(\"publicToken\", j.admin.public_token);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Detail admin",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/admins/{{adminId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admins",
+                "{{adminId}}"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update admin",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admins/{{adminId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admins",
+                "{{adminId}}"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"displayName\": \"Andi\",\n  \"notes\": \"diupdate\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Nonaktifkan / aktifkan",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admins/{{adminId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admins",
+                "{{adminId}}"
+              ]
+            },
+            "description": "status: pending | active | inactive",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"active\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Share link",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/admins/{{adminId}}/share-link",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admins",
+                "{{adminId}}",
+                "share-link"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Approve pendaftaran",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admins/{{pendingAdminId}}/approve",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admins",
+                "{{pendingAdminId}}",
+                "approve"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Beri login / reset password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admins/{{adminId}}/set-login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admins",
+                "{{adminId}}",
+                "set-login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"andi_{{runSpender}}\",\n  \"password\": \"andipass123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5 · Ingest (dari game)",
+      "item": [
+        {
+          "name": "Join dengan kode referral",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-map-key",
+                "value": "{{mapKey}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ingest/join",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ingest",
+                "join"
+              ]
+            },
+            "description": "Dipanggil ReferralJoin.server.luau saat PlayerAdded. launchData dari GetJoinData().LaunchData. joinedAt null = sekarang.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"robloxUserId\": {{runSpender}},\n  \"username\": \"player{{runSpender}}\",\n  \"displayName\": \"Player One\",\n  \"launchData\": \"ref_{{referralCode}}\",\n  \"joinedAt\": null\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));",
+                  "pm.test(\"attributed\", () => pm.expect([\"attributed\",\"already_referred\"]).to.include(pm.response.json().outcome));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Join tanpa kode (organik)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-map-key",
+                "value": "{{mapKey}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ingest/join",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ingest",
+                "join"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"robloxUserId\": 2001,\n  \"username\": \"organic1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Robux: ProcessReceipt",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-map-key",
+                "value": "{{mapKey}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ingest/robux",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ingest",
+                "robux"
+              ]
+            },
+            "description": "Idempoten by purchaseId: kirim ulang → duplicate: true, baris tetap satu.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"purchaseId\": \"P-{{$timestamp}}\",\n  \"robloxUserId\": {{runSpender}},\n  \"username\": \"player{{runSpender}}\",\n  \"productId\": 10,\n  \"currencySpent\": 1000,\n  \"currencyType\": \"Robux\",\n  \"placeId\": 82391043752226,\n  \"purchasedAt\": null\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const setv = (k, v) => { pm.collectionVariables.set(k, v); try { pm.environment.set(k, v); } catch (e) {} };",
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));",
+                  "const j = pm.response.json(); setv(\"eventId\", j.eventId); pm.test(\"1000 R$ → komisi 10.150\", () => pm.expect(j.commissionIdr).to.be.a(\"number\"));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Robux: kirim ulang (duplikat)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-map-key",
+                "value": "{{mapKey}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ingest/robux",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ingest",
+                "robux"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"purchaseId\": \"P-DUP\",\n  \"robloxUserId\": {{runSpender}},\n  \"currencySpent\": 500\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bagi-bagi: player ketemu di server",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-map-key",
+                "value": "{{mapKey}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ingest/bagibagi",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ingest",
+                "bagibagi"
+              ]
+            },
+            "description": "Jalur utama. robloxUserId diisi kalau DonationReport.luau menemukan player di server → match pasti.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"bb-{{$timestamp}}\",\n  \"donorName\": \"player{{runSpender}}\",\n  \"amountIdr\": 50000,\n  \"message\": \"semangat\",\n  \"username\": \"player{{runSpender}}\",\n  \"robloxUserId\": {{runSpender}},\n  \"occurredAt\": null\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bagi-bagi: tebak dari pesan",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-map-key",
+                "value": "{{mapKey}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ingest/bagibagi",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ingest",
+                "bagibagi"
+              ]
+            },
+            "description": "Tanpa robloxUserId: backend cari username di nama/pesan yang cocok dengan spender dikenal.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"bb-guess-{{$timestamp}}\",\n  \"donorName\": \"Hamba Allah\",\n  \"amountIdr\": 25000,\n  \"message\": \"buat player{{runSpender}} ya\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bagi-bagi: tidak ketemu (unmatched)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-map-key",
+                "value": "{{mapKey}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ingest/bagibagi",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ingest",
+                "bagibagi"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"bb-anon-{{$timestamp}}\",\n  \"donorName\": \"Anonim\",\n  \"amountIdr\": 10000,\n  \"message\": \"gas\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const setv = (k, v) => { pm.collectionVariables.set(k, v); try { pm.environment.set(k, v); } catch (e) {} };",
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));",
+                  "const j = pm.response.json(); setv(\"unmatchedEventId\", j.eventId); pm.test(\"unmatched\", () => pm.expect(j.status).to.eql(\"unmatched\"));"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "description": "Auth: header x-map-key (dari Config → Maps). 401 kalau key salah / map nonaktif. 503 kalau belum ada rate."
+    },
+    {
+      "name": "6 · Webhook bagi-bagi (cadangan, dari proxy)",
+      "item": [
+        {
+          "name": "Webhook bagibagi",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-webhook-secret",
+                "value": "{{webhookSecret}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/webhook/bagibagi",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "webhook",
+                "bagibagi"
+              ]
+            },
+            "description": "Payload mentah bagi-bagi. amount boleh 'Rp 50.000' / '50000' / 50000. Auth: x-webhook-secret atau HMAC x-signature. Tanpa auth kalau env kosong (dev).",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"transaction_id\": \"tx-{{$timestamp}}\",\n  \"donator_name\": \"player{{runSpender}}\",\n  \"amount\": \"Rp 50.000\",\n  \"message\": \"halo\",\n  \"created_at\": null\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "7 · Spend Events (owner)",
+      "item": [
+        {
+          "name": "List (filter)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/spend-events?status=&source=&adminId=&from=&to=&limit=50&offset=0",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "spend-events"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": ""
+                },
+                {
+                  "key": "source",
+                  "value": ""
+                },
+                {
+                  "key": "adminId",
+                  "value": ""
+                },
+                {
+                  "key": "from",
+                  "value": ""
+                },
+                {
+                  "key": "to",
+                  "value": ""
+                },
+                {
+                  "key": "limit",
+                  "value": "50"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                }
+              ]
+            },
+            "description": "status: attributed | unattributed | unmatched | void. source: robux | bagibagi. from/to ISO."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "List unmatched",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/spend-events?status=unmatched",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "spend-events"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "unmatched"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Inbox webhook mentah",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/spend-events/inbox",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "spend-events",
+                "inbox"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Match manual ke spender",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/spend-events/{{unmatchedEventId}}/match",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "spend-events",
+                "{{unmatchedEventId}}",
+                "match"
+              ]
+            },
+            "description": "atau {\"spenderId\": 1}. Spender harus sudah pernah join game.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"spenderRobloxUserId\": {{runSpender}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Void event",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/spend-events/{{eventId}}/void",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "spend-events",
+                "{{eventId}}",
+                "void"
+              ]
+            },
+            "description": "Komisi dibalik di ledger (reversal). Tidak bisa dibatalkan.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reason\": \"refund\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "8 · Spenders (owner)",
+      "item": [
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/spenders?adminId=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "spenders"
+              ],
+              "query": [
+                {
+                  "key": "adminId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Cari",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/spenders?q=player",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "spenders"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "player"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Detail",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/spenders/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "spenders",
+                "1"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "9 · Payouts (owner)",
+      "item": [
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/payouts?status=&adminId=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "payouts"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": ""
+                },
+                {
+                  "key": "adminId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Ad-hoc",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/payouts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "payouts"
+              ]
+            },
+            "description": "Nominal ≤ saldo.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"adminId\": \"{{adminId}}\",\n  \"amountIdr\": 10000,\n  \"method\": \"transfer\",\n  \"reference\": \"\",\n  \"note\": \"kasbon\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const setv = (k, v) => { pm.collectionVariables.set(k, v); try { pm.environment.set(k, v); } catch (e) {} };",
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));",
+                  "setv(\"adhocPayoutId\", pm.response.json().payout.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bulanan: preview (dryRun)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/payouts/generate-monthly",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "payouts",
+                "generate-monthly"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"month\": \"2026-09\",\n  \"dryRun\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Bulanan: generate",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/payouts/generate-monthly",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "payouts",
+                "generate-monthly"
+              ]
+            },
+            "description": "Payout pending sebesar saldo tiap admin aktif ≥ minimum. Saldo langsung dikurangi (ledger payout).",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"month\": \"2026-09\",\n  \"dryRun\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const setv = (k, v) => { pm.collectionVariables.set(k, v); try { pm.environment.set(k, v); } catch (e) {} };",
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));",
+                  "const j = pm.response.json(); if (j.created && j.created[0]) setv(\"payoutId\", j.created[0].id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Tandai dibayar",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/payouts/{{adhocPayoutId}}/paid",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "payouts",
+                "{{adhocPayoutId}}",
+                "paid"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"method\": \"transfer\",\n  \"reference\": \"TRX-123\",\n  \"proofUrl\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "10 · Analytics (owner, DuckDB)",
+      "item": [
+        {
+          "name": "Overview",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/analytics/overview?from=&to=&adminId=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "analytics",
+                "overview"
+              ],
+              "query": [
+                {
+                  "key": "from",
+                  "value": ""
+                },
+                {
+                  "key": "to",
+                  "value": ""
+                },
+                {
+                  "key": "adminId",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Default 30 hari terakhir. Bucketing Asia/Jakarta."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Timeseries",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/analytics/timeseries?granularity=day&from=&to=&adminId=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "analytics",
+                "timeseries"
+              ],
+              "query": [
+                {
+                  "key": "granularity",
+                  "value": "day"
+                },
+                {
+                  "key": "from",
+                  "value": ""
+                },
+                {
+                  "key": "to",
+                  "value": ""
+                },
+                {
+                  "key": "adminId",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "granularity: day | week | month"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Leaderboard",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/analytics/leaderboard?from=&to=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "analytics",
+                "leaderboard"
+              ],
+              "query": [
+                {
+                  "key": "from",
+                  "value": ""
+                },
+                {
+                  "key": "to",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Ringkasan semua admin",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/analytics/admins",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "analytics",
+                "admins"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Funnel + cohort",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/analytics/funnel?from=&to=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "analytics",
+                "funnel"
+              ],
+              "query": [
+                {
+                  "key": "from",
+                  "value": ""
+                },
+                {
+                  "key": "to",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Top spenders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/analytics/top-spenders?from=&to=&adminId=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "analytics",
+                "top-spenders"
+              ],
+              "query": [
+                {
+                  "key": "from",
+                  "value": ""
+                },
+                {
+                  "key": "to",
+                  "value": ""
+                },
+                {
+                  "key": "adminId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Export CSV",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/analytics/export/spend.csv?from=&to=&adminId=",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "analytics",
+                "export",
+                "spend.csv"
+              ],
+              "query": [
+                {
+                  "key": "from",
+                  "value": ""
+                },
+                {
+                  "key": "to",
+                  "value": ""
+                },
+                {
+                  "key": "adminId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Setup status (halaman Alur)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/setup",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "setup"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Audit log",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/audit",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "audit"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "11 · Publik (tanpa login)",
+      "item": [
+        {
+          "name": "Halaman admin by token",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/a/{{publicToken}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "a",
+                "{{publicToken}}"
+              ]
+            },
+            "description": "Rate limit per IP. Accept: text/html → SPA (produksi), application/json → data."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "12 · Admin Auth (admin afiliasi)",
+      "item": [
+        {
+          "name": "Login admin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admin-auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin-auth",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"{{adminUsername}}\",\n  \"password\": \"{{adminPassword}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Me (termasuk pending)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/admin-auth/me",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin-auth",
+                "me"
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Ganti password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admin-auth/change-password",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin-auth",
+                "change-password"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"currentPassword\": \"{{adminPassword}}\",\n  \"newPassword\": \"{{adminPassword}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Contoh: ganti currentPassword/newPassword sesuai kebutuhan. Default sama supaya bisa diulang."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"200, atau 400 kalau password sudah diganti di run sebelumnya\", () => pm.expect([200, 400]).to.include(pm.response.code));"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "description": "Cookie klsm_admin_session, terpisah dari owner. Owner dan admin bisa login bersamaan di Postman yang sama."
+    },
+    {
+      "name": "13 · Admin Portal",
+      "item": [
+        {
+          "name": "Summary (status active saja)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/admin-portal/summary",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin-portal",
+                "summary"
+              ]
+            },
+            "description": "403 kalau masih pending / nonaktif. Isi: saldo, komisi, monthly, events, spenders, ledger, payouts, shareLinks, publicUrl."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"200 aktif / 403 pending\", () => pm.expect([200, 403]).to.include(pm.response.code));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "14 · Opsional / mengubah state",
+      "item": [
+        {
+          "name": "Regenerate link publik",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admins/{{adminId}}/regenerate-token",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admins",
+                "{{adminId}}",
+                "regenerate-token"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const setv = (k, v) => { pm.collectionVariables.set(k, v); try { pm.environment.set(k, v); } catch (e) {} };",
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));",
+                  "setv(\"publicToken\", pm.response.json().admin.public_token);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Maps: rotate key",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/config/maps/{{mapId}}/rotate-key",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "config",
+                "maps",
+                "{{mapId}}",
+                "rotate-key"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const setv = (k, v) => { pm.collectionVariables.set(k, v); try { pm.environment.set(k, v); } catch (e) {} };",
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));",
+                  "setv(\"mapKey\", pm.response.json().ingestKey);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Override referrer (kasus khusus)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/spenders/1/referrer",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "spenders",
+                "1",
+                "referrer"
+              ]
+            },
+            "description": "Tidak menghitung ulang event lama. adminId null = lepas referrer.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"adminId\": \"{{adminId}}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Batalkan (pending saja)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/payouts/{{payoutId}}/cancel",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "payouts",
+                "{{payoutId}}",
+                "cancel"
+              ]
+            },
+            "description": "Membatalkan payout bulanan (pending) dari run ini. 400 kalau sudah dibayar.",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Tolak pendaftaran",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admins/{{pendingAdminId}}/reject",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admins",
+                "{{pendingAdminId}}",
+                "reject"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "description": "Tidak termasuk alur utama. Jalankan manual saat perlu: regenerate link, rotate key (mapKey lama mati), override referrer, batalkan payout pending, tolak pendaftaran (session admin dilogout)."
+    },
+    {
+      "name": "15 · Logout",
+      "item": [
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/logout",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "logout"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Logout admin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admin-auth/logout",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin-auth",
+                "logout"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"status 2xx\", () => pm.expect(pm.response.code).to.be.within(200, 299));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Satu id spender acak per run supaya collection bisa diulang (first-touch: spender lama sudah terikat admin lama).",
+          "if (!pm.variables.get(\"runSpender\")) pm.variables.set(\"runSpender\", String(100000 + Math.floor(Math.random() * 900000)));"
+        ]
+      }
+    }
+  ]
+}

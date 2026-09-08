@@ -1,0 +1,24 @@
+{
+  "name": "klsm-admin-affliate",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "bun run --filter '*' dev",
+    "dev:api": "bun run --watch apps/api/src/index.ts",
+    "dev:dashboard": "bun run --cwd apps/dashboard dev",
+    "build": "bun run --cwd apps/dashboard build",
+    "test": "bun test",
+    "typecheck": "bun run --filter '*' typecheck",
+    "seed:owner": "bun run apps/api/src/cli/seed-owner.ts",
+    "migrate": "bun run apps/api/src/cli/migrate.ts",
+    "migrate:sqlite-to-pg": "bun run apps/api/src/cli/sqlite-to-pg.ts",
+    "docs:build": "bun run docs/build.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "@types/bun": "latest"
+  }
+}

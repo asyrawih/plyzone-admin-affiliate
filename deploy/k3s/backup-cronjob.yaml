@@ -1,0 +1,49 @@
+# pg_dump harian 03:00 WIB ke PVC klsm-backups (retensi 14 hari). Patch PV-nya ke Retain juga.
+# Ini melindungi dari salah data, BUKAN dari disk mati: salin ke luar server (README §Backup).
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: klsm-backups
+spec:
+  accessModes: ["ReadWriteOnce"]
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: klsm-pg-backup
+spec:
+  schedule: "0 20 * * *"        # 20:00 UTC = 03:00 WIB
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: backup
+              image: postgres:16.4-alpine
+              envFrom:
+                - secretRef: { name: klsm-postgres }
+              env:
+                - { name: PGHOST, value: klsm-postgres }
+              command: ["/bin/sh", "-c"]
+              args:
+                - |
+                  set -e
+                  export PGPASSWORD="$POSTGRES_PASSWORD"
+                  mkdir -p /backups
+                  ts=$(date +%Y%m%d-%H%M%S)
+                  pg_dump -U "$POSTGRES_USER" -d "$POSTGRES_DB" -Fc -f "/backups/klsm-$ts.dump"
+                  find /backups -name 'klsm-*.dump' -mtime +14 -delete
+                  ls -lh /backups | tail -5
+              volumeMounts:
+                - { name: backups, mountPath: /backups }
+          volumes:
+            - name: backups
+              persistentVolumeClaim: { claimName: klsm-backups }

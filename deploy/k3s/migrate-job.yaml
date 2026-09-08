@@ -1,0 +1,27 @@
+# Copy data SQLite (PVC lama /data/app.db) → Postgres. Job sekali jalan memakai image app.
+# Gladi: boleh jalan selagi app lama masih hidup (baca saja). Cutover: scale app lama ke 0 dulu, lalu jalankan lagi.
+# Ulang: kubectl -n klsm-affiliate delete job klsm-sqlite-to-pg; kubectl apply -f migrate-job.yaml
+# Log verifikasi: kubectl -n klsm-affiliate logs job/klsm-sqlite-to-pg
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: klsm-sqlite-to-pg
+spec:
+  backoffLimit: 0
+  ttlSecondsAfterFinished: 86400
+  template:
+    spec:
+      restartPolicy: Never
+      securityContext: { fsGroup: 1000 }
+      containers:
+        - name: migrate
+          image: klsm-affiliate            # tag di-override kustomization/overlay
+          imagePullPolicy: IfNotPresent
+          command: ["bun", "run", "apps/api/src/cli/sqlite-to-pg.ts", "--source", "/data/app.db"]
+          envFrom:
+            - secretRef: { name: klsm-affiliate-secrets }    # DATABASE_URL
+          volumeMounts:
+            - { name: data, mountPath: /data, readOnly: true }
+      volumes:
+        - name: data
+          persistentVolumeClaim: { claimName: klsm-affiliate-data }

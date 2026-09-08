@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: klsm-affiliate-config
+data:
+  PORT: "3000"
+  APP_URL: "https://affiliate.GANTI-DOMAIN.com"
+  DASHBOARD_ORIGIN: "https://affiliate.GANTI-DOMAIN.com"
+  SESSION_SECURE: "true"
+  SESSION_TTL_HOURS: "168"
+  TZ_BUCKET: "Asia/Jakarta"
+  PUBLIC_RATE_LIMIT: "60"
+  DB_POOL_MAX: "10"
+  DUCKDB_EXTENSION_DIR: "/app/.duckdb/extensions"
+  STATIC_DIR: "/app/apps/dashboard/dist"
