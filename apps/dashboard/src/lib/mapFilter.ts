@@ -4,7 +4,7 @@ import { useSyncExternalStore } from "react";
  * Pemilih map global untuk dashboard owner. Disimpan di localStorage supaya bertahan antar halaman & refresh.
  * `undefined` = semua map. Halaman menyertakan mapId ke queryKey dan query string endpoint.
  */
-const KEY = "klsm-map";
+const KEY = "plyzone-map";
 const listeners = new Set<() => void>();
 function read(): number | undefined {
   try { const v = Number(localStorage.getItem(KEY)); return v > 0 ? v : undefined; } catch { return undefined; }

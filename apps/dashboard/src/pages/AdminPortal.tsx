@@ -6,6 +6,7 @@ import { fmtDate } from "@/lib/format";
 import { AdminView } from "@/components/AdminView";
 import { Badge, Button, Card, CardBody, CardHeader, CopyButton, Input, Label, Modal, Textarea } from "@/components/ui";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Brand, APP_NAME } from "@/components/Brand";
 
 interface Me { admin: { id: number; username: string | null; displayName: string; status: "pending" | "active" | "inactive"; referralCode: string; referralCodePrev: string | null; referralCodeSetAt: string | null; robloxUsername: string | null; robloxUserId: number | null; createdAt: string } | null }
 
@@ -58,8 +59,8 @@ function useAdminMe() {
   return useQuery({ queryKey: ["admin-me"], queryFn: () => get<Me>("/api/admin-auth/me"), retry: false });
 }
 
-function Shell({ children, title = "KLSM Affiliate" }: { children: React.ReactNode; title?: string }) {
-  return <div className="flex min-h-full items-center justify-center p-6"><Card className="w-full max-w-md p-6"><div className="mb-1 flex items-center justify-between text-xs text-[var(--muted)]"><Link to="/" className="hover:underline">{title}</Link><ThemeToggle /></div>{children}</Card></div>;
+function Shell({ children, title = APP_NAME }: { children: React.ReactNode; title?: string }) {
+  return <div className="flex min-h-full items-center justify-center p-6"><Card className="w-full max-w-md p-6"><div className="mb-1 flex items-center justify-between text-xs text-[var(--muted)]"><Brand size="sm" sub={title === APP_NAME ? undefined : title} /><ThemeToggle /></div>{children}</Card></div>;
 }
 
 export function AdminRegisterPage() {
@@ -136,7 +137,7 @@ export function AdminHomePage() {
   return (
     <div className="mx-auto max-w-5xl p-4 md:p-8">
       <div className="mb-5 flex items-start justify-between gap-3">
-        <div><div className="text-xs text-[var(--muted)]">KLSM Affiliate · portal admin</div><h1 className="text-2xl font-semibold">{a.displayName}</h1><div className="text-sm text-[var(--ink-2)]">@{a.username} · kode <code className="rounded bg-[var(--surface-3)] px-1">{a.referralCode}</code> {a.robloxUsername && `· Roblox ${a.robloxUsername}`}</div></div>
+        <div><div className="text-xs text-[var(--muted)]">{APP_NAME} · portal admin</div><h1 className="text-2xl font-semibold">{a.displayName}</h1><div className="text-sm text-[var(--ink-2)]">@{a.username} · kode <code className="rounded bg-[var(--surface-3)] px-1">{a.referralCode}</code> {a.robloxUsername && `· Roblox ${a.robloxUsername}`}</div></div>
         <div className="flex gap-2"><ThemeToggle /><Button size="sm" variant="outline" onClick={() => setPw(true)}>Ganti password</Button><Button size="sm" variant="ghost" onClick={logout}>Keluar</Button></div>
       </div>
       <ReferralCodeCard a={a} onSet={() => { qc.invalidateQueries({ queryKey: ["admin-me"] }); qc.invalidateQueries({ queryKey: ["admin-portal"] }); }} />

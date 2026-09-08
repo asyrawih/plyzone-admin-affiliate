@@ -5,6 +5,7 @@ import { MapSelect } from "@/components/MapSelect";
 import { get, post } from "@/lib/api";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Brand } from "@/components/Brand";
 
 export function useMe() {
   return useQuery({ queryKey: ["me"], queryFn: () => get<{ user: { id: number; username: string } | null }>("/api/auth/me"), retry: false });
@@ -40,11 +41,11 @@ export function Layout() {
   return (
     <div className="flex min-h-full">
       <aside className="flex w-56 shrink-0 flex-col border-r border-[var(--grid)] bg-[var(--surface)]">
-        <div className="flex items-start justify-between px-4 py-4"><div><div className="text-sm font-bold">KLSM Affiliate</div><div className="text-xs text-[var(--muted)]">owner: {me.data?.user?.username}</div></div><ThemeToggle /></div>
+        <div className="flex items-start justify-between px-4 py-4"><Brand to={null} sub={<>owner: {me.data?.user?.username}</>} /><ThemeToggle /></div>
         <MapSelect />
         <nav className="flex-1 px-2">
           {nav.map((n) => (
-            <NavLink key={n.to} to={n.to} end={n.end} className={({ isActive }) => cn("mb-0.5 flex items-center gap-2 rounded-md px-2.5 py-2 text-sm", isActive ? "bg-[var(--surface-3)] font-medium" : "text-[var(--ink-2)] hover:bg-[var(--surface-2)]")}>
+            <NavLink key={n.to} to={n.to} end={n.end} className={({ isActive }) => cn("mb-0.5 flex items-center gap-2 rounded-md px-2.5 py-2 text-sm", isActive ? "bg-[var(--brand)] font-semibold text-[var(--on-brand)]" : "text-[var(--ink-2)] hover:bg-[var(--surface-2)]")}>
               <n.icon size={16} /><span className="flex-1">{n.label}</span>
               {n.to === "/dashboard/spend" && unmatched > 0 && <span className="rounded-full bg-[var(--warn-bg)] px-1.5 text-[11px] font-semibold text-[var(--warn-fg)]">{unmatched}</span>}
               {n.to === "/dashboard/risk" && riskOpen > 0 && <span className={cn("rounded-full px-1.5 text-[11px] font-semibold", (risk.data?.counts?.high ?? 0) > 0 ? "bg-[var(--bad-bg)] text-[var(--bad-fg)]" : "bg-[var(--warn-bg)] text-[var(--warn-fg)]")}>{riskOpen}</span>}

@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 
 export type Theme = "light" | "dark" | "system";
-const KEY = "klsm-theme";
+const KEY = "plyzone-theme";
 
 export function getTheme(): Theme {
   try { const v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "system"; } catch { return "system"; }
 }
-function isDark(t: Theme) { return t === "dark" || (t === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches); }
+/** Mode "system" = gelap (tema bawaan PLYZONE hitam-kuning). Terang hanya jika dipilih eksplisit. */
+function isDark(t: Theme) { return t !== "light"; }
 export function applyTheme(t: Theme) {
   const dark = isDark(t);
   document.documentElement.classList.toggle("dark", dark);

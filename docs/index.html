@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Panduan Afiliasi Roblox</title>
+<title>PLYZONE AFFILIATOR · Panduan Afiliasi Roblox</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
   :root {
-    --bg: #F5F7F4; --surface: #FFFFFF; --surface-2: #ECF1EC; --surface-3: #E1E8E2;
-    --ink: #18201C; --ink-2: #4B5751; --muted: #77837C; --line: #D3DBD5; --line-strong: #B9C4BC;
-    --accent: #0E8A57; --accent-ink: #FFFFFF; --accent-soft: #DCF1E5; --accent-line: #9ED4B8;
+    --bg: #F7F6F1; --surface: #FFFEFA; --surface-2: #F1F0E9; --surface-3: #E8E6DC;
+    --ink: #0A0A0A; --ink-2: #4A4944; --muted: #85837B; --line: #E0DED4; --line-strong: #BFBDB0;
+    --accent: #C9A400; --accent-ink: #0A0A0A; --accent-soft: #FFF6C7; --accent-line: #EDD46A;
     --warm: #B36512; --warm-soft: #F9EBD6; --warm-line: #E7C08A;
     --danger: #B4392E; --danger-soft: #F8E1DD; --danger-line: #E8A39B;
     --info: #2B5FA8; --info-soft: #E0EAF8; --info-line: #A9C1E8;
@@ -25,9 +25,9 @@
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #0E1512; --surface: #151E19; --surface-2: #1B2620; --surface-3: #223029;
-      --ink: #E4EBE6; --ink-2: #B3BFB7; --muted: #7F8C85; --line: #263129; --line-strong: #3A4840;
-      --accent: #3FD08D; --accent-ink: #07160E; --accent-soft: #163224; --accent-line: #2A6A49;
+      --bg: #000000; --surface: #0F0F0F; --surface-2: #181818; --surface-3: #222222;
+      --ink: #F5F3EA; --ink-2: #BDBBB0; --muted: #86847A; --line: #262626; --line-strong: #3D3D3A;
+      --accent: #FFD60A; --accent-ink: #0A0A0A; --accent-soft: #2B2300; --accent-line: #5C4B00;
       --warm: #E8A448; --warm-soft: #33260F; --warm-line: #7A5A24;
       --danger: #F08074; --danger-soft: #3A1E1A; --danger-line: #7A3A33;
       --info: #7FAAEE; --info-soft: #17243A; --info-line: #2F4B7A;
@@ -37,9 +37,9 @@
     }
   }
   :root[data-theme="dark"] {
-    --bg: #0E1512; --surface: #151E19; --surface-2: #1B2620; --surface-3: #223029;
-    --ink: #E4EBE6; --ink-2: #B3BFB7; --muted: #7F8C85; --line: #263129; --line-strong: #3A4840;
-    --accent: #3FD08D; --accent-ink: #07160E; --accent-soft: #163224; --accent-line: #2A6A49;
+    --bg: #000000; --surface: #0F0F0F; --surface-2: #181818; --surface-3: #222222;
+    --ink: #F5F3EA; --ink-2: #BDBBB0; --muted: #86847A; --line: #262626; --line-strong: #3D3D3A;
+    --accent: #FFD60A; --accent-ink: #0A0A0A; --accent-soft: #2B2300; --accent-line: #5C4B00;
     --warm: #E8A448; --warm-soft: #33260F; --warm-line: #7A5A24;
     --danger: #F08074; --danger-soft: #3A1E1A; --danger-line: #7A3A33;
     --info: #7FAAEE; --info-soft: #17243A; --info-line: #2F4B7A;
@@ -264,7 +264,7 @@
 <body>
 <div class="topbar"><div class="topbar-in">
   <button class="btn btn-ghost" id="menu-btn" aria-label="Buka menu" aria-controls="sidebar" aria-expanded="false">☰ Menu</button>
-  <a class="brand" href="#atas"><span class="brand-mark">K</span> KLSM Affiliate <small>· panduan integrasi Roblox</small></a>
+  <a class="brand" href="#atas"><span class="brand-mark">P</span> PLYZONE AFFILIATOR <small>· panduan integrasi Roblox</small></a>
   <span class="spacer"></span>
   <button class="btn btn-ghost" id="theme-btn" title="Ganti tema">Tema: <span id="theme-label">sistem</span></button>
 </div></div>
@@ -279,7 +279,7 @@
     </div>
     <div class="nav-group"><span class="eyebrow">Pasang di Roblox</span>
       <a href="#pasang">1. Taruh script di Studio</a>
-      <a href="#konfig">2. Isi alamat API &amp; key</a>
+      <a href="#konfig">2. Alamat API &amp; secret key</a>
       <a href="#share-link">3. Share link admin</a>
       <a href="#robux">4. Pembelian Robux</a>
       <a href="#bagibagi">5. Donasi bagi-bagi</a>
@@ -337,8 +337,8 @@
     <button class="flow-step" aria-expanded="false" data-detail="fd4"><span class="actor">Server</span><b>Komisi kehitung</b><span>Admin lihat saldonya di halaman sendiri.</span></button>
   </div>
   <div class="flow-detail" id="fd1" hidden><p><strong>Link dibuat otomatis di dashboard</strong> (menu <span class="ui">Admins</span>) untuk tiap admin dan tiap map. Bentuknya: <code>https://www.roblox.com/games/start?placeId=…&amp;launchData=ref_KODE</code>. Admin tinggal copy dan sebar ke mana pun.</p><p>Admin juga punya halaman pribadi <code>/a/&lt;token&gt;</code> tanpa login, isinya saldo, daftar komisi, dan link share-nya.</p></div>
-  <div class="flow-detail" id="fd2" hidden><p>Waktu player masuk lewat link itu, Roblox nyelipin teks <code>ref_KODE</code> ke <code>LaunchData</code>. Script <code>ReferralJoin</code> membacanya dan mengirim <code>POST /ingest/join</code> berisi UserId, username, dan kode tadi.</p><p>Server nyatet: "spender ini diajak admin X". Aturannya <strong>first-touch</strong>: yang dihitung admin pertama, selamanya. Player yang masuk tanpa link juga tetap dilaporkan (kodenya kosong) supaya tercatat sebagai spender organik.</p></div>
-  <div class="flow-detail" id="fd3" hidden><p><strong>Robux:</strong> di dalam <code>ProcessReceipt</code> game, tambahkan satu panggilan <code>AffiliateClient.reportRobux(receipt, player.Name)</code>. Hanya developer product yang dihitung, game pass tidak.</p><p><strong>Bagi-bagi:</strong> setelah donasi masuk ke game (lewat MessagingService dari proxy kamu), script <code>DonationReport</code> mengirimnya ke server. Kalau donaturnya lagi ada di server, kirim UserId-nya supaya cocok pasti.</p></div>
+  <div class="flow-detail" id="fd2" hidden><p>Waktu player masuk lewat link itu, Roblox nyelipin teks <code>ref_KODE</code> ke <code>LaunchData</code>. <code>AffiliateService</code> membacanya saat <code>PlayerAdded</code> dan mengirim <code>POST /ingest/join</code> berisi UserId, username, kode tadi, plus <code>ReferredByPlayerId</code> kalau player masuk lewat undangan Roblox.</p><p>Server nyatet: "spender ini diajak admin X". Aturannya <strong>first-touch</strong>: yang dihitung admin pertama, selamanya. Player yang masuk tanpa link juga tetap dilaporkan (kodenya kosong) supaya tercatat sebagai spender organik.</p></div>
+  <div class="flow-detail" id="fd3" hidden><p><strong>Robux:</strong> di handler <code>ProcessReceipt</code> game (<code>ReceiptService</code>), satu panggilan <code>AffiliateReport.Robux(info)</code> setelah produk tersimpan. Hanya developer product yang dihitung, game pass tidak.</p><p><strong>Bagi-bagi:</strong> setelah donasi tercatat di papan (<code>DonationBoardService</code>), satu panggilan <code>AffiliateReport.Donation(event, userId, name)</code>. Kalau donaturnya lagi ada di server, UserId-nya ikut dikirim supaya cocok pasti.</p></div>
   <div class="flow-detail" id="fd4" hidden><p>Server cari siapa spender-nya, siapa admin pengajaknya, dan rate yang berlaku saat itu. Robux dipotong fee Roblox 30% dulu, dikonversi ke Rupiah, baru dikali persen komisi. Bagi-bagi langsung dikali persen komisi.</p><p>Hasilnya masuk ke buku besar (ledger) admin. Tiap bulan owner generate payout dan tandai sudah dibayar. Semua ini di luar game, kamu nggak perlu ngapa-ngapain lagi.</p></div>
 
   <div class="callout ok"><span class="ico">✓</span><div><b>Yang perlu kamu lakukan di game cuma tiga hal</b><p>Lapor saat player join, lapor saat ada pembelian Robux, lapor saat ada donasi bagi-bagi. Sisanya urusan server.</p></div></div>
@@ -362,361 +362,731 @@
 
 <!-- ================= PASANG ================= -->
 <section class="doc wide" id="pasang">
-  <header><span class="eyebrow">Pasang di Roblox · langkah 1</span><h2>Taruh script di Studio</h2><p>Semua script ada di folder <code>roblox/</code> repo ini. Isinya persis yang tampil di bawah.</p></header>
+  <header><span class="eyebrow">Pasang di Roblox · langkah 1</span><h2>Taruh script di Studio</h2><p>Tiga file di folder <code>roblox/</code> repo ini, isinya persis yang tampil di bawah. Game memakai <strong>Knit</strong>: satu ModuleScript pengirim HTTP, satu service di server, satu controller di client.</p></header>
   <div class="table-wrap"><table>
-    <thead><tr><th>Nama di Explorer</th><th>Jenis object</th><th>Fungsi</th><th>Wajib?</th></tr></thead>
+    <thead><tr><th>Nama di Explorer</th><th>Jenis object</th><th>Lokasi</th><th>Fungsi</th><th>Wajib?</th></tr></thead>
     <tbody>
-      <tr><td><code>AffiliateClient</code></td><td>ModuleScript</td><td>Pengirim HTTP ke server, dengan retry. Dipakai script lain.</td><td><span class="req">wajib</span></td></tr>
-      <tr><td><code>ReferralJoin</code></td><td>Script</td><td>Baca kode dari link saat player join, lapor ke server.</td><td><span class="req">wajib</span></td></tr>
-      <tr><td><code>ReceiptHook</code></td><td>Script (contoh)</td><td>Contoh <code>ProcessReceipt</code>. <strong>Gabungkan</strong> ke handler yang sudah ada, jangan ditaruh mentah.</td><td><span class="opt">lihat langkah 4</span></td></tr>
-      <tr><td><code>DonationReport</code></td><td>Script</td><td>Terusin donasi bagi-bagi yang masuk ke game ke server.</td><td><span class="opt">kalau pakai bagi-bagi</span></td></tr>
+      <tr><td><code>AffiliateReport</code></td><td>ModuleScript</td><td><code>ServerScriptService.Server</code></td><td>Pengirim HTTP ke server afiliasi: <code>Join</code>, <code>Robux</code>, <code>Donation</code>, <code>FlushPending</code>. Fire-and-forget, retry 3×, receipt Robux yang gagal diparkir di DataStore.</td><td><span class="req">wajib</span></td></tr>
+      <tr><td><code>AffiliateService</code></td><td>ModuleScript (Knit service)</td><td><code>ServerScriptService.Server.Services</code></td><td>Baca <code>LaunchData</code> dan <code>ReferredByPlayerId</code> saat player join, lapor ke server, teruskan jawabannya ke client. Timer kirim ulang tiap 5 menit.</td><td><span class="req">wajib</span></td></tr>
+      <tr><td><code>AffiliateController</code></td><td>ModuleScript (Knit controller)</td><td><code>StarterPlayerScripts.Client.Controllers</code></td><td>Tombol <strong>"Undang teman"</strong> untuk admin (undangan Roblox membawa <code>ref_KODE</code>) dan notifikasi hasil undangan.</td><td><span class="opt">kalau mau fitur undang</span></td></tr>
     </tbody>
   </table></div>
 
   <ol class="steps">
-    <li><b>Buka Explorer, cari <span class="ui">ServerScriptService</span></b><p>Semua file ditaruh di sini, bukan di StarterPlayer atau Workspace. Script ini jalan di server, jadi player nggak bisa lihat atau ubah key-nya.</p></li>
-    <li><b>Klik <span class="ui">+</span> di ServerScriptService → pilih <span class="ui">ModuleScript</span></b><p>Ganti namanya jadi persis <code>AffiliateClient</code> (huruf besar-kecil harus sama). Script lain mencarinya dengan nama itu. Hapus isi bawaan, paste isi tab <em>AffiliateClient</em> di bawah.</p></li>
-    <li><b>Klik <span class="ui">+</span> lagi → pilih <span class="ui">Script</span> untuk <code>ReferralJoin</code></b><p>Ganti nama, paste isinya. Ulangi untuk <code>DonationReport</code> kalau map kamu menerima donasi bagi-bagi.</p></li>
-    <li><b><code>ReceiptHook</code> jangan di-paste mentah</b><p>Roblox cuma mengizinkan <strong>satu</strong> <code>ProcessReceipt</code> per game. Kalau game kamu sudah punya, ambil bagian <code>reportRobux</code>-nya saja. Caranya di <a href="#robux">langkah 4</a>.</p></li>
+    <li><b>Taruh <code>AffiliateReport</code> di <span class="ui">ServerScriptService.Server</span></b><p>Klik <span class="ui">+</span> → <span class="ui">ModuleScript</span>, ganti namanya jadi persis <code>AffiliateReport</code> (huruf besar-kecil harus sama), hapus isi bawaan, paste isi tab <em>AffiliateReport</em>. Script lain mencarinya dengan nama itu.</p></li>
+    <li><b>Taruh <code>AffiliateService</code> di folder <span class="ui">Services</span></b><p>Sama seperti service Knit lain di game. Knit memuat semua ModuleScript di folder itu, jadi tidak perlu didaftarkan manual.</p></li>
+    <li><b>Taruh <code>AffiliateController</code> di folder <span class="ui">Controllers</span> client</b><p>Di <code>StarterPlayer.StarterPlayerScripts.Client.Controllers</code>. Tombolnya dibuat oleh script, tidak ada GUI yang perlu ditaruh di StarterGui.</p></li>
+    <li><b>Sambungkan ke kode yang sudah ada</b><p>Tiga titik sambung, masing-masing satu baris: <code>ApiAuth.affiliateKey()</code> (<a href="#konfig">langkah 2</a>), <code>ReceiptService</code> (<a href="#robux">langkah 4</a>), dan <code>DonationBoardService</code> (<a href="#bagibagi">langkah 5</a>).</p></li>
   </ol>
 
   <div class="tabs" id="script-tabs">
     <div class="tablist" role="tablist">
-      <button class="tab" role="tab" aria-selected="true" aria-controls="tp-client">AffiliateClient</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="tp-join">ReferralJoin</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="tp-receipt">ReceiptHook</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="tp-donation">DonationReport</button>
+      <button class="tab" role="tab" aria-selected="true" aria-controls="tp-report">AffiliateReport</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="tp-service">AffiliateService</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="tp-controller">AffiliateController</button>
     </div>
-    <div class="tabpanel" id="tp-client" role="tabpanel">
-      <div class="filemeta"><span>Jenis: <b>ModuleScript</b></span><span>Lokasi: <b>ServerScriptService</b></span><span>Yang perlu diubah: <b>baris API_BASE dan MAP_KEY</b></span></div>
-      <div class="code"><div class="code-bar"><span class="fname">roblox/AffiliateClient.luau</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">--!strict
+    <div class="tabpanel" id="tp-report" role="tabpanel">
+      <div class="filemeta"><span>Jenis: <b>ModuleScript</b></span><span>Lokasi: <b>ServerScriptService.Server</b></span><span>Yang perlu diubah: <b>BASE_URL kalau server kamu beda</b></span></div>
+      <div class="code"><div class="code-bar"><span class="fname">roblox/AffiliateReport.luau</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">--!strict
 --[[
-	AffiliateClient (ModuleScript, ServerScriptService)
-	Klien HTTP ke API afiliasi. Dipakai oleh ReferralJoin dan ProcessReceipt hook.
+	AffiliateReport — lapor ke backend afiliasi admin (affiliate.kelasmalam.app).
 
-	Setup:
-	  1. Game Settings &gt; Security &gt; Allow HTTP Requests = ON
-	  2. Isi API_BASE dan MAP_KEY (dari dashboard Config &gt; Maps). Jangan commit key ke repo publik;
-	     simpan di ServerStorage/StringValue atau HttpService secret kalau tersedia.
+	Tiga kejadian yang dilaporin, semuanya FIRE-AND-FORGET (nggak pernah nge-yield
+	pemanggil, nggak punya nilai balik):
+	  * Join     — dari AffiliateService, bawa LaunchData share link admin
+	  * Robux    — dari ReceiptService, SESUDAH handler produk bilang tersimpan
+	  * Donation — dari DonationBoardService, SESUDAH donasi kecatat di papan
+
+	=== KENAPA NGGAK BOLEH NGARUHIN KEPUTUSAN GAME ===
+	Komisi admin itu urusan backend. Kalau backend-nya mati, pemain tetap dapet
+	barangnya, donasi tetap kecatat di papan. Yang hilang cuma laporan, dan
+	backend-nya idempoten by id (PurchaseId / id transaksi BagiBagi), jadi
+	ngirim ulang kapan pun aman — receipt Robux yang gagal kelapor disimpen ke
+	antrean DataStore dan dikirim ulang berkala.
+
+	=== KREDENSIAL ===
+	Header `x-map-key` dibaca dari Roblox Secret "AF" lewat ApiAuth.affiliateKey().
+	Nilainya = ingest key map "Jaksel Space" di dashboard afiliasi (Config -&gt; Maps).
+	Secret nggak kebaca = fitur mati, warn sekali, game jalan normal.
+
+	=== STUDIO ===
+	ApiAuth.affiliateKey() di Studio baca secret "AF_STUDIO" (map tes), bukan
+	"AF" (produksi). Nggak ada AF_STUDIO = laporan mati, warn sekali. Jadi tes
+	dari Studio nggak pernah nyentuh key produksi. Donasi :Simulate() CUMA
+	diterusin di Studio — di server live dia dilewatin.
 ]]
 
+local DataStoreService = game:GetService("DataStoreService")
 local HttpService = game:GetService("HttpService")
+local MarketplaceService = game:GetService("MarketplaceService")
+local RunService = game:GetService("RunService")
+local ServerScriptService = game:GetService("ServerScriptService")
 
-local AffiliateClient = {}
+local LOG_PREFIX = "[AffiliateReport]"
 
-AffiliateClient.API_BASE = "https://affiliate.example.com" -- ganti
-AffiliateClient.MAP_KEY = "mk_xxx" -- ganti, dari dashboard Config &gt; Maps
+local BASE_URL = "https://affiliate.kelasmalam.app"
+local MAX_ATTEMPTS = 3
+local PENDING_STORE = "AffiliatePending_v1"
+local FLUSH_INTERVAL = 300
 
-local MAX_RETRY = 3
+local AffiliateReport = {}
 
+local apiAuth: any = nil
+local function auth(): any
+	if apiAuth == nil then
+		apiAuth = require(ServerScriptService.Server.ApiAuth)
+	end
+	return apiAuth
+end
+
+local function enabled(): boolean
+	-- nil = secret nggak kebaca; ApiAuth udah ngewarn sekali dengan nama secret-nya.
+	return auth().affiliateKey() ~= nil
+end
+
+--[[
+	POST satu payload. YIELD. Balikin true kalau backend jawab 2xx.
+	4xx = salah payload/key, nggak diulang (nggak bakal berubah). 5xx/HttpError
+	diulang dengan backoff.
+]]
 local function post(path: string, body: { [string]: any }): (boolean, any)
+	local key = auth().affiliateKey()
+	if key == nil then
+		return false, nil
+	end
+
 	local payload = HttpService:JSONEncode(body)
-	local lastErr: string? = nil
-	for attempt = 1, MAX_RETRY do
+	local lastErr = ""
+
+	for attempt = 1, MAX_ATTEMPTS do
 		local ok, res = pcall(function()
 			return HttpService:RequestAsync({
-				Url = AffiliateClient.API_BASE .. path,
+				Url = BASE_URL .. path,
 				Method = "POST",
 				Headers = {
 					["Content-Type"] = "application/json",
-					["x-map-key"] = AffiliateClient.MAP_KEY,
+					["x-map-key"] = key,
 				},
 				Body = payload,
 			})
 		end)
+
 		if ok and res.Success then
+			-- print, bukan warn: ini jalur normal. Sengaja kelihatan di Output biar
+			-- tes di Studio bisa dipastiin beneran nyampe, bukan cuma "nggak error".
+			print(`{LOG_PREFIX} terkirim {path} -&gt; HTTP {res.StatusCode}: {tostring(res.Body):sub(1, 160)}`)
 			local decoded = nil
-			pcall(function() decoded = HttpService:JSONDecode(res.Body) end)
+			pcall(function()
+				decoded = HttpService:JSONDecode(res.Body)
+			end)
 			return true, decoded
 		end
+
 		if ok and res.StatusCode &gt;= 400 and res.StatusCode &lt; 500 then
-			-- 4xx tidak akan berubah dengan retry (key salah / payload salah)
-			warn(("[Affiliate] %s -&gt; %d %s"):format(path, res.StatusCode, tostring(res.Body)))
-			return false, res.Body
+			warn(`{LOG_PREFIX} {path} ditolak HTTP {res.StatusCode}: {tostring(res.Body):sub(1, 200)}`)
+			return false, nil
 		end
-		lastErr = ok and ("HTTP " .. tostring(res.StatusCode)) or tostring(res)
-		task.wait(0.5 * 2 ^ (attempt - 1))
+
+		lastErr = if ok then `HTTP {res.StatusCode}` else tostring(res)
+		if attempt &lt; MAX_ATTEMPTS then
+			task.wait(0.5 * 2 ^ (attempt - 1))
+		end
 	end
-	warn(("[Affiliate] %s gagal: %s"):format(path, tostring(lastErr)))
-	return false, lastErr
-end
 
---- Dipanggil saat player join. launchData boleh nil.
-function AffiliateClient.reportJoin(player: Player, launchData: string?): boolean
-	local ok = post("/ingest/join", {
-		robloxUserId = player.UserId,
-		username = player.Name,
-		displayName = player.DisplayName,
-		launchData = launchData,
-		joinedAt = os.time(),
-	})
-	return ok
-end
-
---- Dipanggil dari ProcessReceipt. Return true kalau backend sudah mencatat (baru atau duplikat).
-function AffiliateClient.reportRobux(receipt: any, username: string?): boolean
-	local ok = post("/ingest/robux", {
-		purchaseId = receipt.PurchaseId,
-		robloxUserId = receipt.PlayerId,
-		username = username,
-		productId = receipt.ProductId,
-		currencySpent = receipt.CurrencySpent,
-		currencyType = tostring(receipt.CurrencyType),
-		placeId = receipt.PlaceIdWherePurchased,
-		purchasedAt = os.time(),
-	})
-	return ok
+	warn(`{LOG_PREFIX} {path} gagal setelah {MAX_ATTEMPTS} percobaan: {lastErr}`)
+	return false, nil
 end
 
 --[[
-	Dipanggil setelah donasi bagi-bagi masuk ke game (dari MessagingService / BindableEvent DonationReceived).
-	donation: { id: string, name: string, amount: number (rupiah), message: string?, username: string? }
-	player  : Player? — isi kalau game sudah mencocokkan donatur ke player yang ada di server.
-	          Kalau nil, backend menebak dari username/nama/pesan; gagal → antrian "Unmatched" di dashboard.
+	Join pemain. launchData nil kalau bukan lewat share link — tetap dilaporin biar spender
+	organik kecatat dan bisa dicocokin sama donasi BagiBagi. referredBy = GetJoinData().ReferredByPlayerId
+	(undangan Roblox); backend yang memutuskan apakah pengundangnya admin.
+
+	onResult(body) dipanggil di thread sendiri SESUDAH backend menjawab, dengan body JSON:
+	  { outcome, via, referrerAdminId, admin = { referralCode, launchData } | nil, invite = { inviterRobloxUserId, outcome, alreadyOwn, message } | nil }
+	Dipakai AffiliateService buat nyalain tombol "Undang teman" (kalau pemainnya admin) dan
+	ngasih notif ke pengundang. Kalau HTTP gagal, onResult nggak dipanggil sama sekali.
 ]]
-function AffiliateClient.reportDonation(donation: { [string]: any }, player: Player?): boolean
-	local ok = post("/ingest/bagibagi", {
-		id = tostring(donation.id),
-		donorName = donation.name or donation.n or "",
-		amountIdr = donation.amount or donation.a or 0,
-		message = donation.message or donation.m or "",
-		username = donation.username or donation.u,
-		robloxUserId = player and player.UserId or nil,
-		occurredAt = donation.t or os.time(),
-	})
-	return ok
-end
-
-return AffiliateClient</code></pre></div>
-    </div>
-    <div class="tabpanel" id="tp-join" role="tabpanel" hidden>
-      <div class="filemeta"><span>Jenis: <b>Script</b></span><span>Lokasi: <b>ServerScriptService</b></span><span>Yang perlu diubah: <b>tidak ada</b></span></div>
-      <div class="code"><div class="code-bar"><span class="fname">roblox/ReferralJoin.server.luau</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">--!strict
---[[
-	ReferralJoin (Script, ServerScriptService)
-	Baca LaunchData dari share link dan laporkan join ke API afiliasi.
-
-	Share link yang dibagikan admin (dibuat otomatis di dashboard):
-	  https://www.roblox.com/games/start?placeId=&lt;PLACE_ID&gt;&amp;launchData=ref_&lt;KODE&gt;
-	LaunchData hanya tersedia saat player masuk lewat link tersebut; join biasa -&gt; nil (tetap dilaporkan
-	supaya spender organik tercatat dan bisa dicocokkan dengan donasi bagi-bagi).
-]]
-
-local Players = game:GetService("Players")
-local ServerScriptService = game:GetService("ServerScriptService")
-
-local AffiliateClient = require(ServerScriptService:WaitForChild("AffiliateClient"))
-
-local function onPlayerAdded(player: Player)
-	local launchData: string? = nil
-	local ok, joinData = pcall(function()
-		return player:GetJoinData()
-	end)
-	if ok and joinData and typeof(joinData.LaunchData) == "string" and #joinData.LaunchData &gt; 0 then
-		launchData = joinData.LaunchData
+function AffiliateReport.Join(player: Player, launchData: string?, referredBy: number?, onResult: ((body: any) -&gt; ())?, joinDataRaw: { [string]: any }?)
+	if not enabled() then
+		return
 	end
-	-- jangan blokir join; jalankan di thread terpisah
 	task.spawn(function()
-		AffiliateClient.reportJoin(player, launchData)
+		local ok, body = post("/ingest/join", {
+			robloxUserId = player.UserId,
+			username = player.Name,
+			displayName = player.DisplayName,
+			launchData = launchData,
+			referredByRobloxUserId = referredBy,
+			joinData = joinDataRaw,
+			waitedSeconds = joinDataRaw and joinDataRaw.waited or nil,
+			joinedAt = os.time(),
+		})
+		if ok and typeof(body) == "table" and onResult then
+			onResult(body)
+		end
 	end)
 end
 
-Players.PlayerAdded:Connect(onPlayerAdded)
-for _, p in Players:GetPlayers() do
-	onPlayerAdded(p)
-end</code></pre></div>
-    </div>
-    <div class="tabpanel" id="tp-receipt" role="tabpanel" hidden>
-      <div class="filemeta"><span>Jenis: <b>Script (contoh)</b></span><span>Lokasi: <b>ServerScriptService</b></span><span>Yang perlu diubah: <b>isi grantProduct, atau gabung ke handler yang ada</b></span></div>
-      <div class="code"><div class="code-bar"><span class="fname">roblox/ReceiptHook.server.luau</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">--!strict
 --[[
-	ReceiptHook (contoh integrasi ke ProcessReceipt yang SUDAH ADA di game)
-
-	PENTING: hanya boleh ada SATU MarketplaceService.ProcessReceipt per game. Jangan taruh file ini
-	apa adanya kalau game sudah punya handler; salin bagian "reportRobux" ke dalam handler yang ada.
-
-	Alur:
-	  1. Cek DataStore ProcessedReceipts[PurchaseId] -&gt; kalau sudah ada, return PurchaseGranted (Roblox retry).
-	  2. Berikan item ke player (logika game).
-	  3. Kirim ke API afiliasi. Backend idempoten by PurchaseId, jadi aman dikirim ulang.
-	  4. Simpan PurchaseId ke DataStore. Kalau gagal simpan -&gt; NotProcessedYet supaya Roblox retry.
-
-	Kalau API afiliasi down, jangan tahan pembelian: catat PurchaseId ke antrian pending dan kirim ulang
-	nanti (lihat flushPending). Jadi player tetap dapat item, komisi menyusul.
+	Harga produk dari katalog, di-cache per productId. Dipakai CUMA kalau
+	receipt bilang CurrencySpent = 0 — itu perilaku Studio yang udah dikenal
+	(pembelian tes selalu 0, devforum #749742). Di server live CurrencySpent
+	udah bener dan jalur ini nggak kesentuh. YIELD; pemanggilnya udah di thread
+	sendiri.
 ]]
-
-local MarketplaceService = game:GetService("MarketplaceService")
-local DataStoreService = game:GetService("DataStoreService")
-local Players = game:GetService("Players")
-local ServerScriptService = game:GetService("ServerScriptService")
-
-local AffiliateClient = require(ServerScriptService:WaitForChild("AffiliateClient"))
-
-local processed = DataStoreService:GetDataStore("ProcessedReceipts_v1")
-local pendingAffiliate = DataStoreService:GetDataStore("AffiliatePending_v1")
-
-local function grantProduct(player: Player, productId: number): boolean
-	-- TODO: logika game (tambah coin, buka item, dsb). Return true kalau sukses.
-	return true
-end
-
-local function flushPending()
-	-- Dipanggil berkala: kirim ulang receipt yang gagal dilaporkan sebelumnya.
-	local ok, pages = pcall(function()
-		return pendingAffiliate:ListKeysAsync()
-	end)
-	if not ok then return end
-	while true do
-		for _, key in pages:GetCurrentPage() do
-			local okGet, data = pcall(function() return pendingAffiliate:GetAsync(key.KeyName) end)
-			if okGet and data then
-				local sent = AffiliateClient.reportRobux(data, data.username)
-				if sent then pcall(function() pendingAffiliate:RemoveAsync(key.KeyName) end) end
-			end
-		end
-		if pages.IsFinished then break end
-		pages:AdvanceToNextPageAsync()
+local priceCache: { [number]: number } = {}
+local function productPrice(productId: any): number?
+	if typeof(productId) ~= "number" then
+		return nil
 	end
-end
-
-MarketplaceService.ProcessReceipt = function(receipt)
-	local key = tostring(receipt.PurchaseId)
-
-	local okCheck, already = pcall(function() return processed:GetAsync(key) end)
-	if okCheck and already then
-		return Enum.ProductPurchaseDecision.PurchaseGranted
+	local cached = priceCache[productId]
+	if cached then
+		return cached
 	end
-
-	local player = Players:GetPlayerByUserId(receipt.PlayerId)
-	if not player then
-		return Enum.ProductPurchaseDecision.NotProcessedYet
-	end
-
-	local granted = grantProduct(player, receipt.ProductId)
-	if not granted then
-		return Enum.ProductPurchaseDecision.NotProcessedYet
-	end
-
-	-- laporkan ke afiliasi (non-fatal)
-	local reported = AffiliateClient.reportRobux(receipt, player.Name)
-	if not reported then
-		pcall(function()
-			pendingAffiliate:SetAsync(key, {
-				PurchaseId = receipt.PurchaseId,
-				PlayerId = receipt.PlayerId,
-				ProductId = receipt.ProductId,
-				CurrencySpent = receipt.CurrencySpent,
-				CurrencyType = tostring(receipt.CurrencyType),
-				PlaceIdWherePurchased = receipt.PlaceIdWherePurchased,
-				username = player.Name,
-			})
-		end)
-	end
-
-	local okSave = pcall(function() processed:SetAsync(key, true) end)
-	if not okSave then
-		return Enum.ProductPurchaseDecision.NotProcessedYet
-	end
-	return Enum.ProductPurchaseDecision.PurchaseGranted
-end
-
-task.spawn(function()
-	while true do
-		task.wait(300)
-		flushPending()
-	end
-end)</code></pre></div>
-    </div>
-    <div class="tabpanel" id="tp-donation" role="tabpanel" hidden>
-      <div class="filemeta"><span>Jenis: <b>Script</b></span><span>Lokasi: <b>ServerScriptService</b></span><span>Yang perlu diubah: <b>TOPIC, atau pakai BindableEvent yang ada</b></span></div>
-      <div class="code"><div class="code-bar"><span class="fname">roblox/DonationReport.server.luau</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">--!strict
---[[
-	DonationReport (Script, ServerScriptService)
-	Laporkan donasi bagi-bagi ke API afiliasi SETELAH donasi masuk ke game.
-
-	Sesuaikan bagian "sumber event" dengan cara game menerima donasi:
-	  - MessagingService:SubscribeAsync(TOPIC) langsung, atau
-	  - BindableEvent yang sudah ada (mis. DonationReceived) yang di-fire receiver donasi.
-
-	Dedupe per server disarankan (id donasi bisa datang dua kali). Backend juga idempoten by id,
-	jadi kirim ulang aman.
-]]
-
-local MessagingService = game:GetService("MessagingService")
-local HttpService = game:GetService("HttpService")
-local Players = game:GetService("Players")
-local ServerScriptService = game:GetService("ServerScriptService")
-
-local AffiliateClient = require(ServerScriptService:WaitForChild("AffiliateClient"))
-
-local TOPIC = "BagiBagiDonation" -- samakan dengan topic yang dipakai proxy
-local seen: { [string]: number } = {}
-
-local function findPlayerByName(name: string?): Player?
-	if not name or name == "" then return nil end
-	local lower = string.lower(name)
-	for _, p in Players:GetPlayers() do
-		if string.lower(p.Name) == lower or string.lower(p.DisplayName) == lower then
-			return p
-		end
+	local ok, info = pcall(MarketplaceService.GetProductInfo, MarketplaceService, productId, Enum.InfoType.Product)
+	if ok and typeof(info) == "table" and typeof(info.PriceInRobux) == "number" then
+		priceCache[productId] = info.PriceInRobux
+		return info.PriceInRobux
 	end
 	return nil
 end
 
-local function handleDonation(d: { [string]: any })
-	local id = tostring(d.id or "")
-	if id == "" then return end
-	local now = os.time()
-	if seen[id] and now - seen[id] &lt; 600 then return end
-	seen[id] = now
+local function robuxBody(info: any): { [string]: any }
+	return {
+		purchaseId = tostring(info.PurchaseId),
+		robloxUserId = info.PlayerId,
+		productId = info.ProductId,
+		currencySpent = info.CurrencySpent,
+		currencyType = tostring(info.CurrencyType),
+		placeId = info.PlaceIdWherePurchased,
+		purchasedAt = os.time(),
+	}
+end
 
-	-- coba cocokkan ke player yang sedang di server: username kandidat, lalu nama donatur
-	local player = findPlayerByName(d.username or d.u) or findPlayerByName(d.name or d.n)
+local pendingStore: DataStore? = nil
+local function pending(): DataStore?
+	if pendingStore == nil then
+		local ok, store = pcall(DataStoreService.GetDataStore, DataStoreService, PENDING_STORE)
+		if ok then
+			pendingStore = store
+		end
+	end
+	return pendingStore
+end
 
+--[[
+	Receipt developer product yang udah GRANTED. Dipanggil ReceiptService di
+	jalur sukses aja. Kalau backend nggak bisa dihubungi, receipt-nya diparkir di
+	DataStore dan dikirim ulang oleh FlushPending.
+]]
+function AffiliateReport.Robux(info: any)
+	if not enabled() then
+		return
+	end
 	task.spawn(function()
-		AffiliateClient.reportDonation(d, player)
+		local body = robuxBody(info)
+		if body.currencySpent == 0 then
+			local price = productPrice(info.ProductId)
+			if price and price &gt; 0 then
+				body.currencySpent = price
+				body.priceSource = "product_info"
+			end
+		end
+		if post("/ingest/robux", body) then
+			return
+		end
+		local store = pending()
+		if store then
+			pcall(store.SetAsync, store, body.purchaseId, body)
+		end
 	end)
 end
 
--- Sumber event A: langsung dari MessagingService
-pcall(function()
-	MessagingService:SubscribeAsync(TOPIC, function(msg)
-		local data = msg.Data
-		if typeof(data) == "string" then
-			local ok, decoded = pcall(function() return HttpService:JSONDecode(data) end)
-			if ok then data = decoded end
+--[[
+	Donasi BagiBagi yang udah lolos dedupe. `userId` nil = donatur nggak
+	ketemu; backend masukin ke antrean "Unmatched" buat dicocokin owner.
+	Donasi hasil :Simulate() dilewatin — itu tes, bukan duit.
+]]
+function AffiliateReport.Donation(event: any, userId: number?, username: string?)
+	if not enabled() then
+		return
+	end
+	if typeof(event) ~= "table" then
+		return
+	end
+	if event.src == "simulate" and not RunService:IsStudio() then
+		return
+	end
+	task.spawn(post, "/ingest/bagibagi", {
+		id = tostring(event.id),
+		donorName = event.n or "",
+		amountIdr = event.a or 0,
+		message = event.m or "",
+		username = if username ~= nil and username ~= "" then username else nil,
+		robloxUserId = userId,
+		occurredAt = event.t or os.time(),
+	})
+end
+
+--[[ Kirim ulang receipt yang keparkir. Dipanggil berkala dari AffiliateService. ]]
+function AffiliateReport.FlushPending()
+	if not enabled() then
+		return
+	end
+	local store = pending()
+	if store == nil then
+		return
+	end
+
+	local ok, pages = pcall(store.ListKeysAsync, store)
+	if not ok then
+		return
+	end
+
+	while true do
+		for _, key in pages:GetCurrentPage() do
+			local okGet, body = pcall(store.GetAsync, store, key.KeyName)
+			if okGet and typeof(body) == "table" and post("/ingest/robux", body) then
+				pcall(store.RemoveAsync, store, key.KeyName)
+			end
 		end
-		if typeof(data) == "table" then
-			handleDonation(data)
+		if pages.IsFinished then
+			break
+		end
+		local okNext = pcall(pages.AdvanceToNextPageAsync, pages)
+		if not okNext then
+			break
+		end
+	end
+end
+
+AffiliateReport.FLUSH_INTERVAL = FLUSH_INTERVAL
+
+return AffiliateReport</code></pre></div>
+    </div>
+    <div class="tabpanel" id="tp-service" role="tabpanel" hidden>
+      <div class="filemeta"><span>Jenis: <b>ModuleScript (Knit service)</b></span><span>Lokasi: <b>ServerScriptService.Server.Services</b></span><span>Yang perlu diubah: <b>tidak ada</b></span></div>
+      <div class="code"><div class="code-bar"><span class="fname">roblox/AffiliateService.luau</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">--!strict
+--[[
+	AffiliateService — atribusi admin afiliasi.
+
+	Tiga jalur pemain "terikat" ke admin (first-touch, semua diputusin backend):
+	  1. Share link: https://www.roblox.com/games/start?placeId=&lt;PLACE&gt;&amp;launchData=ref_&lt;KODE&gt;
+	     → GetJoinData().LaunchData
+	  2. Undangan Roblox dari tombol "Undang teman" milik game (PromptGameInvite + LaunchData ref_&lt;KODE&gt;)
+	     → juga lewat LaunchData, sama persis dengan link
+	  3. Undangan Roblox dari menu sistem (Invite di menu Escape) → GetJoinData().ReferredByPlayerId
+	     = UserId pengundang; backend mencocokkan ke admin yang punya akun Roblox itu
+
+	Service ini cuma NERUSIN nilainya ke backend lewat AffiliateReport.Join dan MENERUSKAN
+	jawabannya ke client:
+	  * Client.InviteReady(launchData)  → pemain ini admin aktif: tampilkan tombol "Undang teman"
+	  * Client.Notify(message)          → ke PENGUNDANG (kalau ada di server ini): hasil undangannya,
+	                                      termasuk "sudah terikat ke admin lain"
+
+	Join TANPA LaunchData juga dilaporin: backend butuh tahu spender-nya ada, biar donasi
+	BagiBagi atas nama dia bisa dicocokin.
+
+	Nggak nge-yield PlayerAdded: GetJoinData bisa error di detik-detik awal (lihat RejoinService),
+	makanya pcall dan semuanya di thread sendiri.
+
+	Sekalian jadi rumah timer FlushPending buat receipt Robux yang gagal kelapor.
+]]
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local ServerScriptService = game:GetService("ServerScriptService")
+
+local Knit = require(ReplicatedStorage.Packages.Knit)
+local Trove = require(ReplicatedStorage.Packages.Trove)
+local AffiliateReport = require(ServerScriptService.Server.AffiliateReport)
+
+type Trove = typeof(Trove.new())
+
+local AffiliateService = Knit.CreateService({
+	Name = "AffiliateService",
+	_trove = (nil :: any) :: Trove,
+	--[[ launchData per admin yang online: dipakai ulang kalau client minta lagi (mis. sesudah respawn UI). ]]
+	_launchData = {} :: { [number]: string },
+	Client = {
+		InviteReady = Knit.CreateSignal(),
+		Notify = Knit.CreateSignal(),
+		RequestInviteReady = Knit.CreateSignal(),
+	},
+})
+
+function AffiliateService:_OnJoinResult(player: Player, body: any)
+	-- Pemain ini admin aktif → tombol "Undang teman" dengan LaunchData kodenya.
+	if typeof(body.admin) == "table" and typeof(body.admin.launchData) == "string" then
+		self._launchData[player.UserId] = body.admin.launchData
+		self.Client.InviteReady:Fire(player, body.admin.launchData)
+	end
+
+	-- Masuk lewat undangan Roblox → kabari pengundangnya kalau dia lagi di server ini.
+	local invite = body.invite
+	if typeof(invite) == "table" and typeof(invite.message) == "string" and typeof(invite.inviterRobloxUserId) == "number" then
+		local inviter = Players:GetPlayerByUserId(invite.inviterRobloxUserId)
+		if inviter then
+			self.Client.Notify:Fire(inviter, invite.message, invite.outcome)
+		end
+	end
+end
+
+--[[ Berapa lama nunggu LaunchData/ReferredByPlayerId muncul. Dokumentasi Roblox (invite prompts):
+     "Launch data can take a few seconds to appear after the friend joins from the invite."
+     Kalau dilaporin di detik pertama, undangan kebaca sebagai join biasa. ]]
+local JOIN_DATA_WAIT = 15
+local JOIN_DATA_POLL = 0.5
+
+--[[ Salinan GetJoinData yang aman di-JSON (tanpa TeleportData besar): buat diagnostik di backend. ]]
+local function readJoinData(player: Player): (string?, number?, { [string]: any })
+	local launchData: string? = nil
+	local referredBy: number? = nil
+	local raw: { [string]: any } = {}
+	local ok, joinData = pcall(function()
+		return player:GetJoinData()
+	end)
+	if ok and typeof(joinData) == "table" then
+		for _, k in { "SourceGameId", "SourcePlaceId", "ReferredByPlayerId", "LaunchData", "Members" } do
+			local v = (joinData :: any)[k]
+			if typeof(v) == "table" then
+				raw[k] = #v
+			elseif v ~= nil then
+				raw[k] = v
+			end
+		end
+		local td = (joinData :: any).TeleportData
+		raw.HasTeleportData = td ~= nil
+		-- Kunci-kunci TeleportData saja (bukan isinya): membedakan rejoin tiket kita vs teleport dari server lain.
+		if typeof(td) == "table" then
+			local keys = {}
+			for k in td do table.insert(keys, tostring(k)) end
+			raw.TeleportDataKeys = table.concat(keys, ",")
+		elseif td ~= nil then
+			raw.TeleportDataType = typeof(td)
+		end
+		if typeof(joinData.LaunchData) == "string" and joinData.LaunchData ~= "" then
+			launchData = joinData.LaunchData
+		end
+		if typeof(joinData.ReferredByPlayerId) == "number" and joinData.ReferredByPlayerId &gt; 0 then
+			referredBy = joinData.ReferredByPlayerId
+		end
+	else
+		raw.error = tostring(joinData)
+	end
+	return launchData, referredBy, raw
+end
+
+function AffiliateService:_OnPlayerAdded(player: Player)
+	task.spawn(function()
+		local t0 = os.clock()
+		local launchData, referredBy, raw = readJoinData(player)
+		local deadline = t0 + JOIN_DATA_WAIT
+		while launchData == nil and referredBy == nil and os.clock() &lt; deadline and player.Parent do
+			task.wait(JOIN_DATA_POLL)
+			launchData, referredBy, raw = readJoinData(player)
+		end
+		if not player.Parent then
+			return
+		end
+		raw.waited = math.floor((os.clock() - t0) * 10) / 10
+		AffiliateReport.Join(player, launchData, referredBy, function(body)
+			if player.Parent then
+				self:_OnJoinResult(player, body)
+			end
+		end, raw)
+	end)
+end
+
+function AffiliateService:KnitInit()
+	self._trove = Trove.new()
+end
+
+function AffiliateService:KnitStart()
+	self._trove:Connect(Players.PlayerAdded, function(player: Player)
+		self:_OnPlayerAdded(player)
+	end)
+	self._trove:Connect(Players.PlayerRemoving, function(player: Player)
+		self._launchData[player.UserId] = nil
+	end)
+	for _, player in Players:GetPlayers() do
+		self:_OnPlayerAdded(player)
+	end
+
+	-- Client controller mungkin siap SESUDAH InviteReady pertama ditembak (KnitStart client
+	-- jalan belakangan). Dia minta ulang, kita jawab dari cache.
+	self.Client.RequestInviteReady:Connect(function(player: Player)
+		local ld = self._launchData[player.UserId]
+		if ld then
+			self.Client.InviteReady:Fire(player, ld)
 		end
 	end)
-end)
 
--- Sumber event B (alternatif): BindableEvent dari receiver donasi yang sudah ada
--- local DonationReceived = ServerScriptService:WaitForChild("DonationReceived") :: BindableEvent
--- DonationReceived.Event:Connect(handleDonation)</code></pre></div>
+	self._trove:Add(task.spawn(function()
+		while true do
+			task.wait(AffiliateReport.FLUSH_INTERVAL)
+			AffiliateReport.FlushPending()
+		end
+	end))
+end
+
+return AffiliateService</code></pre></div>
+    </div>
+    <div class="tabpanel" id="tp-controller" role="tabpanel" hidden>
+      <div class="filemeta"><span>Jenis: <b>ModuleScript (Knit controller)</b></span><span>Lokasi: <b>StarterPlayerScripts.Client.Controllers</b></span><span>Yang perlu diubah: <b>rupa tombol di buildButton (opsional)</b></span></div>
+      <div class="code"><div class="code-bar"><span class="fname">roblox/AffiliateController.luau</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">--!strict
+--[[
+	AffiliateController — sisi client afiliasi admin.
+
+	Dua tugas, dua-duanya dipicu server (AffiliateService):
+	  1. InviteReady(launchData): pemain ini admin aktif → tampilkan tombol "Undang teman".
+	     Klik → SocialService:PromptGameInvite dengan ExperienceInviteOptions.LaunchData = ref_&lt;KODE&gt;.
+	     Teman yang masuk lewat undangan itu datang dengan LaunchData yang sama persis seperti
+	     share link, jadi backend nggak perlu tahu bedanya.
+	  2. Notify(message): hasil undangan buat pengundang, mis. "X sekarang terikat ke kamu" atau
+	     "X sudah terikat ke admin lain". Pakai SetCore SendNotification, pola yang sama dengan
+	     CommandController (nggak butuh GUI apa pun).
+
+	Tombolnya dibuat di sini (bukan instance di StarterGui) supaya nggak ada yang perlu
+	ditaruh manual. Kalau mau ganti rupa, ubah `buildButton`. Undangan Roblox cuma bisa ke
+	TEMAN; itu batasan Roblox, bukan kita.
+]]
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
+local SocialService = game:GetService("SocialService")
+local StarterGui = game:GetService("StarterGui")
+
+local Knit = require(ReplicatedStorage.Packages.Knit)
+
+local LOG_PREFIX = "[AffiliateController]"
+local LocalPlayer = Players.LocalPlayer
+--[[ Jarak minimal antar klik tombol, dan berapa lama sesudah prompt dibuka `false` dari Roblox
+     dianggap cooldown (bukan "nggak tersedia"). Angka dari log tes live: false muncul 2-4 detik
+     sesudah prompt sebelumnya, true lagi ~10 detik kemudian. ]]
+local CLICK_COOLDOWN = 3
+local PROMPT_COOLDOWN = 15
+
+local AffiliateController = Knit.CreateController({ Name = "AffiliateController" })
+
+local function notify(text: string, title: string?, seconds: number?)
+	for attempt = 1, 5 do
+		local ok = pcall(function()
+			StarterGui:SetCore("SendNotification", {
+				Title = title or "Afiliasi",
+				Text = text,
+				Duration = seconds or 6,
+			})
+		end)
+		if ok then
+			return
+		end
+		task.wait(1)
+	end
+	warn(`{LOG_PREFIX} SetCore SendNotification gagal terus: {text}`)
+end
+
+local function buildButton(): TextButton
+	local gui = Instance.new("ScreenGui")
+	gui.Name = "AffiliateInvite"
+	gui.ResetOnSpawn = false
+	gui.DisplayOrder = 5
+	gui.IgnoreGuiInset = true
+
+	local btn = Instance.new("TextButton")
+	btn.Name = "InviteButton"
+	btn.Size = UDim2.fromOffset(150, 36)
+	btn.Position = UDim2.new(0, 16, 1, -56)
+	btn.AnchorPoint = Vector2.new(0, 1)
+	btn.BackgroundColor3 = Color3.fromRGB(46, 125, 255)
+	btn.TextColor3 = Color3.new(1, 1, 1)
+	btn.Font = Enum.Font.GothamBold
+	btn.TextSize = 14
+	btn.Text = "Undang teman"
+	btn.AutoButtonColor = true
+	btn.Parent = gui
+
+	local corner = Instance.new("UICorner")
+	corner.CornerRadius = UDim.new(0, 8)
+	corner.Parent = btn
+
+	gui.Parent = LocalPlayer:WaitForChild("PlayerGui")
+	return btn
+end
+
+function AffiliateController:_ShowInviteButton(launchData: string)
+	if self._button then
+		self._launchData = launchData
+		return
+	end
+	self._launchData = launchData
+	local btn = buildButton()
+	self._button = btn
+
+	btn.Activated:Connect(function()
+		--[[ Debounce. Hasil tes live 2026-09-07: CanSendGameInviteAsync balik `false` SEMENTARA kalau tombol
+		     diklik lagi beberapa detik setelah prompt undangan dibuka/ditutup, lalu `true` lagi. Itu cooldown
+		     Roblox, bukan "nggak tersedia" — jadi klik beruntun ditahan, dan false di dalam jendela
+		     cooldown nggak boleh dibaca sebagai akun/perangkat yang nggak bisa undang. ]]
+		local now = os.clock()
+		if now - (self._lastClickAt or -math.huge) &lt; CLICK_COOLDOWN then
+			notify("Sabar, prompt undangan baru saja dibuka. Coba lagi beberapa detik.", "Undang teman", 3)
+			return
+		end
+		self._lastClickAt = now
+
+		local okCan, can = pcall(function()
+			return SocialService:CanSendGameInviteAsync(LocalPlayer)
+		end)
+		-- Selalu ke log client (F9 &gt; Client): kalau undangan nggak tersedia, di sini alasannya kelihatan.
+		warn(`{LOG_PREFIX} CanSendGameInviteAsync ok={okCan} can={tostring(can)} studio={RunService:IsStudio()} placeId={game.PlaceId}`)
+		if not okCan or not can then
+			-- Di Studio SELALU false: prompt undangan cuma jalan di client Roblox asli. Bukan bug, jangan dicari.
+			if RunService:IsStudio() then
+				notify("Undangan Roblox nggak bisa dikirim dari Studio. Tombolnya udah muncul = backend mengenali kamu sebagai admin; tes kirimnya di server live.", "Undang teman", 8)
+			elseif now - (self._lastPromptAt or -math.huge) &lt; PROMPT_COOLDOWN then
+				notify("Prompt undangan baru saja dipakai. Tunggu beberapa detik lalu coba lagi.", "Undang teman", 4)
+			else
+				-- Roblox menolak di luar jendela cooldown (privasi akun / perangkat). Jangan buntu: kasih share link-nya.
+				notify("Undangan Roblox nggak tersedia di akun/perangkat ini. Pakai share link di kotak yang muncul.", "Undang teman", 6)
+				self:_ShowShareLink()
+			end
+			return
+		end
+		self._lastPromptAt = now
+		local options = Instance.new("ExperienceInviteOptions")
+		options.LaunchData = self._launchData or launchData
+		options.PromptMessage = "Ajak temanmu main. Yang masuk lewat undangan ini jadi undanganmu."
+		-- Bukti di F9 bahwa prompt dibuka DENGAN LaunchData. Kalau teman masuk tanpa LaunchData padahal baris ini ada,
+		-- masalahnya di pengiriman Roblox (teman nggak masuk lewat notifikasi, atau bug Roblox), bukan di kode ini.
+		warn(`{LOG_PREFIX} PromptGameInvite dibuka, LaunchData={options.LaunchData}`)
+		local ok, err = pcall(function()
+			SocialService:PromptGameInvite(LocalPlayer, options)
+		end)
+		if not ok then
+			warn(`{LOG_PREFIX} PromptGameInvite gagal: {err}`)
+			notify("Gagal membuka undangan. Coba lagi.", "Undang teman", 5)
+		end
+	end)
+end
+
+--[[ Cadangan kalau undangan Roblox nggak tersedia: kotak berisi share link (TextBox read-only, bisa
+     diseleksi &amp; disalin di PC). Sekali klik "Tutup" hilang; klik tombol lagi buat munculin lagi. ]]
+function AffiliateController:_ShowShareLink()
+	local launchData = self._launchData
+	if not launchData then
+		return
+	end
+	local link = `https://www.roblox.com/games/start?placeId={game.PlaceId}&amp;launchData={launchData}`
+	if self._linkFrame then
+		self._linkFrame.Visible = true
+		self._linkBox.Text = link
+		return
+	end
+	local gui = self._button and self._button.Parent
+	if not gui then
+		return
+	end
+	local frame = Instance.new("Frame")
+	frame.Name = "ShareLink"
+	frame.Size = UDim2.fromOffset(360, 96)
+	frame.Position = UDim2.new(0, 16, 1, -100)
+	frame.AnchorPoint = Vector2.new(0, 1)
+	frame.BackgroundColor3 = Color3.fromRGB(28, 28, 32)
+	frame.BackgroundTransparency = 0.05
+	frame.Parent = gui
+	local corner = Instance.new("UICorner"); corner.CornerRadius = UDim.new(0, 8); corner.Parent = frame
+
+	local title = Instance.new("TextLabel")
+	title.Size = UDim2.new(1, -16, 0, 22); title.Position = UDim2.fromOffset(8, 6)
+	title.BackgroundTransparency = 1; title.TextXAlignment = Enum.TextXAlignment.Left
+	title.Font = Enum.Font.GothamBold; title.TextSize = 13; title.TextColor3 = Color3.new(1, 1, 1)
+	title.Text = "Share link kamu (salin, kirim ke teman)"; title.Parent = frame
+
+	local box = Instance.new("TextBox")
+	box.Size = UDim2.new(1, -16, 0, 28); box.Position = UDim2.fromOffset(8, 30)
+	box.BackgroundColor3 = Color3.fromRGB(45, 45, 52); box.TextColor3 = Color3.new(1, 1, 1)
+	box.Font = Enum.Font.Code; box.TextSize = 12; box.TextXAlignment = Enum.TextXAlignment.Left
+	box.ClearTextOnFocus = false; box.TextEditable = false; box.Text = link; box.Parent = frame
+	local bc = Instance.new("UICorner"); bc.CornerRadius = UDim.new(0, 6); bc.Parent = box
+
+	local close = Instance.new("TextButton")
+	close.Size = UDim2.fromOffset(70, 24); close.Position = UDim2.new(1, -78, 1, -30)
+	close.BackgroundColor3 = Color3.fromRGB(70, 70, 80); close.TextColor3 = Color3.new(1, 1, 1)
+	close.Font = Enum.Font.GothamBold; close.TextSize = 12; close.Text = "Tutup"; close.Parent = frame
+	local cc = Instance.new("UICorner"); cc.CornerRadius = UDim.new(0, 6); cc.Parent = close
+	close.Activated:Connect(function()
+		frame.Visible = false
+	end)
+
+	self._linkFrame = frame
+	self._linkBox = box
+end
+
+function AffiliateController:KnitStart()
+	local service = Knit.GetService("AffiliateService")
+
+	service.InviteReady:Connect(function(launchData: string)
+		self:_ShowInviteButton(launchData)
+	end)
+
+	service.Notify:Connect(function(message: string, outcome: string?)
+		notify(message, if outcome == "attributed" then "Undangan berhasil" else "Undangan", 8)
+	end)
+
+	-- Kalau server sudah nembak InviteReady sebelum controller ini siap, minta ulang.
+	service.RequestInviteReady:Fire()
+end
+
+return AffiliateController</code></pre></div>
     </div>
   </div>
 </section>
 
 <!-- ================= KONFIG ================= -->
 <section class="doc" id="konfig">
-  <header><span class="eyebrow">Pasang di Roblox · langkah 2</span><h2>Isi alamat API &amp; key</h2><p>Cuma dua baris yang perlu diubah, dua-duanya di <code>AffiliateClient</code>.</p></header>
-  <div class="code"><div class="code-bar"><span class="fname">AffiliateClient · baris 16–17</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">AffiliateClient.API_BASE = "https://affiliate.contoh.com" -- alamat server, TANPA garis miring di akhir
-AffiliateClient.MAP_KEY = "mk_a1b2c3..."                 -- ingest key dari dashboard Config > Maps</code></pre></div>
+  <header><span class="eyebrow">Pasang di Roblox · langkah 2</span><h2>Alamat API &amp; secret key</h2><p>Alamat server ada di satu konstanta. Key tidak ditulis di script sama sekali, tapi dibaca dari <strong>Roblox Secret</strong>.</p></header>
+  <div class="code"><div class="code-bar"><span class="fname">AffiliateReport · konstanta di atas</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">local BASE_URL = "https://affiliate.kelasmalam.app" -- alamat server, TANPA garis miring di akhir</code></pre></div>
   <h3>Aturan alamat API</h3>
   <ul>
     <li>Harus <strong>https</strong> dan bisa diakses dari internet. Roblox nggak bisa memanggil <code>localhost</code> atau IP lokal.</li>
     <li>Jangan pakai garis miring di akhir. Script menambahkan sendiri <code>/ingest/join</code> dan seterusnya.</li>
     <li>Satu server bisa melayani banyak map. Tiap map punya key sendiri, jadi laporan otomatis tahu datang dari map mana.</li>
   </ul>
-  <h3>Simpan key dengan aman</h3>
-  <p>Key ini setara password untuk map kamu. Siapa pun yang punya key bisa kirim laporan palsu. Kalau tempat kerja kamu memakai repo publik atau Rojo, jangan taruh key langsung di file. Dua cara yang lebih aman:</p>
+  <h3>Simpan key sebagai Roblox Secret</h3>
+  <p>Ingest key (berawalan <code>mk_</code>, dari dashboard <span class="ui">Config</span> → Maps) disimpan di <span class="ui">Creator Dashboard</span> → experience kamu → <span class="ui">Secrets</span>. Dua nama secret:</p>
   <ul>
-    <li>Simpan di <code>ServerStorage</code> sebagai <code>StringValue</code> bernama misalnya <code>AffiliateKey</code>, lalu baca: <code>AffiliateClient.MAP_KEY = game.ServerStorage.AffiliateKey.Value</code>.</li>
-    <li>Kalau game kamu punya akses <em>HttpService secrets</em>, pakai <code>HttpService:GetSecret("affiliate_key")</code>.</li>
+    <li><code>AF</code>: key map produksi. Dipakai di server live.</li>
+    <li><code>AF_STUDIO</code>: key map tes. Dipakai hanya saat jalan di Studio, supaya data tes tidak jadi komisi produksi. Tidak ada <code>AF_STUDIO</code> = laporan mati di Studio, warn sekali, game jalan normal.</li>
   </ul>
-  <div class="callout warn"><span class="ico">!</span><div><b>Key bocor? Rotate.</b><p>Dashboard → <span class="ui">Config</span> → Maps → <span class="ui">Rotate key</span>. Key lama langsung mati, semua request dengan key lama ditolak 401. Jangan lupa update di game dan publish ulang.</p></div></div>
+  <p><code>AffiliateReport</code> membacanya lewat <code>ApiAuth.affiliateKey()</code>. Tambahkan fungsi ini di <code>ServerScriptService.Server.ApiAuth</code> kalau belum ada:</p>
+  <div class="code"><div class="code-bar"><span class="fname">ApiAuth · tambahan</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">local HttpService = game:GetService("HttpService")
+local RunService = game:GetService("RunService")
+
+local affiliateCache: Secret? = nil
+local affiliateWarned = false
+
+-- Ingest key map afiliasi. nil = secret tidak terbaca → fitur afiliasi mati, game jalan normal.
+function ApiAuth.affiliateKey(): Secret?
+	if affiliateCache ~= nil then
+		return affiliateCache
+	end
+	local name = if RunService:IsStudio() then "AF_STUDIO" else "AF"
+	local ok, secret = pcall(HttpService.GetSecret, HttpService, name)
+	if ok then
+		affiliateCache = secret
+		return secret
+	end
+	if not affiliateWarned then
+		affiliateWarned = true
+		warn(`[ApiAuth] secret {name} tidak terbaca; laporan afiliasi dimatikan`)
+	end
+	return nil
+end</code></pre></div>
+  <p>Nilai <code>Secret</code> bisa langsung dipakai sebagai header <code>x-map-key</code> di <code>HttpService:RequestAsync</code>, jadi key tidak pernah muncul sebagai string di script maupun di Output.</p>
+  <div class="callout warn"><span class="ico">!</span><div><b>Key bocor? Rotate.</b><p>Dashboard → <span class="ui">Config</span> → Maps → <span class="ui">Rotate key</span>. Key lama langsung mati, semua request dengan key lama ditolak 401. Update nilai secret <code>AF</code> di Creator Dashboard; server yang sudah jalan perlu restart (atau tunggu server baru) karena key di-cache sekali per server.</p></div></div>
 </section>
 
 <!-- ================= SHARE LINK ================= -->
@@ -728,10 +1098,10 @@ AffiliateClient.MAP_KEY = "mk_a1b2c3..."                 -- ingest key dari dash
     <li><code>placeId</code>: Place ID map kamu.</li>
     <li><code>launchData=ref_K7PQ2M</code>: kode referral admin, diawali <code>ref_</code>. Kode 6 huruf/angka, tanpa huruf yang mirip (0/O, 1/I).</li>
   </ul>
-  <p>Saat player klik link itu, Roblox membuka game dan mengisi <code>player:GetJoinData().LaunchData</code> dengan teks <code>ref_K7PQ2M</code>. Script <code>ReferralJoin</code> membacanya dan mengirim ke server. Kamu nggak perlu mengurai kodenya di game, kirim mentah saja.</p>
+  <p>Saat player klik link itu, Roblox membuka game dan mengisi <code>player:GetJoinData().LaunchData</code> dengan teks <code>ref_K7PQ2M</code>. <code>AffiliateService</code> membacanya dan mengirim ke server. Kamu nggak perlu mengurai kodenya di game, kirim mentah saja.</p>
   <h3>Hal yang sering bikin bingung</h3>
   <ul>
-    <li><strong>LaunchData cuma terisi kalau masuk lewat link.</strong> Join dari daftar game, dari teman, atau dari Studio: nilainya <code>nil</code>. Ini normal. Player tetap dilaporkan sebagai join biasa.</li>
+    <li><strong>LaunchData cuma terisi kalau masuk lewat link atau undangan dari tombol "Undang teman".</strong> Join dari daftar game atau dari Studio: nilainya <code>nil</code>. Ini normal. Player tetap dilaporkan sebagai join biasa. Undangan dari menu sistem Roblox (tanpa LaunchData) tetap ditangkap lewat <code>ReferredByPlayerId</code> dan dicocokkan ke admin yang punya akun Roblox itu.</li>
     <li><strong>First-touch.</strong> Spender terikat ke admin pertama yang kodenya dia pakai, selamanya. Kalau dia masuk lagi lewat link admin lain, dicatat tapi tidak mengubah apa-apa.</li>
     <li><strong>Admin nggak bisa ngajak dirinya sendiri.</strong> Kalau admin punya Roblox user ID dan masuk lewat link-nya sendiri, dianggap <code>self_referral</code> dan diabaikan.</li>
     <li><strong>Kode nggak dikenal atau admin nonaktif</strong> tetap dicatat di riwayat, tapi tidak diatribusi. Bisa dicek di halaman Flow dashboard.</li>
@@ -743,51 +1113,53 @@ AffiliateClient.MAP_KEY = "mk_a1b2c3..."                 -- ingest key dari dash
 <!-- ================= ROBUX ================= -->
 <section class="doc" id="robux">
   <header><span class="eyebrow">Pasang di Roblox · langkah 4</span><h2>Pembelian Robux</h2><p>Setiap developer product yang dibeli lewat <code>ProcessReceipt</code> dilaporkan ke server. Game pass sengaja tidak dihitung.</p></header>
-  <div class="callout danger"><span class="ico">!</span><div><b>Roblox cuma mengizinkan satu ProcessReceipt per game</b><p>Kalau kamu menaruh <code>ReceiptHook</code> apa adanya padahal game sudah punya handler, salah satu akan ditimpa dan pembelian bisa kacau. Selalu <strong>gabungkan</strong>.</p></div></div>
-  <h3>Kalau game sudah punya ProcessReceipt</h3>
-  <p>Tambahkan dua baris ini di handler kamu, <em>setelah</em> item diberikan ke player dan <em>sebelum</em> <code>return PurchaseGranted</code>:</p>
-  <div class="code"><div class="code-bar"><span class="fname">potongan untuk digabung</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">local AffiliateClient = require(game:GetService("ServerScriptService"):WaitForChild("AffiliateClient"))
+  <div class="callout danger"><span class="ico">!</span><div><b>Roblox cuma mengizinkan satu ProcessReceipt per game</b><p>Di game ini pemiliknya <code>ReceiptService</code>. Jangan bikin handler baru; cukup tambahkan satu baris di handler yang sudah ada.</p></div></div>
+  <h3>Satu baris di ReceiptService</h3>
+  <p>Panggil <em>setelah</em> handler produk mengembalikan <code>true</code> (item sudah tersimpan permanen) dan <em>sebelum</em> <code>return PurchaseGranted</code>:</p>
+  <div class="code"><div class="code-bar"><span class="fname">ReceiptService · potongan</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">local AffiliateReport = require(game:GetService("ServerScriptService").Server.AffiliateReport)
 
-MarketplaceService.ProcessReceipt = function(receipt)
-	-- ... cek DataStore, cari player, kasih item seperti biasa ...
+MarketplaceService.ProcessReceipt = function(info)
+	-- ... cek DataStore, cari player, jalankan handler produk seperti biasa ...
+	local result = handler(player, info)
 
-	-- laporkan ke afiliasi. Tidak menahan pembelian kalau gagal.
-	local reported = AffiliateClient.reportRobux(receipt, player.Name)
-	if not reported then
-		-- opsional: simpan ke antrian dan kirim ulang nanti (lihat flushPending di ReceiptHook)
+	if result == true then
+		-- laporkan ke afiliasi. Fire-and-forget: tidak menahan pembelian, tidak pernah error ke sini.
+		AffiliateReport.Robux(info)
+		return Enum.ProductPurchaseDecision.PurchaseGranted
 	end
-
-	return Enum.ProductPurchaseDecision.PurchaseGranted
+	return Enum.ProductPurchaseDecision.NotProcessedYet
 end</code></pre></div>
-  <h3>Kalau game belum punya ProcessReceipt</h3>
-  <p>Pakai <code>ReceiptHook</code> apa adanya, lalu isi fungsi <code>grantProduct</code> dengan logika game kamu (tambah coin, buka item, dan seterusnya). Sisanya sudah diurus: cek duplikat lewat DataStore, laporan ke server, dan antrian kirim ulang tiap 5 menit kalau server sempat nggak bisa dihubungi.</p>
+  <p>Transfer Robux antar pemain (<code>RobuxTransferService</code>, <code>BindReceiptHandler</code>) sengaja <strong>tidak</strong> dilaporkan.</p>
+  <h3>Kalau server afiliasi lagi mati?</h3>
+  <p>Pemain tetap dapat barangnya. Receipt yang gagal dilaporkan diparkir di DataStore <code>AffiliatePending_v1</code>, dan <code>AffiliateService</code> memanggil <code>AffiliateReport.FlushPending()</code> tiap 5 menit untuk mengirim ulang.</p>
   <h3>Kenapa aman kalau dikirim dua kali?</h3>
   <p>Server mengenali pembelian dari <code>PurchaseId</code>, yang unik dari Roblox. Kirim ulang dengan <code>PurchaseId</code> yang sama cuma balas <code>duplicate: true</code>, komisi tidak dobel. Jadi kalau ragu, kirim saja.</p>
   <h3>Yang dikirim ke server</h3>
-  <p><code>reportRobux</code> mengambil semuanya dari <code>receipt</code>: <code>PurchaseId</code>, <code>PlayerId</code>, <code>ProductId</code>, <code>CurrencySpent</code> (Robux kotor sebelum potongan), dan <code>PlaceIdWherePurchased</code>. Server yang memotong fee 30% dan mengkonversi ke Rupiah. Lihat rincian di <a href="#api-robux">referensi endpoint</a>.</p>
+  <p><code>AffiliateReport.Robux</code> mengambil semuanya dari <code>info</code>: <code>PurchaseId</code>, <code>PlayerId</code>, <code>ProductId</code>, <code>CurrencySpent</code> (Robux kotor sebelum potongan), dan <code>PlaceIdWherePurchased</code>. Di Studio <code>CurrencySpent</code> selalu 0, jadi script mengambil harga dari katalog produk (<code>priceSource = "product_info"</code>). Server yang memotong fee 30% dan mengkonversi ke Rupiah. Lihat rincian di <a href="#api-robux">referensi endpoint</a>.</p>
 </section>
 
 <!-- ================= BAGI-BAGI ================= -->
 <section class="doc" id="bagibagi">
   <header><span class="eyebrow">Pasang di Roblox · langkah 5</span><h2>Donasi bagi-bagi</h2><p>Donasi Rupiah dari luar Roblox. Server perlu tahu donasi itu milik spender yang mana.</p></header>
-  <p>Alurnya: donatur kirim bagi-bagi → proxy kamu menerima webhook dari bagi-bagi → proxy meneruskan ke game lewat <code>MessagingService</code> → script <code>DonationReport</code> di game mengirim ke server afiliasi. Kenapa lewat game? Karena game yang paling tahu siapa player yang sedang online, jadi pencocokan donatur lebih akurat.</p>
+  <p>Alurnya: donatur kirim bagi-bagi → worker menerima webhook → <code>MessagingService</code> topic <code>Donation</code> → <code>DonationService</code> (dedupe per server, tebak username) → <code>DonationBoardService._OnDonation</code> → <code>Record()</code> lewat <code>UpdateAsync</code> (dedupe lintas server, satu pemenang) → <code>AffiliateReport.Donation</code>. Kenapa lewat game? Karena game yang paling tahu siapa player yang sedang online, jadi pencocokan donatur lebih akurat.</p>
   <ol class="steps">
-    <li><b>Samakan nama topic</b><p>Di <code>DonationReport</code>, ubah <code>TOPIC = "BagiBagiDonation"</code> supaya sama dengan topic yang dipakai proxy kamu saat <code>PublishAsync</code>. Kalau game kamu sudah punya penerima donasi sendiri yang memicu <code>BindableEvent</code>, pakai "Sumber event B" di bagian bawah script dan matikan bagian MessagingService.</p></li>
-    <li><b>Bentuk data donasi yang dimengerti</b><p>Script menerima tabel dengan nama field panjang atau pendek: <code>id</code>, <code>name</code>/<code>n</code>, <code>amount</code>/<code>a</code> (Rupiah), <code>message</code>/<code>m</code>, <code>username</code>/<code>u</code>, <code>t</code> (waktu). Yang wajib cuma <code>id</code> dan <code>amount</code>.</p></li>
-    <li><b>Biarkan script mencari player-nya</b><p>Script mencocokkan <code>username</code> lalu nama donatur dengan player yang ada di server (nama akun atau display name). Kalau ketemu, <code>robloxUserId</code> ikut dikirim dan server langsung yakin siapa spender-nya.</p></li>
+    <li><b>Dua baris di DonationBoardService._OnDonation</b><p>Jalur <code>ok</code> (server ini pemenang dedupe, userId ter-resolve) → <code>AffiliateReport.Donation(event, userId, name)</code>. Jalur <code>userId == nil</code> → <code>AffiliateReport.Donation(event, nil, username)</code> supaya tetap masuk antrian Unmatched di dashboard.</p></li>
+    <li><b>Bentuk event yang dibaca</b><p>Field pendek dari worker: <code>id</code>, <code>n</code> (nama donatur), <code>a</code> (Rupiah), <code>m</code> (pesan), <code>t</code> (waktu), <code>src</code>. Yang wajib cuma <code>id</code> dan <code>a</code>.</p></li>
+    <li><b>Donasi simulasi dilewati</b><p>Event dengan <code>src = "simulate"</code> (dari <code>Simulate()</code>) tidak dilaporkan di server live, hanya diteruskan di Studio ke map tes.</p></li>
   </ol>
   <h3>Kalau player-nya nggak ada di server?</h3>
   <p>Server menebak dari beberapa petunjuk, urut prioritas: field <code>username</code>, nama donatur, sebutan <code>@nama</code> atau <code>un: nama</code> di pesan, lalu kata pertama pesan. Tebakan hanya dicocokkan ke spender yang <strong>sudah pernah join</strong> map kamu. Orang Roblox asing tidak dibuat otomatis.</p>
   <p>Kalau tetap nggak ketemu, donasi masuk antrian <strong>Unmatched</strong> di dashboard (menu <span class="ui">Spend</span>, filter status unmatched). Owner tinggal pilih spender yang benar, komisi langsung dihitung ulang dengan rate saat donasi terjadi.</p>
-  <div class="callout"><span class="ico">i</span><div><b>Jalur cadangan tanpa game</b><p>Proxy juga boleh langsung memanggil <code>POST /webhook/bagibagi</code> di server afiliasi. Dua jalur boleh nyala bersamaan, karena server mengenali donasi dari <code>id</code>-nya, jadi tidak dobel. Detail di <a href="#api-webhook">referensi endpoint</a>.</p></div></div>
+  <div class="callout"><span class="ico">i</span><div><b>Jalur cadangan tanpa game</b><p>Worker juga boleh langsung memanggil <code>POST /webhook/bagibagi</code> di server afiliasi. Dua jalur boleh nyala bersamaan, karena server mengenali donasi dari <code>id</code>-nya, jadi tidak dobel. Detail di <a href="#api-webhook">referensi endpoint</a>.</p></div></div>
 </section>
 
 <!-- ================= TES ================= -->
 <section class="doc" id="tes">
   <header><span class="eyebrow">Pasang di Roblox · langkah 6</span><h2>Tes &amp; pastikan jalan</h2><p>Urutan cek dari yang paling gampang.</p></header>
   <ol class="steps">
-    <li><b>Tes join dari Studio</b><p>Tekan <span class="ui">Play</span> di Studio. Karena HTTP Requests sudah nyala, script langsung mengirim join. Buka dashboard → <span class="ui">Spenders</span>, akun kamu harus muncul. Kalau tidak, lihat jendela <span class="ui">Output</span> di Studio: semua kegagalan dicetak dengan awalan <code>[Affiliate]</code>.</p></li>
+    <li><b>Tes join dari Studio</b><p>Pastikan secret <code>AF_STUDIO</code> menunjuk ke map tes dan Studio diberi akses secret. Tekan <span class="ui">Play</span>; script langsung mengirim join. Buka dashboard map tes → <span class="ui">Spenders</span>, akun kamu harus muncul. Di jendela <span class="ui">Output</span> Studio, laporan yang sampai dicetak <code>[AffiliateReport] terkirim /ingest/join -&gt; HTTP 200</code>; kegagalan dicetak sebagai warn dengan awalan yang sama.</p></li>
     <li><b>Tes kode referral di game yang sudah publish</b><p>LaunchData tidak bisa disimulasikan di Studio. Publish game, lalu buka share link salah satu admin dari akun Roblox lain (bukan akun admin itu sendiri). Cek <span class="ui">Spenders</span>: kolom referrer harus terisi.</p></li>
+    <li><b>Tes tombol "Undang teman"</b><p>Masuk dengan akun admin yang <code>roblox_user_id</code>-nya tercatat di dashboard: tombol muncul di kiri bawah. Klik, pilih teman, teman masuk lewat notifikasi undangan → di <span class="ui">Spenders</span> teman itu terikat ke admin, dan portal admin menampilkan "berhasil". Ulangi dari admin lain ke teman yang sama → pengundang kedua dapat notifikasi "sudah terikat ke admin lain".</p></li>
     <li><b>Tes pembelian</b><p>Beli developer product di game yang sudah publish (Robux benar-benar terpotong, pakai produk murah). Cek <span class="ui">Spend</span>: event Robux muncul dengan status <code>attributed</code> kalau pembelinya masuk lewat link, atau <code>unattributed</code> kalau organik.</p></li>
     <li><b>Tes tanpa game pakai curl</b><p>Buat memastikan server dan key benar, kirim langsung dari terminal. Pakai <a href="#alat-payload">pembuat payload</a> untuk menyusun perintahnya.</p></li>
   </ol>
@@ -931,7 +1303,7 @@ end</code></pre></div>
       <tr><td><span class="err">503</span></td><td><code>Belum ada commission rate yang berlaku</code>. Buka Config → Rate dan buat rate.</td></tr>
     </tbody>
   </table></div>
-  <p>Script <code>AffiliateClient</code> mengulang request sampai 3 kali kalau server error (5xx) atau jaringan gagal, tapi <strong>tidak</strong> mengulang kalau 4xx, karena mengulang tidak akan mengubah hasil.</p>
+  <p><code>AffiliateReport</code> mengulang request sampai 3 kali kalau server error (5xx) atau jaringan gagal, tapi <strong>tidak</strong> mengulang kalau 4xx, karena mengulang tidak akan mengubah hasil.</p>
 </section>
 
 <!-- ================= STATUS ================= -->
@@ -949,12 +1321,13 @@ end</code></pre></div>
 <section class="doc" id="masalah">
   <header><span class="eyebrow">Referensi</span><h2>Masalah umum</h2><p>Gejala di kiri, penyebab dan obatnya di dalam.</p></header>
   <details class="faq"><summary>Output Studio: "Http requests are not enabled"</summary><div class="body"><p>HTTP Requests belum dinyalakan. <span class="ui">Game Settings</span> → <span class="ui">Security</span> → <span class="ui">Allow HTTP Requests</span> = ON, lalu publish ulang.</p></div></details>
-  <details class="faq"><summary>Output Studio: "[Affiliate] /ingest/join -> 401"</summary><div class="body"><p>Key salah, map dinonaktifkan, atau key sudah di-rotate. Ambil key baru lewat <span class="ui">Rotate key</span> di Config → Maps, pasang di <code>AffiliateClient.MAP_KEY</code>, publish ulang.</p></div></details>
-  <details class="faq"><summary>Output Studio: "[Affiliate] ... -> 503"</summary><div class="body"><p>Belum ada rate komisi. Config → Rate → buat rate. Setelah itu laporan berikutnya langsung diterima. Pembelian yang sempat gagal dilaporkan akan dikirim ulang oleh <code>flushPending</code> kalau kamu pakai <code>ReceiptHook</code>.</p></div></details>
-  <details class="faq"><summary>Request gagal terus, tidak ada kode status</summary><div class="body"><p>Server tidak bisa dijangkau dari Roblox. Pastikan alamatnya https publik, bukan <code>localhost</code> atau IP lokal. Coba buka alamat itu dari HP dengan data seluler. Pastikan juga tidak ada garis miring ganda: <code>API_BASE</code> tanpa <code>/</code> di akhir.</p></div></details>
+  <details class="faq"><summary>Output: "[AffiliateReport] /ingest/join ditolak HTTP 401"</summary><div class="body"><p>Key salah, map dinonaktifkan, atau key sudah di-rotate. Ambil key baru lewat <span class="ui">Rotate key</span> di Config → Maps, update nilai secret <code>AF</code> (atau <code>AF_STUDIO</code>) di Creator Dashboard, lalu restart server.</p></div></details>
+  <details class="faq"><summary>Output: "[AffiliateReport] ... ditolak HTTP 503"</summary><div class="body"><p>Belum ada rate komisi. Config → Rate → buat rate. Setelah itu laporan berikutnya langsung diterima. Pembelian yang sempat gagal dilaporkan dikirim ulang oleh <code>FlushPending</code> tiap 5 menit.</p></div></details>
+  <details class="faq"><summary>Output: "[AffiliateReport] ... gagal setelah 3 percobaan"</summary><div class="body"><p>Server tidak bisa dijangkau dari Roblox. Pastikan alamatnya https publik, bukan <code>localhost</code> atau IP lokal. Coba buka alamat itu dari HP dengan data seluler. Pastikan juga tidak ada garis miring ganda: <code>BASE_URL</code> tanpa <code>/</code> di akhir.</p></div>
+  <details class="faq"><summary>Output: "[ApiAuth] secret AF tidak terbaca"</summary><div class="body"><p>Secret belum dibuat, namanya beda, atau Studio belum diberi akses. Buat <code>AF</code> (dan <code>AF_STUDIO</code> untuk Studio) di Creator Dashboard → Secrets. Selama secret tidak terbaca, semua laporan afiliasi mati tapi game jalan normal.</p></div></details>
   <details class="faq"><summary>Join masuk, tapi referrer kosong padahal pakai link</summary><div class="body"><p>Tiga kemungkinan. Pertama, tes dilakukan di Studio: LaunchData tidak ada di Studio, harus di game yang sudah publish. Kedua, player masuk dari tempat lain (daftar game, undangan teman) bukan dari link. Ketiga, player memakai akun admin itu sendiri: <code>self_referral</code>.</p><p>Cek halaman <span class="ui">Flow</span>: kalau ada peringatan "kode tidak dikenal", berarti link-nya salah format atau kodenya tidak ada.</p></div></details>
   <details class="faq"><summary>Spender sudah punya referrer, tapi bukan admin yang saya harapkan</summary><div class="body"><p>First-touch. Dia sudah pernah masuk lewat link admin lain sebelumnya, dan itu yang dihitung selamanya. Riwayat semua kode yang pernah dia bawa ada di detail spender.</p></div></details>
-  <details class="faq"><summary>Pembelian Robux terjadi, tapi tidak muncul di dashboard</summary><div class="body"><p>Pastikan <code>reportRobux</code> benar-benar dipanggil di dalam <code>ProcessReceipt</code> yang aktif. Kalau game punya dua handler, hanya yang terakhir di-assign yang jalan. Cek juga bahwa itu developer product, bukan game pass.</p></div></details>
+  <details class="faq"><summary>Pembelian Robux terjadi, tapi tidak muncul di dashboard</summary><div class="body"><p>Pastikan <code>AffiliateReport.Robux(info)</code> benar-benar dipanggil di cabang <code>result == true</code> di <code>ReceiptService</code>. Kalau game punya dua handler <code>ProcessReceipt</code>, hanya yang terakhir di-assign yang jalan. Cek juga bahwa itu developer product, bukan game pass, dan bukan transfer Robux antar pemain.</p></div></details>
   <details class="faq"><summary>Balasan "duplicate: true"</summary><div class="body"><p>Bukan error. Pembelian atau donasi dengan ID yang sama sudah pernah dicatat. Roblox memang sering memanggil <code>ProcessReceipt</code> lebih dari sekali.</p></div></details>
   <details class="faq"><summary>Donasi bagi-bagi statusnya unmatched terus</summary><div class="body"><p>Server tidak menemukan spender yang cocok. Penyebab paling sering: donatur belum pernah join map kamu (jadi belum ada di daftar spender), atau nama yang dia tulis beda dengan username Roblox-nya. Lihat <code>candidates</code> di balasan untuk tahu nama apa saja yang dicoba.</p><p>Solusinya: cocokkan manual di dashboard, atau minta donatur menulis username Roblox di pesan donasi, misalnya <code>@namaakun</code>.</p></div></details>
   <details class="faq"><summary>Komisi 0 padahal statusnya attributed</summary><div class="body"><p>Cek rate saat transaksi. Kalau komisi 0%, atau untuk Robux kursnya 0, hasilnya memang 0. Pembelian yang sangat kecil juga bisa 0 karena pembulatan ke bawah: 1 Robux × 70% = 0 Robux net.</p></div></details>
@@ -970,7 +1343,7 @@ end</code></pre></div>
     <dt>Spender</dt><dd>Player yang pernah masuk ke map dan tercatat. Bisa punya admin pengajak (referrer) atau tidak.</dd>
     <dt>Kode referral</dt><dd>6 karakter unik milik admin, misalnya <code>K7PQ2M</code>. Ditempel di link sebagai <code>ref_K7PQ2M</code>.</dd>
     <dt>LaunchData</dt><dd>Teks yang Roblox selipkan ke game saat player masuk lewat link <code>games/start</code>. Di sinilah kode referral dibawa.</dd>
-    <dt>Ingest key</dt><dd>Password map untuk mengirim laporan ke server, berawalan <code>mk_</code>. Dipasang di <code>AffiliateClient.MAP_KEY</code>.</dd>
+    <dt>Ingest key</dt><dd>Password map untuk mengirim laporan ke server, berawalan <code>mk_</code>. Disimpan sebagai Roblox Secret <code>AF</code>, dibaca lewat <code>ApiAuth.affiliateKey()</code>.</dd>
     <dt>Place ID</dt><dd>Angka ID tempat (place) di Roblox. Dipakai di share link.</dd>
     <dt>First-touch</dt><dd>Aturan bahwa spender terikat ke admin pertama yang kodenya dia pakai, selamanya.</dd>
     <dt>Developer product</dt><dd>Barang yang bisa dibeli berulang di game pakai Robux. Yang dihitung komisi. Game pass tidak.</dd>

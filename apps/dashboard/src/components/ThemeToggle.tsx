@@ -3,7 +3,7 @@ import { useTheme, type Theme } from "@/lib/theme";
 import { cn } from "@/lib/utils";
 
 const order: Theme[] = ["system", "light", "dark"];
-const label: Record<Theme, string> = { system: "Ikuti sistem", light: "Terang", dark: "Gelap" };
+const label: Record<Theme, string> = { system: "Bawaan (gelap)", light: "Terang", dark: "Gelap" };
 const Icon: Record<Theme, typeof Sun> = { system: Monitor, light: Sun, dark: Moon };
 
 /** Tombol siklus tema: sistem → terang → gelap. */

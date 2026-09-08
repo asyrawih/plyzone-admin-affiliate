@@ -1,11 +1,11 @@
-<title>Panduan Afiliasi Roblox</title>
+<title>PLYZONE AFFILIATOR · Panduan Afiliasi Roblox</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
   :root {
-    --bg: #F5F7F4; --surface: #FFFFFF; --surface-2: #ECF1EC; --surface-3: #E1E8E2;
-    --ink: #18201C; --ink-2: #4B5751; --muted: #77837C; --line: #D3DBD5; --line-strong: #B9C4BC;
-    --accent: #0E8A57; --accent-ink: #FFFFFF; --accent-soft: #DCF1E5; --accent-line: #9ED4B8;
+    --bg: #F7F6F1; --surface: #FFFEFA; --surface-2: #F1F0E9; --surface-3: #E8E6DC;
+    --ink: #0A0A0A; --ink-2: #4A4944; --muted: #85837B; --line: #E0DED4; --line-strong: #BFBDB0;
+    --accent: #C9A400; --accent-ink: #0A0A0A; --accent-soft: #FFF6C7; --accent-line: #EDD46A;
     --warm: #B36512; --warm-soft: #F9EBD6; --warm-line: #E7C08A;
     --danger: #B4392E; --danger-soft: #F8E1DD; --danger-line: #E8A39B;
     --info: #2B5FA8; --info-soft: #E0EAF8; --info-line: #A9C1E8;
@@ -20,9 +20,9 @@
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #0E1512; --surface: #151E19; --surface-2: #1B2620; --surface-3: #223029;
-      --ink: #E4EBE6; --ink-2: #B3BFB7; --muted: #7F8C85; --line: #263129; --line-strong: #3A4840;
-      --accent: #3FD08D; --accent-ink: #07160E; --accent-soft: #163224; --accent-line: #2A6A49;
+      --bg: #000000; --surface: #0F0F0F; --surface-2: #181818; --surface-3: #222222;
+      --ink: #F5F3EA; --ink-2: #BDBBB0; --muted: #86847A; --line: #262626; --line-strong: #3D3D3A;
+      --accent: #FFD60A; --accent-ink: #0A0A0A; --accent-soft: #2B2300; --accent-line: #5C4B00;
       --warm: #E8A448; --warm-soft: #33260F; --warm-line: #7A5A24;
       --danger: #F08074; --danger-soft: #3A1E1A; --danger-line: #7A3A33;
       --info: #7FAAEE; --info-soft: #17243A; --info-line: #2F4B7A;
@@ -32,9 +32,9 @@
     }
   }
   :root[data-theme="dark"] {
-    --bg: #0E1512; --surface: #151E19; --surface-2: #1B2620; --surface-3: #223029;
-    --ink: #E4EBE6; --ink-2: #B3BFB7; --muted: #7F8C85; --line: #263129; --line-strong: #3A4840;
-    --accent: #3FD08D; --accent-ink: #07160E; --accent-soft: #163224; --accent-line: #2A6A49;
+    --bg: #000000; --surface: #0F0F0F; --surface-2: #181818; --surface-3: #222222;
+    --ink: #F5F3EA; --ink-2: #BDBBB0; --muted: #86847A; --line: #262626; --line-strong: #3D3D3A;
+    --accent: #FFD60A; --accent-ink: #0A0A0A; --accent-soft: #2B2300; --accent-line: #5C4B00;
     --warm: #E8A448; --warm-soft: #33260F; --warm-line: #7A5A24;
     --danger: #F08074; --danger-soft: #3A1E1A; --danger-line: #7A3A33;
     --info: #7FAAEE; --info-soft: #17243A; --info-line: #2F4B7A;
@@ -258,7 +258,7 @@
 <!--BODY-->
 <div class="topbar"><div class="topbar-in">
   <button class="btn btn-ghost" id="menu-btn" aria-label="Buka menu" aria-controls="sidebar" aria-expanded="false">☰ Menu</button>
-  <a class="brand" href="#atas"><span class="brand-mark">K</span> KLSM Affiliate <small>· panduan integrasi Roblox</small></a>
+  <a class="brand" href="#atas"><span class="brand-mark">P</span> PLYZONE AFFILIATOR <small>· panduan integrasi Roblox</small></a>
   <span class="spacer"></span>
   <button class="btn btn-ghost" id="theme-btn" title="Ganti tema">Tema: <span id="theme-label">sistem</span></button>
 </div></div>
@@ -273,7 +273,7 @@
     </div>
     <div class="nav-group"><span class="eyebrow">Pasang di Roblox</span>
       <a href="#pasang">1. Taruh script di Studio</a>
-      <a href="#konfig">2. Isi alamat API &amp; key</a>
+      <a href="#konfig">2. Alamat API &amp; secret key</a>
       <a href="#share-link">3. Share link admin</a>
       <a href="#robux">4. Pembelian Robux</a>
       <a href="#bagibagi">5. Donasi bagi-bagi</a>
@@ -331,8 +331,8 @@
     <button class="flow-step" aria-expanded="false" data-detail="fd4"><span class="actor">Server</span><b>Komisi kehitung</b><span>Admin lihat saldonya di halaman sendiri.</span></button>
   </div>
   <div class="flow-detail" id="fd1" hidden><p><strong>Link dibuat otomatis di dashboard</strong> (menu <span class="ui">Admins</span>) untuk tiap admin dan tiap map. Bentuknya: <code>https://www.roblox.com/games/start?placeId=…&amp;launchData=ref_KODE</code>. Admin tinggal copy dan sebar ke mana pun.</p><p>Admin juga punya halaman pribadi <code>/a/&lt;token&gt;</code> tanpa login, isinya saldo, daftar komisi, dan link share-nya.</p></div>
-  <div class="flow-detail" id="fd2" hidden><p>Waktu player masuk lewat link itu, Roblox nyelipin teks <code>ref_KODE</code> ke <code>LaunchData</code>. Script <code>ReferralJoin</code> membacanya dan mengirim <code>POST /ingest/join</code> berisi UserId, username, dan kode tadi.</p><p>Server nyatet: "spender ini diajak admin X". Aturannya <strong>first-touch</strong>: yang dihitung admin pertama, selamanya. Player yang masuk tanpa link juga tetap dilaporkan (kodenya kosong) supaya tercatat sebagai spender organik.</p></div>
-  <div class="flow-detail" id="fd3" hidden><p><strong>Robux:</strong> di dalam <code>ProcessReceipt</code> game, tambahkan satu panggilan <code>AffiliateClient.reportRobux(receipt, player.Name)</code>. Hanya developer product yang dihitung, game pass tidak.</p><p><strong>Bagi-bagi:</strong> setelah donasi masuk ke game (lewat MessagingService dari proxy kamu), script <code>DonationReport</code> mengirimnya ke server. Kalau donaturnya lagi ada di server, kirim UserId-nya supaya cocok pasti.</p></div>
+  <div class="flow-detail" id="fd2" hidden><p>Waktu player masuk lewat link itu, Roblox nyelipin teks <code>ref_KODE</code> ke <code>LaunchData</code>. <code>AffiliateService</code> membacanya saat <code>PlayerAdded</code> dan mengirim <code>POST /ingest/join</code> berisi UserId, username, kode tadi, plus <code>ReferredByPlayerId</code> kalau player masuk lewat undangan Roblox.</p><p>Server nyatet: "spender ini diajak admin X". Aturannya <strong>first-touch</strong>: yang dihitung admin pertama, selamanya. Player yang masuk tanpa link juga tetap dilaporkan (kodenya kosong) supaya tercatat sebagai spender organik.</p></div>
+  <div class="flow-detail" id="fd3" hidden><p><strong>Robux:</strong> di handler <code>ProcessReceipt</code> game (<code>ReceiptService</code>), satu panggilan <code>AffiliateReport.Robux(info)</code> setelah produk tersimpan. Hanya developer product yang dihitung, game pass tidak.</p><p><strong>Bagi-bagi:</strong> setelah donasi tercatat di papan (<code>DonationBoardService</code>), satu panggilan <code>AffiliateReport.Donation(event, userId, name)</code>. Kalau donaturnya lagi ada di server, UserId-nya ikut dikirim supaya cocok pasti.</p></div>
   <div class="flow-detail" id="fd4" hidden><p>Server cari siapa spender-nya, siapa admin pengajaknya, dan rate yang berlaku saat itu. Robux dipotong fee Roblox 30% dulu, dikonversi ke Rupiah, baru dikali persen komisi. Bagi-bagi langsung dikali persen komisi.</p><p>Hasilnya masuk ke buku besar (ledger) admin. Tiap bulan owner generate payout dan tandai sudah dibayar. Semua ini di luar game, kamu nggak perlu ngapa-ngapain lagi.</p></div>
 
   <div class="callout ok"><span class="ico">✓</span><div><b>Yang perlu kamu lakukan di game cuma tiga hal</b><p>Lapor saat player join, lapor saat ada pembelian Robux, lapor saat ada donasi bagi-bagi. Sisanya urusan server.</p></div></div>
@@ -356,68 +356,86 @@
 
 <!-- ================= PASANG ================= -->
 <section class="doc wide" id="pasang">
-  <header><span class="eyebrow">Pasang di Roblox · langkah 1</span><h2>Taruh script di Studio</h2><p>Semua script ada di folder <code>roblox/</code> repo ini. Isinya persis yang tampil di bawah.</p></header>
+  <header><span class="eyebrow">Pasang di Roblox · langkah 1</span><h2>Taruh script di Studio</h2><p>Tiga file di folder <code>roblox/</code> repo ini, isinya persis yang tampil di bawah. Game memakai <strong>Knit</strong>: satu ModuleScript pengirim HTTP, satu service di server, satu controller di client.</p></header>
   <div class="table-wrap"><table>
-    <thead><tr><th>Nama di Explorer</th><th>Jenis object</th><th>Fungsi</th><th>Wajib?</th></tr></thead>
+    <thead><tr><th>Nama di Explorer</th><th>Jenis object</th><th>Lokasi</th><th>Fungsi</th><th>Wajib?</th></tr></thead>
     <tbody>
-      <tr><td><code>AffiliateClient</code></td><td>ModuleScript</td><td>Pengirim HTTP ke server, dengan retry. Dipakai script lain.</td><td><span class="req">wajib</span></td></tr>
-      <tr><td><code>ReferralJoin</code></td><td>Script</td><td>Baca kode dari link saat player join, lapor ke server.</td><td><span class="req">wajib</span></td></tr>
-      <tr><td><code>ReceiptHook</code></td><td>Script (contoh)</td><td>Contoh <code>ProcessReceipt</code>. <strong>Gabungkan</strong> ke handler yang sudah ada, jangan ditaruh mentah.</td><td><span class="opt">lihat langkah 4</span></td></tr>
-      <tr><td><code>DonationReport</code></td><td>Script</td><td>Terusin donasi bagi-bagi yang masuk ke game ke server.</td><td><span class="opt">kalau pakai bagi-bagi</span></td></tr>
+      <tr><td><code>AffiliateReport</code></td><td>ModuleScript</td><td><code>ServerScriptService.Server</code></td><td>Pengirim HTTP ke server afiliasi: <code>Join</code>, <code>Robux</code>, <code>Donation</code>, <code>FlushPending</code>. Fire-and-forget, retry 3×, receipt Robux yang gagal diparkir di DataStore.</td><td><span class="req">wajib</span></td></tr>
+      <tr><td><code>AffiliateService</code></td><td>ModuleScript (Knit service)</td><td><code>ServerScriptService.Server.Services</code></td><td>Baca <code>LaunchData</code> dan <code>ReferredByPlayerId</code> saat player join, lapor ke server, teruskan jawabannya ke client. Timer kirim ulang tiap 5 menit.</td><td><span class="req">wajib</span></td></tr>
+      <tr><td><code>AffiliateController</code></td><td>ModuleScript (Knit controller)</td><td><code>StarterPlayerScripts.Client.Controllers</code></td><td>Tombol <strong>"Undang teman"</strong> untuk admin (undangan Roblox membawa <code>ref_KODE</code>) dan notifikasi hasil undangan.</td><td><span class="opt">kalau mau fitur undang</span></td></tr>
     </tbody>
   </table></div>
 
   <ol class="steps">
-    <li><b>Buka Explorer, cari <span class="ui">ServerScriptService</span></b><p>Semua file ditaruh di sini, bukan di StarterPlayer atau Workspace. Script ini jalan di server, jadi player nggak bisa lihat atau ubah key-nya.</p></li>
-    <li><b>Klik <span class="ui">+</span> di ServerScriptService → pilih <span class="ui">ModuleScript</span></b><p>Ganti namanya jadi persis <code>AffiliateClient</code> (huruf besar-kecil harus sama). Script lain mencarinya dengan nama itu. Hapus isi bawaan, paste isi tab <em>AffiliateClient</em> di bawah.</p></li>
-    <li><b>Klik <span class="ui">+</span> lagi → pilih <span class="ui">Script</span> untuk <code>ReferralJoin</code></b><p>Ganti nama, paste isinya. Ulangi untuk <code>DonationReport</code> kalau map kamu menerima donasi bagi-bagi.</p></li>
-    <li><b><code>ReceiptHook</code> jangan di-paste mentah</b><p>Roblox cuma mengizinkan <strong>satu</strong> <code>ProcessReceipt</code> per game. Kalau game kamu sudah punya, ambil bagian <code>reportRobux</code>-nya saja. Caranya di <a href="#robux">langkah 4</a>.</p></li>
+    <li><b>Taruh <code>AffiliateReport</code> di <span class="ui">ServerScriptService.Server</span></b><p>Klik <span class="ui">+</span> → <span class="ui">ModuleScript</span>, ganti namanya jadi persis <code>AffiliateReport</code> (huruf besar-kecil harus sama), hapus isi bawaan, paste isi tab <em>AffiliateReport</em>. Script lain mencarinya dengan nama itu.</p></li>
+    <li><b>Taruh <code>AffiliateService</code> di folder <span class="ui">Services</span></b><p>Sama seperti service Knit lain di game. Knit memuat semua ModuleScript di folder itu, jadi tidak perlu didaftarkan manual.</p></li>
+    <li><b>Taruh <code>AffiliateController</code> di folder <span class="ui">Controllers</span> client</b><p>Di <code>StarterPlayer.StarterPlayerScripts.Client.Controllers</code>. Tombolnya dibuat oleh script, tidak ada GUI yang perlu ditaruh di StarterGui.</p></li>
+    <li><b>Sambungkan ke kode yang sudah ada</b><p>Tiga titik sambung, masing-masing satu baris: <code>ApiAuth.affiliateKey()</code> (<a href="#konfig">langkah 2</a>), <code>ReceiptService</code> (<a href="#robux">langkah 4</a>), dan <code>DonationBoardService</code> (<a href="#bagibagi">langkah 5</a>).</p></li>
   </ol>
 
   <div class="tabs" id="script-tabs">
     <div class="tablist" role="tablist">
-      <button class="tab" role="tab" aria-selected="true" aria-controls="tp-client">AffiliateClient</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="tp-join">ReferralJoin</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="tp-receipt">ReceiptHook</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="tp-donation">DonationReport</button>
+      <button class="tab" role="tab" aria-selected="true" aria-controls="tp-report">AffiliateReport</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="tp-service">AffiliateService</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="tp-controller">AffiliateController</button>
     </div>
-    <div class="tabpanel" id="tp-client" role="tabpanel">
-      <div class="filemeta"><span>Jenis: <b>ModuleScript</b></span><span>Lokasi: <b>ServerScriptService</b></span><span>Yang perlu diubah: <b>baris API_BASE dan MAP_KEY</b></span></div>
-      <div class="code"><div class="code-bar"><span class="fname">roblox/AffiliateClient.luau</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">{{FILE:roblox/AffiliateClient.luau}}</code></pre></div>
+    <div class="tabpanel" id="tp-report" role="tabpanel">
+      <div class="filemeta"><span>Jenis: <b>ModuleScript</b></span><span>Lokasi: <b>ServerScriptService.Server</b></span><span>Yang perlu diubah: <b>BASE_URL kalau server kamu beda</b></span></div>
+      <div class="code"><div class="code-bar"><span class="fname">roblox/AffiliateReport.luau</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">{{FILE:roblox/AffiliateReport.luau}}</code></pre></div>
     </div>
-    <div class="tabpanel" id="tp-join" role="tabpanel" hidden>
-      <div class="filemeta"><span>Jenis: <b>Script</b></span><span>Lokasi: <b>ServerScriptService</b></span><span>Yang perlu diubah: <b>tidak ada</b></span></div>
-      <div class="code"><div class="code-bar"><span class="fname">roblox/ReferralJoin.server.luau</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">{{FILE:roblox/ReferralJoin.server.luau}}</code></pre></div>
+    <div class="tabpanel" id="tp-service" role="tabpanel" hidden>
+      <div class="filemeta"><span>Jenis: <b>ModuleScript (Knit service)</b></span><span>Lokasi: <b>ServerScriptService.Server.Services</b></span><span>Yang perlu diubah: <b>tidak ada</b></span></div>
+      <div class="code"><div class="code-bar"><span class="fname">roblox/AffiliateService.luau</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">{{FILE:roblox/AffiliateService.luau}}</code></pre></div>
     </div>
-    <div class="tabpanel" id="tp-receipt" role="tabpanel" hidden>
-      <div class="filemeta"><span>Jenis: <b>Script (contoh)</b></span><span>Lokasi: <b>ServerScriptService</b></span><span>Yang perlu diubah: <b>isi grantProduct, atau gabung ke handler yang ada</b></span></div>
-      <div class="code"><div class="code-bar"><span class="fname">roblox/ReceiptHook.server.luau</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">{{FILE:roblox/ReceiptHook.server.luau}}</code></pre></div>
-    </div>
-    <div class="tabpanel" id="tp-donation" role="tabpanel" hidden>
-      <div class="filemeta"><span>Jenis: <b>Script</b></span><span>Lokasi: <b>ServerScriptService</b></span><span>Yang perlu diubah: <b>TOPIC, atau pakai BindableEvent yang ada</b></span></div>
-      <div class="code"><div class="code-bar"><span class="fname">roblox/DonationReport.server.luau</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">{{FILE:roblox/DonationReport.server.luau}}</code></pre></div>
+    <div class="tabpanel" id="tp-controller" role="tabpanel" hidden>
+      <div class="filemeta"><span>Jenis: <b>ModuleScript (Knit controller)</b></span><span>Lokasi: <b>StarterPlayerScripts.Client.Controllers</b></span><span>Yang perlu diubah: <b>rupa tombol di buildButton (opsional)</b></span></div>
+      <div class="code"><div class="code-bar"><span class="fname">roblox/AffiliateController.luau</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">{{FILE:roblox/AffiliateController.luau}}</code></pre></div>
     </div>
   </div>
 </section>
 
 <!-- ================= KONFIG ================= -->
 <section class="doc" id="konfig">
-  <header><span class="eyebrow">Pasang di Roblox · langkah 2</span><h2>Isi alamat API &amp; key</h2><p>Cuma dua baris yang perlu diubah, dua-duanya di <code>AffiliateClient</code>.</p></header>
-  <div class="code"><div class="code-bar"><span class="fname">AffiliateClient · baris 16–17</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">AffiliateClient.API_BASE = "https://affiliate.contoh.com" -- alamat server, TANPA garis miring di akhir
-AffiliateClient.MAP_KEY = "mk_a1b2c3..."                 -- ingest key dari dashboard Config > Maps</code></pre></div>
+  <header><span class="eyebrow">Pasang di Roblox · langkah 2</span><h2>Alamat API &amp; secret key</h2><p>Alamat server ada di satu konstanta. Key tidak ditulis di script sama sekali, tapi dibaca dari <strong>Roblox Secret</strong>.</p></header>
+  <div class="code"><div class="code-bar"><span class="fname">AffiliateReport · konstanta di atas</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">local BASE_URL = "https://affiliate.kelasmalam.app" -- alamat server, TANPA garis miring di akhir</code></pre></div>
   <h3>Aturan alamat API</h3>
   <ul>
     <li>Harus <strong>https</strong> dan bisa diakses dari internet. Roblox nggak bisa memanggil <code>localhost</code> atau IP lokal.</li>
     <li>Jangan pakai garis miring di akhir. Script menambahkan sendiri <code>/ingest/join</code> dan seterusnya.</li>
     <li>Satu server bisa melayani banyak map. Tiap map punya key sendiri, jadi laporan otomatis tahu datang dari map mana.</li>
   </ul>
-  <h3>Simpan key dengan aman</h3>
-  <p>Key ini setara password untuk map kamu. Siapa pun yang punya key bisa kirim laporan palsu. Kalau tempat kerja kamu memakai repo publik atau Rojo, jangan taruh key langsung di file. Dua cara yang lebih aman:</p>
+  <h3>Simpan key sebagai Roblox Secret</h3>
+  <p>Ingest key (berawalan <code>mk_</code>, dari dashboard <span class="ui">Config</span> → Maps) disimpan di <span class="ui">Creator Dashboard</span> → experience kamu → <span class="ui">Secrets</span>. Dua nama secret:</p>
   <ul>
-    <li>Simpan di <code>ServerStorage</code> sebagai <code>StringValue</code> bernama misalnya <code>AffiliateKey</code>, lalu baca: <code>AffiliateClient.MAP_KEY = game.ServerStorage.AffiliateKey.Value</code>.</li>
-    <li>Kalau game kamu punya akses <em>HttpService secrets</em>, pakai <code>HttpService:GetSecret("affiliate_key")</code>.</li>
+    <li><code>AF</code>: key map produksi. Dipakai di server live.</li>
+    <li><code>AF_STUDIO</code>: key map tes. Dipakai hanya saat jalan di Studio, supaya data tes tidak jadi komisi produksi. Tidak ada <code>AF_STUDIO</code> = laporan mati di Studio, warn sekali, game jalan normal.</li>
   </ul>
-  <div class="callout warn"><span class="ico">!</span><div><b>Key bocor? Rotate.</b><p>Dashboard → <span class="ui">Config</span> → Maps → <span class="ui">Rotate key</span>. Key lama langsung mati, semua request dengan key lama ditolak 401. Jangan lupa update di game dan publish ulang.</p></div></div>
+  <p><code>AffiliateReport</code> membacanya lewat <code>ApiAuth.affiliateKey()</code>. Tambahkan fungsi ini di <code>ServerScriptService.Server.ApiAuth</code> kalau belum ada:</p>
+  <div class="code"><div class="code-bar"><span class="fname">ApiAuth · tambahan</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">local HttpService = game:GetService("HttpService")
+local RunService = game:GetService("RunService")
+
+local affiliateCache: Secret? = nil
+local affiliateWarned = false
+
+-- Ingest key map afiliasi. nil = secret tidak terbaca → fitur afiliasi mati, game jalan normal.
+function ApiAuth.affiliateKey(): Secret?
+	if affiliateCache ~= nil then
+		return affiliateCache
+	end
+	local name = if RunService:IsStudio() then "AF_STUDIO" else "AF"
+	local ok, secret = pcall(HttpService.GetSecret, HttpService, name)
+	if ok then
+		affiliateCache = secret
+		return secret
+	end
+	if not affiliateWarned then
+		affiliateWarned = true
+		warn(`[ApiAuth] secret {name} tidak terbaca; laporan afiliasi dimatikan`)
+	end
+	return nil
+end</code></pre></div>
+  <p>Nilai <code>Secret</code> bisa langsung dipakai sebagai header <code>x-map-key</code> di <code>HttpService:RequestAsync</code>, jadi key tidak pernah muncul sebagai string di script maupun di Output.</p>
+  <div class="callout warn"><span class="ico">!</span><div><b>Key bocor? Rotate.</b><p>Dashboard → <span class="ui">Config</span> → Maps → <span class="ui">Rotate key</span>. Key lama langsung mati, semua request dengan key lama ditolak 401. Update nilai secret <code>AF</code> di Creator Dashboard; server yang sudah jalan perlu restart (atau tunggu server baru) karena key di-cache sekali per server.</p></div></div>
 </section>
 
 <!-- ================= SHARE LINK ================= -->
@@ -429,10 +447,10 @@ AffiliateClient.MAP_KEY = "mk_a1b2c3..."                 -- ingest key dari dash
     <li><code>placeId</code>: Place ID map kamu.</li>
     <li><code>launchData=ref_K7PQ2M</code>: kode referral admin, diawali <code>ref_</code>. Kode 6 huruf/angka, tanpa huruf yang mirip (0/O, 1/I).</li>
   </ul>
-  <p>Saat player klik link itu, Roblox membuka game dan mengisi <code>player:GetJoinData().LaunchData</code> dengan teks <code>ref_K7PQ2M</code>. Script <code>ReferralJoin</code> membacanya dan mengirim ke server. Kamu nggak perlu mengurai kodenya di game, kirim mentah saja.</p>
+  <p>Saat player klik link itu, Roblox membuka game dan mengisi <code>player:GetJoinData().LaunchData</code> dengan teks <code>ref_K7PQ2M</code>. <code>AffiliateService</code> membacanya dan mengirim ke server. Kamu nggak perlu mengurai kodenya di game, kirim mentah saja.</p>
   <h3>Hal yang sering bikin bingung</h3>
   <ul>
-    <li><strong>LaunchData cuma terisi kalau masuk lewat link.</strong> Join dari daftar game, dari teman, atau dari Studio: nilainya <code>nil</code>. Ini normal. Player tetap dilaporkan sebagai join biasa.</li>
+    <li><strong>LaunchData cuma terisi kalau masuk lewat link atau undangan dari tombol "Undang teman".</strong> Join dari daftar game atau dari Studio: nilainya <code>nil</code>. Ini normal. Player tetap dilaporkan sebagai join biasa. Undangan dari menu sistem Roblox (tanpa LaunchData) tetap ditangkap lewat <code>ReferredByPlayerId</code> dan dicocokkan ke admin yang punya akun Roblox itu.</li>
     <li><strong>First-touch.</strong> Spender terikat ke admin pertama yang kodenya dia pakai, selamanya. Kalau dia masuk lagi lewat link admin lain, dicatat tapi tidak mengubah apa-apa.</li>
     <li><strong>Admin nggak bisa ngajak dirinya sendiri.</strong> Kalau admin punya Roblox user ID dan masuk lewat link-nya sendiri, dianggap <code>self_referral</code> dan diabaikan.</li>
     <li><strong>Kode nggak dikenal atau admin nonaktif</strong> tetap dicatat di riwayat, tapi tidak diatribusi. Bisa dicek di halaman Flow dashboard.</li>
@@ -444,51 +462,53 @@ AffiliateClient.MAP_KEY = "mk_a1b2c3..."                 -- ingest key dari dash
 <!-- ================= ROBUX ================= -->
 <section class="doc" id="robux">
   <header><span class="eyebrow">Pasang di Roblox · langkah 4</span><h2>Pembelian Robux</h2><p>Setiap developer product yang dibeli lewat <code>ProcessReceipt</code> dilaporkan ke server. Game pass sengaja tidak dihitung.</p></header>
-  <div class="callout danger"><span class="ico">!</span><div><b>Roblox cuma mengizinkan satu ProcessReceipt per game</b><p>Kalau kamu menaruh <code>ReceiptHook</code> apa adanya padahal game sudah punya handler, salah satu akan ditimpa dan pembelian bisa kacau. Selalu <strong>gabungkan</strong>.</p></div></div>
-  <h3>Kalau game sudah punya ProcessReceipt</h3>
-  <p>Tambahkan dua baris ini di handler kamu, <em>setelah</em> item diberikan ke player dan <em>sebelum</em> <code>return PurchaseGranted</code>:</p>
-  <div class="code"><div class="code-bar"><span class="fname">potongan untuk digabung</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">local AffiliateClient = require(game:GetService("ServerScriptService"):WaitForChild("AffiliateClient"))
+  <div class="callout danger"><span class="ico">!</span><div><b>Roblox cuma mengizinkan satu ProcessReceipt per game</b><p>Di game ini pemiliknya <code>ReceiptService</code>. Jangan bikin handler baru; cukup tambahkan satu baris di handler yang sudah ada.</p></div></div>
+  <h3>Satu baris di ReceiptService</h3>
+  <p>Panggil <em>setelah</em> handler produk mengembalikan <code>true</code> (item sudah tersimpan permanen) dan <em>sebelum</em> <code>return PurchaseGranted</code>:</p>
+  <div class="code"><div class="code-bar"><span class="fname">ReceiptService · potongan</span><span class="spacer"></span><button class="btn" data-copy>Salin</button></div><pre><code data-lang="lua">local AffiliateReport = require(game:GetService("ServerScriptService").Server.AffiliateReport)
 
-MarketplaceService.ProcessReceipt = function(receipt)
-	-- ... cek DataStore, cari player, kasih item seperti biasa ...
+MarketplaceService.ProcessReceipt = function(info)
+	-- ... cek DataStore, cari player, jalankan handler produk seperti biasa ...
+	local result = handler(player, info)
 
-	-- laporkan ke afiliasi. Tidak menahan pembelian kalau gagal.
-	local reported = AffiliateClient.reportRobux(receipt, player.Name)
-	if not reported then
-		-- opsional: simpan ke antrian dan kirim ulang nanti (lihat flushPending di ReceiptHook)
+	if result == true then
+		-- laporkan ke afiliasi. Fire-and-forget: tidak menahan pembelian, tidak pernah error ke sini.
+		AffiliateReport.Robux(info)
+		return Enum.ProductPurchaseDecision.PurchaseGranted
 	end
-
-	return Enum.ProductPurchaseDecision.PurchaseGranted
+	return Enum.ProductPurchaseDecision.NotProcessedYet
 end</code></pre></div>
-  <h3>Kalau game belum punya ProcessReceipt</h3>
-  <p>Pakai <code>ReceiptHook</code> apa adanya, lalu isi fungsi <code>grantProduct</code> dengan logika game kamu (tambah coin, buka item, dan seterusnya). Sisanya sudah diurus: cek duplikat lewat DataStore, laporan ke server, dan antrian kirim ulang tiap 5 menit kalau server sempat nggak bisa dihubungi.</p>
+  <p>Transfer Robux antar pemain (<code>RobuxTransferService</code>, <code>BindReceiptHandler</code>) sengaja <strong>tidak</strong> dilaporkan.</p>
+  <h3>Kalau server afiliasi lagi mati?</h3>
+  <p>Pemain tetap dapat barangnya. Receipt yang gagal dilaporkan diparkir di DataStore <code>AffiliatePending_v1</code>, dan <code>AffiliateService</code> memanggil <code>AffiliateReport.FlushPending()</code> tiap 5 menit untuk mengirim ulang.</p>
   <h3>Kenapa aman kalau dikirim dua kali?</h3>
   <p>Server mengenali pembelian dari <code>PurchaseId</code>, yang unik dari Roblox. Kirim ulang dengan <code>PurchaseId</code> yang sama cuma balas <code>duplicate: true</code>, komisi tidak dobel. Jadi kalau ragu, kirim saja.</p>
   <h3>Yang dikirim ke server</h3>
-  <p><code>reportRobux</code> mengambil semuanya dari <code>receipt</code>: <code>PurchaseId</code>, <code>PlayerId</code>, <code>ProductId</code>, <code>CurrencySpent</code> (Robux kotor sebelum potongan), dan <code>PlaceIdWherePurchased</code>. Server yang memotong fee 30% dan mengkonversi ke Rupiah. Lihat rincian di <a href="#api-robux">referensi endpoint</a>.</p>
+  <p><code>AffiliateReport.Robux</code> mengambil semuanya dari <code>info</code>: <code>PurchaseId</code>, <code>PlayerId</code>, <code>ProductId</code>, <code>CurrencySpent</code> (Robux kotor sebelum potongan), dan <code>PlaceIdWherePurchased</code>. Di Studio <code>CurrencySpent</code> selalu 0, jadi script mengambil harga dari katalog produk (<code>priceSource = "product_info"</code>). Server yang memotong fee 30% dan mengkonversi ke Rupiah. Lihat rincian di <a href="#api-robux">referensi endpoint</a>.</p>
 </section>
 
 <!-- ================= BAGI-BAGI ================= -->
 <section class="doc" id="bagibagi">
   <header><span class="eyebrow">Pasang di Roblox · langkah 5</span><h2>Donasi bagi-bagi</h2><p>Donasi Rupiah dari luar Roblox. Server perlu tahu donasi itu milik spender yang mana.</p></header>
-  <p>Alurnya: donatur kirim bagi-bagi → proxy kamu menerima webhook dari bagi-bagi → proxy meneruskan ke game lewat <code>MessagingService</code> → script <code>DonationReport</code> di game mengirim ke server afiliasi. Kenapa lewat game? Karena game yang paling tahu siapa player yang sedang online, jadi pencocokan donatur lebih akurat.</p>
+  <p>Alurnya: donatur kirim bagi-bagi → worker menerima webhook → <code>MessagingService</code> topic <code>Donation</code> → <code>DonationService</code> (dedupe per server, tebak username) → <code>DonationBoardService._OnDonation</code> → <code>Record()</code> lewat <code>UpdateAsync</code> (dedupe lintas server, satu pemenang) → <code>AffiliateReport.Donation</code>. Kenapa lewat game? Karena game yang paling tahu siapa player yang sedang online, jadi pencocokan donatur lebih akurat.</p>
   <ol class="steps">
-    <li><b>Samakan nama topic</b><p>Di <code>DonationReport</code>, ubah <code>TOPIC = "BagiBagiDonation"</code> supaya sama dengan topic yang dipakai proxy kamu saat <code>PublishAsync</code>. Kalau game kamu sudah punya penerima donasi sendiri yang memicu <code>BindableEvent</code>, pakai "Sumber event B" di bagian bawah script dan matikan bagian MessagingService.</p></li>
-    <li><b>Bentuk data donasi yang dimengerti</b><p>Script menerima tabel dengan nama field panjang atau pendek: <code>id</code>, <code>name</code>/<code>n</code>, <code>amount</code>/<code>a</code> (Rupiah), <code>message</code>/<code>m</code>, <code>username</code>/<code>u</code>, <code>t</code> (waktu). Yang wajib cuma <code>id</code> dan <code>amount</code>.</p></li>
-    <li><b>Biarkan script mencari player-nya</b><p>Script mencocokkan <code>username</code> lalu nama donatur dengan player yang ada di server (nama akun atau display name). Kalau ketemu, <code>robloxUserId</code> ikut dikirim dan server langsung yakin siapa spender-nya.</p></li>
+    <li><b>Dua baris di DonationBoardService._OnDonation</b><p>Jalur <code>ok</code> (server ini pemenang dedupe, userId ter-resolve) → <code>AffiliateReport.Donation(event, userId, name)</code>. Jalur <code>userId == nil</code> → <code>AffiliateReport.Donation(event, nil, username)</code> supaya tetap masuk antrian Unmatched di dashboard.</p></li>
+    <li><b>Bentuk event yang dibaca</b><p>Field pendek dari worker: <code>id</code>, <code>n</code> (nama donatur), <code>a</code> (Rupiah), <code>m</code> (pesan), <code>t</code> (waktu), <code>src</code>. Yang wajib cuma <code>id</code> dan <code>a</code>.</p></li>
+    <li><b>Donasi simulasi dilewati</b><p>Event dengan <code>src = "simulate"</code> (dari <code>Simulate()</code>) tidak dilaporkan di server live, hanya diteruskan di Studio ke map tes.</p></li>
   </ol>
   <h3>Kalau player-nya nggak ada di server?</h3>
   <p>Server menebak dari beberapa petunjuk, urut prioritas: field <code>username</code>, nama donatur, sebutan <code>@nama</code> atau <code>un: nama</code> di pesan, lalu kata pertama pesan. Tebakan hanya dicocokkan ke spender yang <strong>sudah pernah join</strong> map kamu. Orang Roblox asing tidak dibuat otomatis.</p>
   <p>Kalau tetap nggak ketemu, donasi masuk antrian <strong>Unmatched</strong> di dashboard (menu <span class="ui">Spend</span>, filter status unmatched). Owner tinggal pilih spender yang benar, komisi langsung dihitung ulang dengan rate saat donasi terjadi.</p>
-  <div class="callout"><span class="ico">i</span><div><b>Jalur cadangan tanpa game</b><p>Proxy juga boleh langsung memanggil <code>POST /webhook/bagibagi</code> di server afiliasi. Dua jalur boleh nyala bersamaan, karena server mengenali donasi dari <code>id</code>-nya, jadi tidak dobel. Detail di <a href="#api-webhook">referensi endpoint</a>.</p></div></div>
+  <div class="callout"><span class="ico">i</span><div><b>Jalur cadangan tanpa game</b><p>Worker juga boleh langsung memanggil <code>POST /webhook/bagibagi</code> di server afiliasi. Dua jalur boleh nyala bersamaan, karena server mengenali donasi dari <code>id</code>-nya, jadi tidak dobel. Detail di <a href="#api-webhook">referensi endpoint</a>.</p></div></div>
 </section>
 
 <!-- ================= TES ================= -->
 <section class="doc" id="tes">
   <header><span class="eyebrow">Pasang di Roblox · langkah 6</span><h2>Tes &amp; pastikan jalan</h2><p>Urutan cek dari yang paling gampang.</p></header>
   <ol class="steps">
-    <li><b>Tes join dari Studio</b><p>Tekan <span class="ui">Play</span> di Studio. Karena HTTP Requests sudah nyala, script langsung mengirim join. Buka dashboard → <span class="ui">Spenders</span>, akun kamu harus muncul. Kalau tidak, lihat jendela <span class="ui">Output</span> di Studio: semua kegagalan dicetak dengan awalan <code>[Affiliate]</code>.</p></li>
+    <li><b>Tes join dari Studio</b><p>Pastikan secret <code>AF_STUDIO</code> menunjuk ke map tes dan Studio diberi akses secret. Tekan <span class="ui">Play</span>; script langsung mengirim join. Buka dashboard map tes → <span class="ui">Spenders</span>, akun kamu harus muncul. Di jendela <span class="ui">Output</span> Studio, laporan yang sampai dicetak <code>[AffiliateReport] terkirim /ingest/join -&gt; HTTP 200</code>; kegagalan dicetak sebagai warn dengan awalan yang sama.</p></li>
     <li><b>Tes kode referral di game yang sudah publish</b><p>LaunchData tidak bisa disimulasikan di Studio. Publish game, lalu buka share link salah satu admin dari akun Roblox lain (bukan akun admin itu sendiri). Cek <span class="ui">Spenders</span>: kolom referrer harus terisi.</p></li>
+    <li><b>Tes tombol "Undang teman"</b><p>Masuk dengan akun admin yang <code>roblox_user_id</code>-nya tercatat di dashboard: tombol muncul di kiri bawah. Klik, pilih teman, teman masuk lewat notifikasi undangan → di <span class="ui">Spenders</span> teman itu terikat ke admin, dan portal admin menampilkan "berhasil". Ulangi dari admin lain ke teman yang sama → pengundang kedua dapat notifikasi "sudah terikat ke admin lain".</p></li>
     <li><b>Tes pembelian</b><p>Beli developer product di game yang sudah publish (Robux benar-benar terpotong, pakai produk murah). Cek <span class="ui">Spend</span>: event Robux muncul dengan status <code>attributed</code> kalau pembelinya masuk lewat link, atau <code>unattributed</code> kalau organik.</p></li>
     <li><b>Tes tanpa game pakai curl</b><p>Buat memastikan server dan key benar, kirim langsung dari terminal. Pakai <a href="#alat-payload">pembuat payload</a> untuk menyusun perintahnya.</p></li>
   </ol>
@@ -632,7 +652,7 @@ end</code></pre></div>
       <tr><td><span class="err">503</span></td><td><code>Belum ada commission rate yang berlaku</code>. Buka Config → Rate dan buat rate.</td></tr>
     </tbody>
   </table></div>
-  <p>Script <code>AffiliateClient</code> mengulang request sampai 3 kali kalau server error (5xx) atau jaringan gagal, tapi <strong>tidak</strong> mengulang kalau 4xx, karena mengulang tidak akan mengubah hasil.</p>
+  <p><code>AffiliateReport</code> mengulang request sampai 3 kali kalau server error (5xx) atau jaringan gagal, tapi <strong>tidak</strong> mengulang kalau 4xx, karena mengulang tidak akan mengubah hasil.</p>
 </section>
 
 <!-- ================= STATUS ================= -->
@@ -650,12 +670,13 @@ end</code></pre></div>
 <section class="doc" id="masalah">
   <header><span class="eyebrow">Referensi</span><h2>Masalah umum</h2><p>Gejala di kiri, penyebab dan obatnya di dalam.</p></header>
   <details class="faq"><summary>Output Studio: "Http requests are not enabled"</summary><div class="body"><p>HTTP Requests belum dinyalakan. <span class="ui">Game Settings</span> → <span class="ui">Security</span> → <span class="ui">Allow HTTP Requests</span> = ON, lalu publish ulang.</p></div></details>
-  <details class="faq"><summary>Output Studio: "[Affiliate] /ingest/join -> 401"</summary><div class="body"><p>Key salah, map dinonaktifkan, atau key sudah di-rotate. Ambil key baru lewat <span class="ui">Rotate key</span> di Config → Maps, pasang di <code>AffiliateClient.MAP_KEY</code>, publish ulang.</p></div></details>
-  <details class="faq"><summary>Output Studio: "[Affiliate] ... -> 503"</summary><div class="body"><p>Belum ada rate komisi. Config → Rate → buat rate. Setelah itu laporan berikutnya langsung diterima. Pembelian yang sempat gagal dilaporkan akan dikirim ulang oleh <code>flushPending</code> kalau kamu pakai <code>ReceiptHook</code>.</p></div></details>
-  <details class="faq"><summary>Request gagal terus, tidak ada kode status</summary><div class="body"><p>Server tidak bisa dijangkau dari Roblox. Pastikan alamatnya https publik, bukan <code>localhost</code> atau IP lokal. Coba buka alamat itu dari HP dengan data seluler. Pastikan juga tidak ada garis miring ganda: <code>API_BASE</code> tanpa <code>/</code> di akhir.</p></div></details>
+  <details class="faq"><summary>Output: "[AffiliateReport] /ingest/join ditolak HTTP 401"</summary><div class="body"><p>Key salah, map dinonaktifkan, atau key sudah di-rotate. Ambil key baru lewat <span class="ui">Rotate key</span> di Config → Maps, update nilai secret <code>AF</code> (atau <code>AF_STUDIO</code>) di Creator Dashboard, lalu restart server.</p></div></details>
+  <details class="faq"><summary>Output: "[AffiliateReport] ... ditolak HTTP 503"</summary><div class="body"><p>Belum ada rate komisi. Config → Rate → buat rate. Setelah itu laporan berikutnya langsung diterima. Pembelian yang sempat gagal dilaporkan dikirim ulang oleh <code>FlushPending</code> tiap 5 menit.</p></div></details>
+  <details class="faq"><summary>Output: "[AffiliateReport] ... gagal setelah 3 percobaan"</summary><div class="body"><p>Server tidak bisa dijangkau dari Roblox. Pastikan alamatnya https publik, bukan <code>localhost</code> atau IP lokal. Coba buka alamat itu dari HP dengan data seluler. Pastikan juga tidak ada garis miring ganda: <code>BASE_URL</code> tanpa <code>/</code> di akhir.</p></div>
+  <details class="faq"><summary>Output: "[ApiAuth] secret AF tidak terbaca"</summary><div class="body"><p>Secret belum dibuat, namanya beda, atau Studio belum diberi akses. Buat <code>AF</code> (dan <code>AF_STUDIO</code> untuk Studio) di Creator Dashboard → Secrets. Selama secret tidak terbaca, semua laporan afiliasi mati tapi game jalan normal.</p></div></details>
   <details class="faq"><summary>Join masuk, tapi referrer kosong padahal pakai link</summary><div class="body"><p>Tiga kemungkinan. Pertama, tes dilakukan di Studio: LaunchData tidak ada di Studio, harus di game yang sudah publish. Kedua, player masuk dari tempat lain (daftar game, undangan teman) bukan dari link. Ketiga, player memakai akun admin itu sendiri: <code>self_referral</code>.</p><p>Cek halaman <span class="ui">Flow</span>: kalau ada peringatan "kode tidak dikenal", berarti link-nya salah format atau kodenya tidak ada.</p></div></details>
   <details class="faq"><summary>Spender sudah punya referrer, tapi bukan admin yang saya harapkan</summary><div class="body"><p>First-touch. Dia sudah pernah masuk lewat link admin lain sebelumnya, dan itu yang dihitung selamanya. Riwayat semua kode yang pernah dia bawa ada di detail spender.</p></div></details>
-  <details class="faq"><summary>Pembelian Robux terjadi, tapi tidak muncul di dashboard</summary><div class="body"><p>Pastikan <code>reportRobux</code> benar-benar dipanggil di dalam <code>ProcessReceipt</code> yang aktif. Kalau game punya dua handler, hanya yang terakhir di-assign yang jalan. Cek juga bahwa itu developer product, bukan game pass.</p></div></details>
+  <details class="faq"><summary>Pembelian Robux terjadi, tapi tidak muncul di dashboard</summary><div class="body"><p>Pastikan <code>AffiliateReport.Robux(info)</code> benar-benar dipanggil di cabang <code>result == true</code> di <code>ReceiptService</code>. Kalau game punya dua handler <code>ProcessReceipt</code>, hanya yang terakhir di-assign yang jalan. Cek juga bahwa itu developer product, bukan game pass, dan bukan transfer Robux antar pemain.</p></div></details>
   <details class="faq"><summary>Balasan "duplicate: true"</summary><div class="body"><p>Bukan error. Pembelian atau donasi dengan ID yang sama sudah pernah dicatat. Roblox memang sering memanggil <code>ProcessReceipt</code> lebih dari sekali.</p></div></details>
   <details class="faq"><summary>Donasi bagi-bagi statusnya unmatched terus</summary><div class="body"><p>Server tidak menemukan spender yang cocok. Penyebab paling sering: donatur belum pernah join map kamu (jadi belum ada di daftar spender), atau nama yang dia tulis beda dengan username Roblox-nya. Lihat <code>candidates</code> di balasan untuk tahu nama apa saja yang dicoba.</p><p>Solusinya: cocokkan manual di dashboard, atau minta donatur menulis username Roblox di pesan donasi, misalnya <code>@namaakun</code>.</p></div></details>
   <details class="faq"><summary>Komisi 0 padahal statusnya attributed</summary><div class="body"><p>Cek rate saat transaksi. Kalau komisi 0%, atau untuk Robux kursnya 0, hasilnya memang 0. Pembelian yang sangat kecil juga bisa 0 karena pembulatan ke bawah: 1 Robux × 70% = 0 Robux net.</p></div></details>
@@ -671,7 +692,7 @@ end</code></pre></div>
     <dt>Spender</dt><dd>Player yang pernah masuk ke map dan tercatat. Bisa punya admin pengajak (referrer) atau tidak.</dd>
     <dt>Kode referral</dt><dd>6 karakter unik milik admin, misalnya <code>K7PQ2M</code>. Ditempel di link sebagai <code>ref_K7PQ2M</code>.</dd>
     <dt>LaunchData</dt><dd>Teks yang Roblox selipkan ke game saat player masuk lewat link <code>games/start</code>. Di sinilah kode referral dibawa.</dd>
-    <dt>Ingest key</dt><dd>Password map untuk mengirim laporan ke server, berawalan <code>mk_</code>. Dipasang di <code>AffiliateClient.MAP_KEY</code>.</dd>
+    <dt>Ingest key</dt><dd>Password map untuk mengirim laporan ke server, berawalan <code>mk_</code>. Disimpan sebagai Roblox Secret <code>AF</code>, dibaca lewat <code>ApiAuth.affiliateKey()</code>.</dd>
     <dt>Place ID</dt><dd>Angka ID tempat (place) di Roblox. Dipakai di share link.</dd>
     <dt>First-touch</dt><dd>Aturan bahwa spender terikat ke admin pertama yang kodenya dia pakai, selamanya.</dd>
     <dt>Developer product</dt><dd>Barang yang bisa dibeli berulang di game pakai Robux. Yang dihitung komisi. Game pass tidak.</dd>

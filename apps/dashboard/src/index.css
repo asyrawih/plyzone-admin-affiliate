@@ -1,58 +1,66 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Token warna. Tema gelap cukup menimpa nilai di .dark; komponen memakai var(--...), bukan warna Tailwind langsung. */
+/* Token warna. Identitas PLYZONE: hitam + kuning. Tema gelap (default) menimpa nilai di .dark; komponen memakai var(--...), bukan warna Tailwind langsung. */
 :root {
-  --plane: #f9f9f7;      /* latar halaman */
-  --surface: #fcfcfb;    /* kartu, input, sidebar */
-  --surface-2: #f3f3f0;  /* hover baris, blok lembut */
-  --surface-3: #ebebe6;  /* code, nav aktif */
-  --ink: #0b0b0b;
-  --ink-2: #52514e;
-  --muted: #898781;
-  --grid: #e1e0d9;
-  --axis: #c3c2b7;
-  --on-ink: #ffffff;     /* teks di atas tombol --ink */
-  --s1: #2a78d6; /* net spend */
-  --s2: #eb6834; /* komisi */
-  --s3: #1baf7a; /* bagi-bagi */
+  --plane: #f7f6f1;      /* latar halaman */
+  --surface: #fffefa;    /* kartu, input, sidebar */
+  --surface-2: #f1f0e9;  /* hover baris, blok lembut */
+  --surface-3: #e8e6dc;  /* code, nav aktif */
+  --ink: #0a0a0a;
+  --ink-2: #4a4944;
+  --muted: #85837b;
+  --grid: #e0ded4;
+  --axis: #bfbdb0;
+  --on-ink: #ffd60a;     /* teks/ikon di atas blok --ink */
+  --brand: #ffd60a;      /* kuning PLYZONE */
+  --brand-2: #e6bf00;    /* kuning lebih pekat: hover, garis */
+  --on-brand: #0a0a0a;   /* teks di atas kuning */
+  --brand-bg: #fff8d1; --brand-fg: #6b5300; --brand-bd: #f2dd7a;
+  --s1: #d9b300; /* net spend */
+  --s2: #0a0a0a; /* komisi */
+  --s3: #7a7a72; /* bagi-bagi */
   --good: #0ca30c;
-  --warn: #fab219;
+  --warn: #e6a700;
   --serious: #ec835a;
   --critical: #d03b3b;
   /* tone badge/blok status: bg / fg / border */
   --good-bg: #ecfdf0;  --good-fg: #166534;  --good-bd: #bbf7d0;
-  --warn-bg: #fffbeb;  --warn-fg: #92400e;  --warn-bd: #fde68a;
+  --warn-bg: #fff8d1;  --warn-fg: #6b5300;  --warn-bd: #f2dd7a;
   --bad-bg: #fef2f2;   --bad-fg: #991b1b;   --bad-bd: #fecaca;
-  --info-bg: #eff6ff;  --info-fg: #1e40af;  --info-bd: #bfdbfe;
+  --info-bg: #f1f0e9;  --info-fg: #0a0a0a;  --info-bd: #bfbdb0;
   --teal-bg: #f0fdfa;  --teal-fg: #115e59;  --teal-bd: #99f6e4;
-  --neutral-bg: #ebebe6; --neutral-fg: #52514e; --neutral-bd: #d6d5cd;
+  --neutral-bg: #e8e6dc; --neutral-fg: #4a4944; --neutral-bd: #cfcdc1;
 }
 .dark {
-  --plane: #121211;
-  --surface: #1b1b1a;
-  --surface-2: #232322;
-  --surface-3: #2c2c2a;
-  --ink: #f2f1ec;
-  --ink-2: #c2c0b8;
-  --muted: #8f8d86;
-  --grid: #2f2f2c;
-  --axis: #45453f;
-  --on-ink: #0b0b0b;
-  --s1: #5a9ae6;
-  --s2: #f0855b;
-  --s3: #3cc796;
+  --plane: #000000;
+  --surface: #0f0f0f;
+  --surface-2: #181818;
+  --surface-3: #222222;
+  --ink: #f5f3ea;
+  --ink-2: #bdbbb0;
+  --muted: #86847a;
+  --grid: #262626;
+  --axis: #3d3d3a;
+  --on-ink: #0a0a0a;
+  --brand: #ffd60a;
+  --brand-2: #ffe14d;
+  --on-brand: #0a0a0a;
+  --brand-bg: #2b2300; --brand-fg: #ffd60a; --brand-bd: #5c4b00;
+  --s1: #ffd60a;
+  --s2: #f5f3ea;
+  --s3: #86847a;
   --good: #3ec43e;
-  --warn: #f6c24a;
+  --warn: #ffd60a;
   --critical: #e35b5b;
   --good-bg: #13301c;  --good-fg: #86e0a0;  --good-bd: #1f5a32;
-  --warn-bg: #3a2b0a;  --warn-fg: #f2c86a;  --warn-bd: #6b4f14;
+  --warn-bg: #2b2300;  --warn-fg: #ffd60a;  --warn-bd: #5c4b00;
   --bad-bg: #3b1717;   --bad-fg: #f3a0a0;   --bad-bd: #6e2626;
-  --info-bg: #14263f;  --info-fg: #95c0f2;  --info-bd: #234876;
+  --info-bg: #181818;  --info-fg: #f5f3ea;  --info-bd: #3d3d3a;
   --teal-bg: #10302c;  --teal-fg: #86d9cb;  --teal-bd: #1e5c54;
-  --neutral-bg: #2c2c2a; --neutral-fg: #c2c0b8; --neutral-bd: #45453f;
+  --neutral-bg: #222222; --neutral-fg: #bdbbb0; --neutral-bd: #3d3d3a;
 }
 html, body, #root { height: 100%; }
 body { background: var(--plane); color: var(--ink); font-feature-settings: "tnum" 1; }
 .tnum { font-variant-numeric: tabular-nums; }
-::selection { background: color-mix(in srgb, var(--s1) 30%, transparent); }
+::selection { background: color-mix(in srgb, var(--brand) 45%, transparent); }

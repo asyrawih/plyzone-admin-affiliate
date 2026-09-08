@@ -1,4 +1,4 @@
-# klsm-admin-affliate
+# PLYZONE AFFILIATOR
 
 Sistem afiliasi admin: admin mengundang spender lewat share link Roblox, setiap spend (Robux dari `ProcessReceipt`, Rupiah dari donasi bagi-bagi) menghasilkan komisi untuk admin sesuai rate di config. Robux dipotong fee Roblox 30% dulu, lalu dikonversi ke Rupiah.
 

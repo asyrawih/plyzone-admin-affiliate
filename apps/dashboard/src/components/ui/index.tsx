@@ -5,9 +5,9 @@ export function Button({ className, variant = "default", size = "md", ...p }: Re
   return (
     <button
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-md font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus-visible:ring-2 ring-[var(--s1)]",
+        "inline-flex items-center gap-1.5 rounded-md font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus-visible:ring-2 ring-[var(--brand)]",
         size === "sm" ? "h-8 px-2.5 text-xs" : "h-9 px-3.5 text-sm",
-        variant === "default" && "bg-[var(--ink)] text-[var(--on-ink)] hover:opacity-85",
+        variant === "default" && "bg-[var(--brand)] text-[var(--on-brand)] hover:bg-[var(--brand-2)]",
         variant === "outline" && "border border-[var(--axis)] bg-[var(--surface)] hover:bg-[var(--surface-2)]",
         variant === "ghost" && "hover:bg-[var(--surface-3)]",
         variant === "danger" && "bg-[var(--critical)] text-white hover:opacity-90",
@@ -19,7 +19,7 @@ export function Button({ className, variant = "default", size = "md", ...p }: Re
 }
 
 export function Input({ className, ...p }: React.InputHTMLAttributes<HTMLInputElement>) {
-  return <input className={cn("h-9 w-full rounded-md border border-[var(--axis)] bg-[var(--surface)] px-3 text-sm focus:outline-none focus:ring-2 ring-[var(--s1)]", className)} {...p} />;
+  return <input className={cn("h-9 w-full rounded-md border border-[var(--axis)] bg-[var(--surface)] px-3 text-sm focus:outline-none focus:ring-2 ring-[var(--brand)]", className)} {...p} />;
 }
 export function Select({ className, ...p }: React.SelectHTMLAttributes<HTMLSelectElement>) {
   return <select className={cn("h-9 rounded-md border border-[var(--axis)] bg-[var(--surface)] px-2 text-sm", className)} {...p} />;

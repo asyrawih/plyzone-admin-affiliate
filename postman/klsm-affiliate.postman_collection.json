@@ -1,7 +1,7 @@
 {
   "info": {
     "_postman_id": "1e981b0c-1b64-4ba5-ae35-59f40fb79344",
-    "name": "KLSM Affiliate",
+    "name": "PLYZONE AFFILIATOR",
     "description": "API sistem afiliasi admin (SQLite + DuckDB). Jalankan folder berurutan: Owner Auth → Config → Admins → Ingest → ... Variabel (mapKey, adminId, eventId, dll) diisi otomatis oleh test script.\n\nAuth:\n- Owner: cookie session (login dulu, Postman simpan cookie otomatis)\n- Game: header x-map-key\n- Webhook: header x-webhook-secret\n- Admin: cookie session terpisah (folder Admin Auth)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },

@@ -1,5 +1,5 @@
 {
-  "name": "klsm-admin-affliate",
+  "name": "plyzone-affiliator",
   "private": true,
   "workspaces": [
     "apps/*",

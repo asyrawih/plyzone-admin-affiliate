@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Brand } from "@/components/Brand";
 import { useQueryClient } from "@tanstack/react-query";
 import { post } from "@/lib/api";
 import { Button, Card, Input, Label } from "@/components/ui";
@@ -11,7 +12,7 @@ export function LoginPage() {
   return (
     <div className="flex min-h-full items-center justify-center p-6">
       <Card className="w-full max-w-sm p-6">
-        <div className="mb-1 flex items-center justify-between"><h1 className="text-lg font-semibold">KLSM Affiliate</h1><ThemeToggle /></div>
+        <div className="mb-1 flex items-center justify-between"><Brand size="lg" /><ThemeToggle /></div>
         <p className="mb-5 text-sm text-[var(--muted)]">Login owner</p>
         <form onSubmit={async (e) => { e.preventDefault(); setBusy(true); setErr(""); try { await post("/api/auth/login", { username: u, password: p }); await qc.invalidateQueries({ queryKey: ["me"] }); nav(from && from.startsWith("/dashboard") ? from : "/dashboard"); } catch (x: any) { setErr(x.message); } finally { setBusy(false); } }}>
           <Label>Username</Label><Input value={u} onChange={(e) => setU(e.target.value)} autoFocus className="mb-3" />

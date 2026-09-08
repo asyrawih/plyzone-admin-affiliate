@@ -7,6 +7,7 @@ import { calcCommission, formatBps } from "@klsm/shared/commission";
 import { get } from "@/lib/api";
 import { fmtIdr, fmtNum } from "@/lib/format";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Brand, APP_NAME } from "@/components/Brand";
 import { Button, Card, Input, Label } from "@/components/ui";
 
 interface Info {
@@ -26,7 +27,7 @@ export function LandingPage() {
     <div className="min-h-full">
       <header className="sticky top-0 z-40 border-b border-[var(--grid)] bg-[var(--plane)]/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3 md:px-6">
-          <Link to="/" className="text-sm font-bold">KLSM Affiliate</Link>
+          <Brand />
           <nav className="ml-4 hidden gap-4 text-sm text-[var(--ink-2)] md:flex">
             <a href="#cara-kerja" className="hover:text-[var(--ink)]">Cara kerja</a><a href="#komisi" className="hover:text-[var(--ink)]">Komisi</a><a href="#aturan" className="hover:text-[var(--ink)]">Aturan</a><a href="#faq" className="hover:text-[var(--ink)]">FAQ</a>
           </nav>
@@ -42,7 +43,7 @@ export function LandingPage() {
         {/* Hero */}
         <section className="grid items-center gap-8 py-14 md:grid-cols-2 md:py-20">
           <div>
-            <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-[var(--grid)] bg-[var(--surface)] px-3 py-1 text-xs text-[var(--ink-2)]"><Sparkles size={12} /> Program afiliasi untuk map Roblox KLSM</div>
+            <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-[var(--grid)] bg-[var(--surface)] px-3 py-1 text-xs text-[var(--ink-2)]"><Sparkles size={12} /> Program afiliasi untuk map Roblox PLYZONE</div>
             <h1 className="text-3xl font-semibold leading-tight md:text-5xl">Ajak teman main, dapat komisi dari setiap Robux yang mereka belanjakan.</h1>
             <p className="mt-4 max-w-xl text-base text-[var(--ink-2)]">Kamu bagikan satu link. Teman yang masuk lewat link itu tercatat sebagai undanganmu, selamanya. Setiap kali mereka beli item di dalam game atau kirim donasi bagi-bagi, <b className="text-[var(--ink)]">{formatBps(rate.commission_bps)}</b> dari nilai bersihnya jadi komisimu. Dibayar tiap bulan dalam Rupiah.</p>
             <div className="mt-6 flex flex-wrap gap-2">
@@ -141,7 +142,7 @@ Komisi = bersih × ${formatBps(rate.commission_bps)}   (dibulatkan ke bawah)`}</
       </main>
 
       <footer className="border-t border-[var(--grid)] py-6 text-center text-xs text-[var(--muted)]">
-        KLSM Affiliate · <Link to="/login" className="underline">Login owner</Link>
+        {APP_NAME} · <Link to="/login" className="underline">Login owner</Link>
       </footer>
     </div>
   );
